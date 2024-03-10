@@ -17,7 +17,7 @@ export default function Card (props: {cardTitle: string, text?: string, onCardCl
       if (openable) document.removeEventListener("mousedown", handleClickOutside);
     };
     
-  }, []);
+  }, [openable]);
 
     return(
         <div ref={cardRef} className="relative w-[223px] h-[351px] bg-white rounded-xl border-2 border-black p-2">
