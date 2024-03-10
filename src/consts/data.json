@@ -1,0 +1,80 @@
+[
+    {
+        "lang": "english",
+        "img": "",
+        "categories": [
+            {
+                "category": "école",
+                "img": "",
+                "subcategories": [
+                    {
+                        "category": "",
+                        "img": "",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "category": "ville",
+                "img": "",
+                "subcategories": [
+                    {
+                        "category": "",
+                        "img": "",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "category": "général (avec le relais d'associations spécialisées)",
+                "img": "",
+                "subcategories": [
+                    {
+                        "category": "",
+                        "img": "",
+                        "text": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lang": "francais",
+        "img": "",
+        "categories": [
+            {
+                "category": "school",
+                "img": "",
+                "subcategories": [
+                    {
+                        "category": "",
+                        "img": "",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "category": "city",
+                "img": "",
+                "subcategories": [
+                    {
+                        "category": "",
+                        "img": "",
+                        "text": ""
+                    }
+                ]
+            },
+            {
+                "category": "general",
+                "img": "",
+                "subcategories": [
+                    {
+                        "category": "",
+                        "img": "",
+                        "text": ""
+                    }
+                ]
+            }
+        ]
+    }
+]
