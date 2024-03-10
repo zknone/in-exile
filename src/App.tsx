@@ -41,7 +41,7 @@ function App() {
             <div className="absolute -top-20 flex gap-2 justify-center w-full">
               {
                 data
-                .filter(item => item.lang !== state.lang)
+                .filter(item => item.lang === state.lang)
                 .flatMap(lang => lang.categories)
                 .filter(cat => cat.category === state.category)
                 .flatMap(subc => subc.subcategories.map(subcategory => 
@@ -59,7 +59,7 @@ function App() {
             <div className="absolute -top-10 flex gap-2 justify-center w-full">
               {
                 data
-                .filter(item => item.lang !== state.lang)
+                .filter(item => item.lang === state.lang)
                 .map(item => item.categories.map(category => 
                   <Card 
                     text={category.category} 
