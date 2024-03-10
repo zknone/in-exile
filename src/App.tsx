@@ -7,10 +7,8 @@ import data from './consts/data.json';
 function App() {
   const [state, setState] = useState({
     lang: 'noLang',
-    category: 'noCategory'
+    category: 'noCategory',
   });
-
-  console.log(state);
 
   const onCategoryChange = (category: string) => {
     if (state.category !== category) {
@@ -46,7 +44,9 @@ function App() {
                 .filter(cat => cat.category === state.category)
                 .flatMap(subc => subc.subcategories.map(subcategory => 
                   <Card 
-                    key={subcategory.card} 
+                    key={subcategory.card}
+                    openable 
+                    cardTitle={subcategory.title}
                     text={subcategory.text}
                   />)
                 )
@@ -62,7 +62,7 @@ function App() {
                 .filter(item => item.lang === state.lang)
                 .map(item => item.categories.map(category => 
                   <Card 
-                    text={category.category} 
+                    cardTitle={category.title} 
                     key={category.category}
                     onCardClick={
                       ()=> onCategoryChange(category.category)
@@ -74,7 +74,7 @@ function App() {
         <div className="flex gap-2 justify-center w-full z-0">
           {data.map(item => 
             <Card 
-              text={item.lang} 
+              cardTitle={item.lang} 
               key={item.lang} 
               onCardClick={() => onLanguageChange(item.lang)}/>
           )}

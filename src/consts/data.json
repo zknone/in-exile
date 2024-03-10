@@ -4,93 +4,111 @@
         "img": "",
         "categories": [
             {
-                "category": "école",
+                "category": "school",
+                "title": "école",
                 "img": "",
                 "subcategories": [
                     {
                         "card": "test1",
+                        "title": "test1",
                         "img": "test1",
                         "text": "test1"
                     },
                     {
                         "card": "test2",
+                        "title": "test2",
                         "img": "test2",
                         "text": "test2"
                     },
                     {
                         "card": "test3",
+                        "title": "test3",
                         "img": "test3",
                         "text": "test3"
                     },
                     {
                         "card": "test4",
+                        "title": "test4",
                         "img": "test4",
                         "text": "test4"
                     },
                     {
                         "card": "test5",
+                        "title": "test5",
                         "img": "test5",
                         "text": "test5"
                     }
                 ]
             },
             {
-                "category": "ville",
+                "category": "city",
+                "title": "ville",
                 "img": "",
                 "subcategories": [
                     {
                         "card": "test1",
+                        "title": "test1",
                         "img": "test1",
                         "text": "test1"
                     },
                     {
                         "card": "test2",
+                        "title": "test2",
                         "img": "test2",
                         "text": "test2"
                     },
                     {
                         "card": "test3",
+                        "title": "test3",
                         "img": "test3",
                         "text": "test3"
                     },
                     {
                         "card": "test4",
+                        "title": "test4",
                         "img": "test4",
                         "text": "test4"
                     },
                     {
                         "card": "test5",
+                        "title": "test5",
                         "img": "test5",
                         "text": "test5"
                     }
                 ]
             },
             {
-                "category": "général (avec le relais d'associations spécialisées)",
+                "category": "general",
+                "title": "général (avec le relais d'associations spécialisées)",
                 "img": "",
                 "subcategories": [
                     {
                         "card": "test1",
+                        "title": "test1",
                         "img": "test1",
                         "text": "test1"
                     },
                     {
                         "card": "test2",
+                        "title": "test2",
                         "img": "test2",
                         "text": "test2"
                     },
                     {
                         "card": "test3",
+                        "title": "test3",
                         "img": "test3",
                         "text": "test3"
                     },
                     {
                         "card": "test4",
+                        "title": "test4",
                         "img": "test4",
                         "text": "test4"
                     },
                     {
                         "card": "test5",
+                        "title": "test5",
                         "img": "test5",
                         "text": "test5"
                     }
@@ -104,30 +122,36 @@
         "categories": [
             {
                 "category": "school",
+                "title": "school",
                 "img": "",
                 "subcategories": [
                     {
                         "card": "test1",
+                        "title": "test1",
                         "img": "test1",
                         "text": "test1"
                     },
                     {
                         "card": "test2",
+                        "title": "test2",
                         "img": "test2",
                         "text": "test2"
                     },
                     {
                         "card": "test3",
+                        "title": "test3",
                         "img": "test3",
                         "text": "test3"
                     },
                     {
                         "card": "test4",
+                        "title": "test4",
                         "img": "test4",
                         "text": "test4"
                     },
                     {
                         "card": "test5",
+                        "title": "test5",
                         "img": "test5",
                         "text": "test5"
                     }
@@ -135,30 +159,36 @@
             },
             {
                 "category": "city",
+                "title": "city",
                 "img": "",
                 "subcategories": [
                     {
                         "card": "test1",
+                        "title": "test1",
                         "img": "test1",
                         "text": "test1"
                     },
                     {
                         "card": "test2",
+                        "title": "test2",
                         "img": "test2",
                         "text": "test2"
                     },
                     {
                         "card": "test3",
+                        "title": "test3",
                         "img": "test3",
                         "text": "test3"
                     },
                     {
                         "card": "test4",
+                        "title": "test4",
                         "img": "test4",
                         "text": "test4"
                     },
                     {
                         "card": "test5",
+                        "title": "test5",
                         "img": "test5",
                         "text": "test5"
                     }
@@ -166,30 +196,36 @@
             },
             {
                 "category": "general",
+                "title": "ville",
                 "img": "",
                 "subcategories": [
                     {
                         "card": "test1",
+                        "title": "test1",
                         "img": "test1",
                         "text": "test1"
                     },
                     {
                         "card": "test2",
+                        "title": "test2",
                         "img": "test2",
                         "text": "test2"
                     },
                     {
                         "card": "test3",
+                        "title": "test3",
                         "img": "test3",
                         "text": "test3"
                     },
                     {
                         "card": "test4",
+                        "title": "test4",
                         "img": "test4",
                         "text": "test4"
                     },
                     {
                         "card": "test5",
+                        "title": "test5",
                         "img": "test5",
                         "text": "test5"
                     }
