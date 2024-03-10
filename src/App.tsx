@@ -23,25 +23,28 @@ function App() {
 
   return (
     <div className="App flex bg-[#50d71e] h-screen justify-center items-center">
-      <div className="flex gap-x-2">
+      <div className="gap-x-2">
         {state.category !== 'noCategory' && 
           <div>
             субкатегории
           </div>
         }
-
         {state.lang !== 'noLang' && 
-          <div className='flex'>
-            {
-              data.filter(item => item.lang !== state.lang).map(item => item.categories.map(category => 
-                <Card text={category.category} onCardClick={() => setState({...state, category: category.category})}/>
-              ))
-            }
-          </div>}
+          <div className="z-10 relative">
+            <div className='absolute flex -top-10 -left-[20%]'>
+              {
+                data.filter(item => item.lang !== state.lang).map(item => item.categories.map(category => 
+                  <Card text={category.category} onCardClick={() => setState({...state, category: category.category})}/>
+                ))
+              }
+            </div>
 
-        {data.map(item => 
-          <Card text={item.lang} key={item.lang} onCardClick={() => setState({...state, lang: item.lang})}/>
-        )}
+          </div>}
+        <div className="flex z-0">
+          {data.map(item => 
+            <Card text={item.lang} key={item.lang} onCardClick={() => setState({...state, lang: item.lang})}/>
+          )}
+        </div>
       </div>
     </div>
   );
