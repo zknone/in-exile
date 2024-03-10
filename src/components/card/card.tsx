@@ -5,17 +5,18 @@ export default function Card (props: {cardTitle: string, text?: string, onCardCl
     const [isOpen, setOpen] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+    useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-        if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
+        if (openable && cardRef.current && !cardRef.current.contains(event.target as Node)) {
           setOpen(false);
         }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    if (openable) document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      if (openable) document.removeEventListener("mousedown", handleClickOutside);
     };
+    
   }, []);
 
     return(
