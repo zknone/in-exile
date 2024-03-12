@@ -17,7 +17,7 @@ export default function Card (props: {cardTitle: string, text?: string, onCardCl
       document.addEventListener("mousedown", handleClickOutside);
 
       return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("mousedown", handleClickOutside);
       };
     }
   }, [openable]);

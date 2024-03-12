@@ -32,7 +32,7 @@ function App() {
   }
 
   return (
-    <div className="App flex bg-[#50d71e] h-screen justify-center items-center">
+    <div className="App flex bg-white h-screen justify-center items-center">
       <div className="gap-x-2">
         {state.category !== 'noCategory' && 
           <div className="z-20 relative">
@@ -72,6 +72,8 @@ function App() {
               }
             </div>
           </div>}
+
+        {/* перенести отступ */}
         <div className="flex gap-2 justify-center w-full z-0">
           {data.map(item => 
             <Card
