@@ -36,7 +36,9 @@ export default function Card (props: {cardTitle: string, text?: string, onCardCl
               {"border-[#008AFF]/[0.6]": isThirdPlan})}
             >
               <div className="w-[200px] h-[300px]">img</div>
-              { openable && <p className="text-center cursor-pointer" onClick={()=> setOpen(!isOpen)}>{ cardTitle }</p> }
+              { openable && <p className="text-center cursor-pointer" onClick={()=> setOpen(!isOpen)}>
+                { cardTitle }
+              </p> }
               { !openable && 
                 <p className={cn(
                   "text-center cursor-pointer", 
