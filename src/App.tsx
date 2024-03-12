@@ -61,7 +61,8 @@ function App() {
                 data
                 .filter(item => item.lang === state.lang)
                 .map(item => item.categories.map(category => 
-                  <Card 
+                  <Card
+                    isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'} 
                     cardTitle={category.title} 
                     key={category.category}
                     onCardClick={
@@ -73,7 +74,9 @@ function App() {
           </div>}
         <div className="flex gap-2 justify-center w-full z-0">
           {data.map(item => 
-            <Card 
+            <Card
+              isSecondPlan={ state.lang !== 'noLang' && state.category === 'noCategory'} 
+              isThirdPlan={ state.lang !== 'noLang' && state.category !== 'noCategory'} 
               cardTitle={item.lang} 
               key={item.lang} 
               onCardClick={() => onLanguageChange(item.lang)}/>
