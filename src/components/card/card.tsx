@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import cn from "classnames";
+import { useEffect, useRef, useState } from 'react';
+import cn from 'classnames';
 
 export default function Card(props: {
   cardTitle: string;
@@ -9,26 +9,22 @@ export default function Card(props: {
   isThirdPlan?: boolean;
   openable?: boolean;
 }) {
-  const { cardTitle, text, onCardClick, isSecondPlan, isThirdPlan, openable } =
-    props;
+  const { cardTitle, text, onCardClick, isSecondPlan, isThirdPlan, openable } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (openable) {
       const handleClickOutside = (event: MouseEvent) => {
-        if (
-          cardRef.current &&
-          !cardRef.current.contains(event.target as Node)
-        ) {
+        if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
           setOpen(false);
         }
       };
 
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
 
       return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener('mousedown', handleClickOutside);
       };
     }
   }, [openable]);
@@ -37,9 +33,11 @@ export default function Card(props: {
     <div
       ref={cardRef}
       className={cn(
-        "relative w-[223px] h-auto bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px] hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1",
-        { "border-[#008AFF]/[0.8]": isSecondPlan },
-        { "border-[#008AFF]/[0.6]": isThirdPlan },
+        'relative w-[223px] h-auto bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px]',
+        'shadow-card',
+        'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
+        { 'border-[#008AFF]/[0.8]': isSecondPlan },
+        { 'border-[#008AFF]/[0.6]': isThirdPlan }
       )}
     >
       {isOpen && (
@@ -52,26 +50,23 @@ export default function Card(props: {
       )}
       <div
         className={cn(
-          "z-0 border-2 border-[#008AFF] rounded-[15px] bg-white",
-          { "border-[#008AFF]/[0.8]": isSecondPlan },
-          { "border-[#008AFF]/[0.6]": isThirdPlan },
+          'z-0 border-2 border-[#008AFF] rounded-[15px] bg-white',
+          { 'border-[#008AFF]/[0.8]': isSecondPlan },
+          { 'border-[#008AFF]/[0.6]': isThirdPlan }
         )}
       >
         <div className="w-[200px] h-[300px]">img</div>
         {openable && (
-          <p
-            className="text-center cursor-pointer"
-            onClick={() => setOpen(!isOpen)}
-          >
+          <p className="text-center cursor-pointer" onClick={() => setOpen(!isOpen)}>
             {cardTitle}
           </p>
         )}
         {!openable && (
           <p
             className={cn(
-              "text-center cursor-pointer",
-              { "opacity-[80%]": isSecondPlan },
-              { "opacity-[60%]": isThirdPlan },
+              'text-center cursor-pointer',
+              { 'opacity-[80%]': isSecondPlan },
+              { 'opacity-[60%]': isThirdPlan }
             )}
             onClick={onCardClick}
           >
