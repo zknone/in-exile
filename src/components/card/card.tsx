@@ -42,10 +42,12 @@ export default function Card(props: {
     >
       {isOpen && (
         <div
-          className="block absolute z-50 -left-6 -top-6 bg-slate-50 w-[263px] h-[381px] rounded-l border-4 border-black p-2s"
+          className="block absolute z-50 -left-6 -top-6 bg-slate-50 w-[263px] h-[381px] rounded-[20px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
           onClick={() => setOpen(false)}
         >
-          {text}
+          <div className="w-full h-full border-2 rounded-[15px] border-[#FF6CFF] bg-white">
+            {text}
+          </div>
         </div>
       )}
       <div
