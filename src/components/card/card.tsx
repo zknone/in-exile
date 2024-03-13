@@ -50,4 +50,4 @@ export default function Card (props: {cardTitle: string, text?: string, onCardCl
                 </p> }
           </div>
     </div>
-  )};
+    )}

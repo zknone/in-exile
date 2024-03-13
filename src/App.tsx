@@ -29,7 +29,7 @@ function App() {
       } else {
         setState({lang: 'noLang', category: 'noCategory'})
       }
-    };
+    }
   }
 
   return (
