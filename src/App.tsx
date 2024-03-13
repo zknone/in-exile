@@ -54,7 +54,9 @@ function App() {
           </div>
         }
         {state.lang !== 'noLang' && 
-          <div className="absolute z-10 flex gap-2 justify-center w-full">
+          <div className={cn("absolute z-10 flex gap-2 justify-center w-full", 
+            {"top-10": state.lang !== 'noLang' && state.category !== 'noCategory'})}
+          >
             {
               data
               .filter(item => item.lang === state.lang)
