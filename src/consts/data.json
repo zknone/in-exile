@@ -1,7 +1,8 @@
 [
   {
     "lang": "francais",
-    "img": "",
+    "img": "french",
+    "imgFocus": "french-focus",
     "categories": [
       {
         "category": "school",
@@ -172,6 +173,7 @@
   {
     "lang": "english",
     "img": "english",
+    "imgFocus": "french-focus",
     "categories": [
       {
         "category": "school",

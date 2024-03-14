@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 export default function Card(props: {
   cardTitle: string;
+  img: string;
   points?: string[];
   onCardClick?: (event: any) => void;
   isSecondPlan?: boolean;
@@ -12,6 +13,7 @@ export default function Card(props: {
   const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const imgUrl = `/static/${props.img}.jpg`
 
   useEffect(() => {
     if (openable) {
@@ -33,7 +35,7 @@ export default function Card(props: {
     <div
       ref={cardRef}
       className={cn(
-        'relative w-[223px] h-auto bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px]',
+        'relative w-[223px] h-[351px] bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px]',
         'shadow-card',
         'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
         { 'border-[#008AFF]/[0.8]': isSecondPlan },
@@ -42,7 +44,7 @@ export default function Card(props: {
     >
       {isOpen && (
         <div
-          className="block absolute z-50 -left-6 -top-6 w-[263px] h-[381px] rounded-[20px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
+          className="block absolute z-50 -left-[35%] -top-[30%] w-[380px] h-[548px] rounded-[20px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
           onClick={() => setOpen(false)}
         >
           <div className="w-full flex flex-col justify-between p-5 h-full border-2 rounded-[15px] border-[#FF6CFF] bg-white">
@@ -61,7 +63,9 @@ export default function Card(props: {
           { 'border-[#008AFF]/[0.6]': isThirdPlan }
         )}
       >
-        <div className="w-[200px] h-[300px]">img</div>
+        <div className="w-[200px] h-[300px]">
+          <img src={imgUrl} alt="cardTitle" />
+        </div>
         {openable && (
           <p className="text-center cursor-pointer" onClick={() => setOpen(!isOpen)}>
             {cardTitle}

@@ -44,6 +44,7 @@ function App() {
               .flatMap((subc) =>
                 subc.subcategories.map((subcategory) => (
                   <Card
+                    img={subcategory.img}
                     key={subcategory.card}
                     openable
                     cardTitle={subcategory.title}
@@ -64,6 +65,7 @@ function App() {
               .map((item) =>
                 item.categories.map((category) => (
                   <Card
+                    img={category.img}
                     isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
                     cardTitle={category.title}
                     key={category.category}
@@ -86,6 +88,7 @@ function App() {
         >
           {data.map((item) => (
             <Card
+              img={item.img}
               isSecondPlan={state.lang !== 'noLang' && state.category === 'noCategory'}
               isThirdPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
               cardTitle={item.lang}
