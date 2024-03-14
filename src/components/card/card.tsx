@@ -3,13 +3,13 @@ import cn from 'classnames';
 
 export default function Card(props: {
   cardTitle: string;
-  text?: string;
+  points?: string[];
   onCardClick?: (event: any) => void;
   isSecondPlan?: boolean;
   isThirdPlan?: boolean;
   openable?: boolean;
 }) {
-  const { cardTitle, text, onCardClick, isSecondPlan, isThirdPlan, openable } = props;
+  const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -42,12 +42,16 @@ export default function Card(props: {
     >
       {isOpen && (
         <div
-          className="block absolute z-50 -left-6 -top-6 bg-slate-50 w-[263px] h-[381px] rounded-[20px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
+          className="block absolute z-50 -left-6 -top-6 w-[263px] h-[381px] rounded-[20px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
           onClick={() => setOpen(false)}
         >
-          <div className="w-full h-full border-2 rounded-[15px] border-[#FF6CFF] bg-white">
-            {text}
+          <div className="w-full flex flex-col justify-between p-5 h-full border-2 rounded-[15px] border-[#FF6CFF] bg-white">
+            <ul>
+              {points && points.map((item, index) => <li className="pb-2" key={index}>{item}</li>)}
+            </ul>
+            <div className="font-bold">{cardTitle}</div>
           </div>
+
         </div>
       )}
       <div

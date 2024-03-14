@@ -47,7 +47,7 @@ function App() {
                     key={subcategory.card}
                     openable
                     cardTitle={subcategory.title}
-                    text={subcategory.text}
+                    points={subcategory.text}
                   />
                 ))
               )}
