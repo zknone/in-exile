@@ -13,7 +13,7 @@ export default function Card(props: {
   const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const imgUrl = `/static/${props.img}.jpg`
+  const imgUrl = `/static/${props.img}.jpg`;
 
   useEffect(() => {
     if (openable) {
@@ -35,7 +35,7 @@ export default function Card(props: {
     <div
       ref={cardRef}
       className={cn(
-        'relative w-[223px] h-[351px] bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px]',
+        'relative w-min-content h-min-content bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px]',
         'shadow-card',
         'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
         { 'border-[#008AFF]/[0.8]': isSecondPlan },
@@ -49,23 +49,25 @@ export default function Card(props: {
         >
           <div className="w-full flex flex-col justify-between p-5 h-full border-2 rounded-[15px] border-[#FF6CFF] bg-white">
             <ul>
-              {points && points.map((item, index) => <li className="pb-2" key={index}>{item}</li>)}
+              {points &&
+                points.map((item, index) => (
+                  <li className="pb-2" key={index}>
+                    {item}
+                  </li>
+                ))}
             </ul>
             <div className="font-bold">{cardTitle}</div>
           </div>
-
         </div>
       )}
       <div
         className={cn(
-          'z-0 border-2 border-[#008AFF] rounded-[15px] bg-white',
+          'z-0 border-2 border-[#008AFF] rounded-[15px] bg-white truncate',
           { 'border-[#008AFF]/[0.8]': isSecondPlan },
           { 'border-[#008AFF]/[0.6]': isThirdPlan }
         )}
       >
-        <div className="w-[200px] h-[300px]">
-          <img src={imgUrl} alt="cardTitle" />
-        </div>
+        <img className="w-[200px] h-full" src={imgUrl} alt="cardTitle" />
         {openable && (
           <p className="text-center cursor-pointer" onClick={() => setOpen(!isOpen)}>
             {cardTitle}
