@@ -56,7 +56,9 @@ export default function Card(props: {
                   </li>
                 ))}
             </ul>
-            <div className="font-bold text-center py-2 border-t-2 border-[#FF6CFF]">{cardTitle}</div>
+            <div className="font-bold text-center py-2 border-t-2 border-[#FF6CFF]">
+              {cardTitle}
+            </div>
           </div>
         </div>
       )}
@@ -69,14 +71,17 @@ export default function Card(props: {
       >
         <img className="w-[200px] h-[300px]" src={imgUrl} alt="cardTitle" />
         {openable && (
-          <p className="text-center cursor-pointer py-2 border-t-2 border-[#008AFF]" onClick={() => setOpen(!isOpen)}>
+          <p
+            className="font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]"
+            onClick={() => setOpen(!isOpen)}
+          >
             {cardTitle}
           </p>
         )}
         {!openable && (
           <div
             className={cn(
-              "text-center cursor-pointer py-2 border-t-2 border-[#008AFF]",
+              'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]',
               { 'opacity-[80%]': isSecondPlan },
               { 'opacity-[60%]': isThirdPlan }
             )}
