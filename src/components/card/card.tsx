@@ -13,7 +13,7 @@ export default function Card(props: {
   const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const imgUrl = `/static/${props.img}.jpg`;
+  const imgUrl = `static/${props.img}.jpg`;
 
   useEffect(() => {
     if (openable) {
