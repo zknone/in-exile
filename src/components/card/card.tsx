@@ -47,16 +47,16 @@ export default function Card(props: {
           className="block absolute z-50 -left-[35%] -top-[30%] w-[380px] h-[548px] rounded-[20px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
           onClick={() => setOpen(false)}
         >
-          <div className="w-full flex flex-col justify-between p-5 h-full border-2 rounded-[15px] border-[#FF6CFF] bg-white">
-            <ul>
+          <div className="w-full flex flex-col justify-between h-full border-2 rounded-[15px] border-[#FF6CFF] bg-white">
+            <ul className="p-5">
               {points &&
                 points.map((item, index) => (
-                  <li className="pb-2" key={index}>
+                  <li className="pb-5" key={index}>
                     {item}
                   </li>
                 ))}
             </ul>
-            <div className="font-bold">{cardTitle}</div>
+            <div className="font-bold text-center py-2 border-t-2 border-[#FF6CFF]">{cardTitle}</div>
           </div>
         </div>
       )}
@@ -67,23 +67,23 @@ export default function Card(props: {
           { 'border-[#008AFF]/[0.6]': isThirdPlan }
         )}
       >
-        <img className="w-[200px] h-full" src={imgUrl} alt="cardTitle" />
+        <img className="w-[200px] h-[300px]" src={imgUrl} alt="cardTitle" />
         {openable && (
-          <p className="text-center cursor-pointer" onClick={() => setOpen(!isOpen)}>
+          <p className="text-center cursor-pointer py-2 border-t-2 border-[#008AFF]" onClick={() => setOpen(!isOpen)}>
             {cardTitle}
           </p>
         )}
         {!openable && (
-          <p
+          <div
             className={cn(
-              'text-center cursor-pointer',
+              "text-center cursor-pointer py-2 border-t-2 border-[#008AFF]",
               { 'opacity-[80%]': isSecondPlan },
               { 'opacity-[60%]': isThirdPlan }
             )}
             onClick={onCardClick}
           >
             {cardTitle}
-          </p>
+          </div>
         )}
       </div>
     </div>
