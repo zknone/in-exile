@@ -48,7 +48,7 @@ export default function Card(props: {
           onClick={() => setOpen(false)}
         >
           <div className="w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white">
-            <ul className="p-5">
+            <ul className="p-5 my-auto">
               {points &&
                 points.map((item, index) => (
                   <li className="pb-5" key={index}>
