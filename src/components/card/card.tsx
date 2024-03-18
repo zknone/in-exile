@@ -13,7 +13,7 @@ export default function Card(props: {
   const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const imgUrl = `static/${props.img}.jpg`;
+  const imgUrl = `/images/${props.img}.jpg`;
 
   useEffect(() => {
     if (openable) {
@@ -35,7 +35,7 @@ export default function Card(props: {
     <div
       ref={cardRef}
       className={cn(
-        'relative w-min-content h-min-content bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px]',
+        'relative min-w-[223px] h-min-content bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px]',
         'shadow-card',
         'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
         { 'border-[#008AFF]/[0.8]': isSecondPlan },
@@ -44,10 +44,10 @@ export default function Card(props: {
     >
       {isOpen && (
         <div
-          className="block absolute z-50 -left-[35%] -top-[30%] w-[380px] h-[548px] rounded-[20px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
+          className="block absolute z-50 -left-[35%] -top-[30%] w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
           onClick={() => setOpen(false)}
         >
-          <div className="w-full flex flex-col justify-between h-full border-2 rounded-[15px] border-[#FF6CFF] bg-white">
+          <div className="w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white">
             <ul className="p-5">
               {points &&
                 points.map((item, index) => (
