@@ -68,28 +68,19 @@ export default function Card(props: {
           { 'border-[#008AFF]/[0.8]': isSecondPlan },
           { 'border-[#008AFF]/[0.6]': isThirdPlan }
         )}
+
+        onClick={ openable ? () => setOpen(!isOpen): onCardClick }
       >
         <img className="w-[200px] h-[300px]" src={imgUrl} alt="cardTitle" />
-        {openable && (
-          <p
-            className="font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]"
-            onClick={() => setOpen(!isOpen)}
-          >
-            {cardTitle}
-          </p>
-        )}
-        {!openable && (
           <div
             className={cn(
               'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]',
               { 'opacity-[80%]': isSecondPlan },
               { 'opacity-[60%]': isThirdPlan }
             )}
-            onClick={onCardClick}
           >
             {cardTitle}
           </div>
-        )}
       </div>
     </div>
   );
