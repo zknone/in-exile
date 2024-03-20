@@ -44,7 +44,7 @@ export default function Card(props: {
     >
       {isOpen && (
         <div
-          className="block absolute z-50 -left-[35%] -top-[35%] w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2"
+          className="block absolute z-50 -left-[35%] -top-[42%] w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2 shadow-card"
           onClick={() => setOpen(false)}
         >
           <div className="w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white">
