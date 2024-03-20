@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 
 export default function Card(props: {
   cardTitle: string;
   img: string;
   points?: string[];
-  onCardClick?: (event: any) => void;
+  onCardClick?: MouseEventHandler<HTMLDivElement>;
   isSecondPlan?: boolean;
   isThirdPlan?: boolean;
   openable?: boolean;
