@@ -10,9 +10,24 @@
     font-style: normal;
   }
   
-  @font-face {
+@font-face {
     font-family: 'Suise';
     src: url('fonts/suisse-bold.otf') format('otf');
     font-weight: bold;
     font-style: normal;
   }
+
+.card::after {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    display: block;
+    width: 96%;
+    height: 2px;
+    background-color: #FF6CB6;
+    top: calc(100% - 60px);
+}
+
+.card:hover::after {
+    background-color: #F93598;
+}

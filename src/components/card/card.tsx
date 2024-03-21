@@ -43,10 +43,10 @@ export default function Card(props: {
     >
       {isOpen && (
         <div
-          className="block absolute z-50 -left-[35%] -top-[42%] w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2 shadow-card text-xl"
+          className="block absolute z-50 -left-[35%] -top-[42%] w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] card"
           onClick={() => setOpen(false)}
         >
-          <div className="w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white">
+          <div className="w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
             <ul className="p-5 my-auto">
               {points &&
                 points.map((item, index) => (
@@ -55,7 +55,7 @@ export default function Card(props: {
                   </li>
                 ))}
             </ul>
-            <div className="font-bold text-center py-2 border-t-2 border-[#FF6CFF] text-2xl">
+            <div className="font-bold text-center py-2 text-2xl">
               {cardTitle}
             </div>
           </div>
