@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <div className="App flex bg-white h-screen justify-center items-center">
+    <div className="App flex bg-white h-screen justify-center items-center font-body">
       <div className="relative block w-full h-[380px] my-auto">
         {state.category !== 'noCategory' && (
           <div className="absolute z-20 w-full flex gap-2 justify-center ">

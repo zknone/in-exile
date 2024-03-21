@@ -35,8 +35,7 @@ export default function Card(props: {
     <div
       ref={cardRef}
       className={cn(
-        'relative min-w-[223px] h-min-content bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px]',
-        'shadow-card',
+        'relative min-w-[223px] h-min-content bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px] shadow-card',
         'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
         { 'border-[#008AFF]/[0.8]': isSecondPlan },
         { 'border-[#008AFF]/[0.6]': isThirdPlan }
@@ -44,7 +43,7 @@ export default function Card(props: {
     >
       {isOpen && (
         <div
-          className="block absolute z-50 -left-[35%] -top-[42%] w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2 shadow-card"
+          className="block absolute z-50 -left-[35%] -top-[42%] w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CFF] p-2 shadow-card text-xl"
           onClick={() => setOpen(false)}
         >
           <div className="w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white">
@@ -56,7 +55,7 @@ export default function Card(props: {
                   </li>
                 ))}
             </ul>
-            <div className="font-bold text-center py-2 border-t-2 border-[#FF6CFF]">
+            <div className="font-bold text-center py-2 border-t-2 border-[#FF6CFF] text-2xl">
               {cardTitle}
             </div>
           </div>
