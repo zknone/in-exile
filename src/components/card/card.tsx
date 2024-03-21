@@ -70,7 +70,7 @@ export default function Card(props: {
 
         onClick={ openable ? () => setOpen(!isOpen): onCardClick }
       >
-        <img className="w-[200px] h-[300px]" src={imgUrl} alt="cardTitle" />
+        <img className="w-[211px] h-[302px]" src={imgUrl} alt="cardTitle" />
           <div
             className={cn(
               'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]',
