@@ -22,10 +22,10 @@
   position: relative;
   z-index: 100;
   display: block;
-  width: 96%;
+  width: 100%;
   height: 2px;
   background-color: #FF6CB6;
-  top: calc(100% - 60px);
+  top: -50px;
 }
 
 .card:hover::after {
