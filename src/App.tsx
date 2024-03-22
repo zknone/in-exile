@@ -34,6 +34,15 @@ function App() {
 
   const [isOpen, setOpen] = useState(true);
   const cardRef = useRef<HTMLDivElement>(null);
+  const [isCardActive, setCardsActive] = useState(false);
+
+  const handlePopupHover = () => {
+    setCardsActive(true);
+  };
+
+  const handlePopupLeave = () => {
+    setCardsActive(false);
+  };
 
   return (
     <div className="App flex bg-white h-screen justify-center items-center font-body">
@@ -44,6 +53,8 @@ function App() {
               <div className="popup-background"></div>
               <div
                 ref={cardRef}
+                onMouseEnter={handlePopupHover}
+                onMouseLeave={handlePopupLeave}
                 className="block absolute z-50 w-[382px] h-[624px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
                 onClick={() => setOpen(false)}
               >
@@ -59,23 +70,21 @@ function App() {
             </div>
             <section className="absolute flex top-[30px] right-[50%] justify-center">
               <div className="absolute flex justify-center">
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
+                <Card img='school' key='artist' cardTitle='artist' />
+                <Card img='school' key='inner' cardTitle='inner' />
+                <Card img='school' key='school' cardTitle='school' />
               </div>
               <div className="absolute -top-[20px] flex gap-3 justify-center">
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
+                <Card img='school' key='artist' cardTitle='artist' />
+                <Card img='school' key='inner' cardTitle='inner' />
+                <Card img='school' key='school' cardTitle='school' />
               </div>
               <div className="absolute -top-[40px] flex gap-6 justify-center">
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
-                <Card img={data[0].categories[0].img} key={data[0].categories[0].title} cardTitle={data[0].categories[0].title} />
+                <Card img='school' altImg='social-life' key='artist' cardTitle='artist' active={isCardActive}/>
+                <Card img='school' key='inner' cardTitle='inner' active={isCardActive}/>
+                <Card img='school' altImg='social-life' key='school' cardTitle='school' active={isCardActive}/>
               </div>
             </section>
-
-            
           </div> 
 
         }

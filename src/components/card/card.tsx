@@ -9,11 +9,14 @@ export default function Card(props: {
   isSecondPlan?: boolean;
   isThirdPlan?: boolean;
   openable?: boolean;
+  active?: boolean;
+  altImg?: string;
 }) {
-  const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable } = props;
+  const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable, active, altImg } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const imgUrl = `/images/${props.img}.jpg`;
+  const altImgUrl = `/images/${props.altImg}.jpg`;
 
   useEffect(() => {
     if (openable) {
@@ -33,10 +36,11 @@ export default function Card(props: {
 
   return (
     <div
-
       className={cn(
-        'relative min-w-[223px] h-min-content bg-white rounded-[20px] border-2 border-[#008AFF] p-[6px] shadow-card',
+        'relative min-w-[223px] h-min-content bg-white rounded-[20px] border-2  p-[6px] shadow-card',
         'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
+        {'border-[#008AFF]': !active},
+        {'border-[#396E9A] bg-[#008AFF]': active},
         { 'border-[#008AFF]/[0.8]': isSecondPlan },
         { 'border-[#008AFF]/[0.6]': isThirdPlan  },
       )}
@@ -73,7 +77,7 @@ export default function Card(props: {
         )}
         onClick={ openable ? () => setOpen(!isOpen): onCardClick }
       >
-        <img className="w-[211px] h-[302px]" src={imgUrl} alt="cardTitle" />
+        <img className="w-[211px] h-[302px]" src={active ? altImgUrl : imgUrl} alt="cardTitle" />
           <div
             className={cn(
               'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]',
