@@ -37,10 +37,10 @@ export default function Card(props: {
   return (
     <div
       className={cn(
-        'relative min-w-[223px] h-min-content bg-white rounded-[20px] border-2  p-[6px] shadow-card',
+        'relative w-[223px] h-min-content bg-white rounded-[20px] border-2 p-[6px] shadow-card',
         'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
         {'border-[#008AFF]': !active},
-        {'border-[#396E9A] bg-[#008AFF]': active},
+        {'border-[#396E9A] bg-[#008AFF] border-1': active},
         { 'border-[#008AFF]/[0.8]': isSecondPlan },
         { 'border-[#008AFF]/[0.6]': isThirdPlan  },
       )}
