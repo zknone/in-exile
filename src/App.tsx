@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Card from './components/card/card';
 import cn from 'classnames';
@@ -39,73 +39,72 @@ function App() {
     <div className="App flex bg-white h-screen justify-center items-center font-body">
       <div className="relative block w-full h-[380px] my-auto">
         {isOpen && <EntranceScreen onClick={()=> setOpen(false)}/>}
-
-      {!isOpen && 
-        <>
-          {state.category !== 'noCategory' && (
-            <div className="absolute z-20 w-full flex gap-2 justify-center">
-              {data
-                .filter((item) => item.lang === state.lang)
-                .flatMap((lang) => lang.categories)
-                .filter((cat) => cat.category === state.category)
-                .flatMap((subc) =>
-                  subc.subcategories.map((subcategory) => (
-                    <Card
-                      img={subcategory.img}
-                      key={subcategory.card}
-                      openable
-                      cardTitle={subcategory.title}
-                      points={subcategory.text}
-                    />
-                  ))
-                )}
-            </div>
-          )}
-          {state.lang !== 'noLang' && (
-            <div
-              className={cn('absolute z-10 flex gap-2 justify-center w-full', {
-                'top-10': state.lang !== 'noLang' && state.category !== 'noCategory'
-              })}
-            >
-              {data
-                .filter((item) => item.lang === state.lang)
-                .map((item) =>
-                  item.categories.map((category) => (
-                    <Card
-                      img={category.img}
-                      isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
-                      cardTitle={category.title}
-                      key={category.category}
-                      onCardClick={() => onCategoryChange(category.category)}
-                    />
-                  ))
-                )}
-            </div>
-          )}
-          <div
-            className={cn(
-              'absolute flex gap-2 justify-center w-full z-0',
-              {
-                'top-10': state.lang !== 'noLang' && state.category === 'noCategory'
-              },
-              {
-                'top-20': state.lang !== 'noLang' && state.category !== 'noCategory'
-              }
+        {!isOpen && 
+          <>
+            {state.category !== 'noCategory' && (
+              <div className="absolute z-20 w-full flex gap-2 justify-center">
+                {data
+                  .filter((item) => item.lang === state.lang)
+                  .flatMap((lang) => lang.categories)
+                  .filter((cat) => cat.category === state.category)
+                  .flatMap((subc) =>
+                    subc.subcategories.map((subcategory) => (
+                      <Card
+                        img={subcategory.img}
+                        key={subcategory.card}
+                        openable
+                        cardTitle={subcategory.title}
+                        points={subcategory.text}
+                      />
+                    ))
+                  )}
+              </div>
             )}
-          >
-            {data.map((item) => (
-              <Card
-                img={item.img}
-                isSecondPlan={state.lang !== 'noLang' && state.category === 'noCategory'}
-                isThirdPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
-                cardTitle={item.lang}
-                key={item.lang}
-                onCardClick={() => onLanguageChange(item.lang)}
-              />
-            ))}
-          </div>
-        </>
-      }
+            {state.lang !== 'noLang' && (
+              <div
+                className={cn('absolute z-10 flex gap-2 justify-center w-full', {
+                  'top-10': state.lang !== 'noLang' && state.category !== 'noCategory'
+                })}
+              >
+                {data
+                  .filter((item) => item.lang === state.lang)
+                  .map((item) =>
+                    item.categories.map((category) => (
+                      <Card
+                        img={category.img}
+                        isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
+                        cardTitle={category.title}
+                        key={category.category}
+                        onCardClick={() => onCategoryChange(category.category)}
+                      />
+                    ))
+                  )}
+              </div>
+            )}
+            <div
+              className={cn(
+                'absolute flex gap-2 justify-center w-full z-0',
+                {
+                  'top-10': state.lang !== 'noLang' && state.category === 'noCategory'
+                },
+                {
+                  'top-20': state.lang !== 'noLang' && state.category !== 'noCategory'
+                }
+              )}
+            >
+              {data.map((item) => (
+                <Card
+                  img={item.img}
+                  isSecondPlan={state.lang !== 'noLang' && state.category === 'noCategory'}
+                  isThirdPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
+                  cardTitle={item.lang}
+                  key={item.lang}
+                  onCardClick={() => onLanguageChange(item.lang)}
+                />
+              ))}
+            </div>
+          </>
+        }
       </div>
     </div>
   );
