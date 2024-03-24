@@ -12,7 +12,7 @@ export default function Card(props: {
   active?: boolean;
   altImg?: string;
 }) {
-  const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable, active, altImg } = props;
+  const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable, active } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const imgUrl = `/images/${props.img}.jpg`;
