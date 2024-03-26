@@ -1,4 +1,6 @@
-[
+import { Dataset } from "../types/data";
+
+const data: Dataset = [
   {
     "lang": "francais",
     "img": "french",
@@ -342,3 +344,5 @@
     ]
   }
 ]
+
+export default data;

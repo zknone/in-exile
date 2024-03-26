@@ -11,8 +11,9 @@ export default function Card(props: {
   openable?: boolean;
   active?: boolean;
   altImg?: string;
+  size?: 'normal' | 'big';
 }) {
-  const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable, active } = props;
+  const { cardTitle, points, onCardClick, isSecondPlan, isThirdPlan, openable, active, size = 'normal' } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const imgUrl = `/images/${props.img}.jpg`;
@@ -37,7 +38,9 @@ export default function Card(props: {
   return (
     <div
       className={cn(
-        'relative w-[223px] h-min-content rounded-[20px] border-2 p-[6px] shadow-card',
+        'relative h-min-content rounded-[20px] border-2 p-[6px] shadow-card',
+        {'w-[223px]': size === 'normal'},
+        {'w-[303px]': size === 'big'},
         'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
         {'border-[#008AFF] bg-white': !active},
         {'border-[#396E9A] bg-[#008AFF] border-1': active},
@@ -77,7 +80,10 @@ export default function Card(props: {
         )}
         onClick={ openable ? () => setOpen(!isOpen): onCardClick }
       >
-        <img className="w-[211px] h-[302px]" src={active ? altImgUrl : imgUrl} alt="cardTitle" />
+        <img className={cn(
+          {'w-[223px]': size === 'normal'},
+          {'w-[303px]': size === 'big'}, 
+          'h-min-content')} src={active ? altImgUrl : imgUrl} alt="cardTitle" />
           <div
             className={cn(
               'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]',

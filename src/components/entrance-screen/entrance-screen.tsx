@@ -18,7 +18,7 @@ export default function EntranceScreen ( props: {onClick: ()=> void}) {
                 <div
                     onMouseEnter={handlePopupHover}
                     onMouseLeave={handlePopupLeave}
-                    className="block absolute z-50 w-[382px] h-[624px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
+                    className="block absolute z-50 w-[407px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
                     onClick={onClick}
                 >
                     <div className="absolute popup-content w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
@@ -45,21 +45,18 @@ export default function EntranceScreen ( props: {onClick: ()=> void}) {
                     </div>
                 </div>
             </div>
-            <section className="absolute flex top-[30px] right-[50%] justify-center">
-                <div className="absolute flex justify-center">
-                    <Card img='school' key='artist' cardTitle='artist' />
-                    <Card img='school' key='inner' cardTitle='inner' />
-                    <Card img='school' key='school' cardTitle='school' />
+            <section className="absolute flex right-[50%] justify-center">
+                <div className="absolute flex gap-[240px] justify-center">
+                    <Card img='school' key='artist' cardTitle='artist' size="big"/>
+                    <Card img='school' key='school' cardTitle='school' size="big"/>
                 </div>
-                <div className="absolute -top-[20px] flex gap-3 justify-center">
-                    <Card img='school' key='artist' cardTitle='artist' />
-                    <Card img='school' key='inner' cardTitle='inner' />
-                    <Card img='school' key='school' cardTitle='school' />
+                <div className="absolute -top-[20px] flex gap-[270px] justify-center">
+                    <Card img='school' key='artist' cardTitle='artist' size="big"/>
+                    <Card img='school' key='school' cardTitle='school' size="big"/>
                 </div>
-                <div className="absolute -top-[40px] flex gap-6 justify-center">
-                    <Card img='school' altImg='social-life' key='artist' cardTitle='artist' active={isCardActive}/>
-                    <Card img='school' key='inner' cardTitle='inner' active={isCardActive}/>
-                    <Card img='school' altImg='social-life' key='school' cardTitle='school' active={isCardActive}/>
+                <div className="absolute -top-[40px] flex gap-[300px] justify-center">
+                    <Card img='school' altImg='social-life' key='artist' size="big" cardTitle='artist' active={isCardActive}/>
+                    <Card img='school' altImg='social-life' key='school' size="big" cardTitle='school' active={isCardActive}/>
                 </div>
             </section>
         </div> 
