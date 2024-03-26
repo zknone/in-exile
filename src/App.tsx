@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import './App.css';
-import cn from 'classnames';
 
 import data from './consts/data';
 import EntranceScreen from './components/entrance-screen/entrance-screen';
-import CategoryLine from './components/category-line/category-line';
 import { CategoryCard, Language } from './types/data';
+import CardLine from './components/category-line/category-line';
 
 type AppState = {
   lang: Language;
@@ -26,34 +25,13 @@ function App() {
         {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
         {!isOpen && (
           <>
-            <div className="absolute z-20 w-full flex gap-2 justify-center">
-              {state.category !== 'noCategory' && (
-                <CategoryLine
-                  state={state}
-                  data={data}
-                  mode="subCategory"
-                  setState={setState}
-                />
-              )}
-            </div>
-            <div className={cn("absolute z-10 w-full flex gap-2 justify-center", {
-              'top-12': state.lang !== 'noLang' && state.category !== 'noCategory'
-            })}>
-              {state.lang !== 'noLang' && <CategoryLine data={data} mode="category" state={state} setState={setState} />}
-            </div>
-            <div
-              className={cn(
-                'absolute flex gap-2 justify-center w-full z-0',
-                {
-                  'top-12': state.lang !== 'noLang' && state.category === 'noCategory'
-                },
-                {
-                  'top-24': state.lang !== 'noLang' && state.category !== 'noCategory'
-                }
-              )}
-            >
-              <CategoryLine data={data} mode="language" state={state} setState={setState}/>
-            </div>
+            {state.category !== 'noCategory' && (
+              <CardLine state={state} data={data} mode="subCategory" setState={setState} />
+            )}
+            {state.lang !== 'noLang' && (
+              <CardLine data={data} mode="category" state={state} setState={setState} />
+            )}
+              <CardLine data={data} mode="language" state={state} setState={setState} />
           </>
         )}
       </div>

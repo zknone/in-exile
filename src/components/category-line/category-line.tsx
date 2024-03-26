@@ -1,17 +1,18 @@
 import { Dispatch, SetStateAction } from 'react';
 import { CategoryCard, Dataset, DatasetItem, Language, Subcategory } from '../../types/data';
 import Card from '../card/card';
+import cn from 'classnames';
 
 type AppState = {
-    lang: Language;
-    category: CategoryCard;
-  };
+  lang: Language;
+  category: CategoryCard;
+};
 
-const CategoryLine = (props: {
-    state: AppState;
-    data: Dataset;
-    mode: 'category' | 'default' | 'language' | 'subCategory';
-    setState: Dispatch<SetStateAction<AppState>>;
+const CardLine = (props: {
+  state: AppState;
+  data: Dataset;
+  mode: 'category' | 'default' | 'language' | 'subCategory';
+  setState: Dispatch<SetStateAction<AppState>>;
 }) => {
   const { data, mode, state, setState } = props;
 
@@ -39,15 +40,17 @@ const CategoryLine = (props: {
   const checkData = () => {
     if (mode === 'language') return data;
     if (mode === 'subCategory') {
-      const selectedLanguage = data.find(item => item.lang === state.lang);
+      const selectedLanguage = data.find((item) => item.lang === state.lang);
       if (selectedLanguage) {
-        const selectedCategory = selectedLanguage.categories.find(category => category.category === state.category);
+        const selectedCategory = selectedLanguage.categories.find(
+          (category) => category.category === state.category
+        );
         if (selectedCategory) {
           return selectedCategory.subcategories;
         }
       }
     }
-    if (mode === 'category') return data.filter(item => item.lang === state.lang);
+    if (mode === 'category') return data.filter((item) => item.lang === state.lang);
   };
 
   console.log(state.lang !== 'noLang' && state.category !== 'noCategory');
@@ -56,40 +59,66 @@ const CategoryLine = (props: {
 
   return (
     <>
-        {mode === "subCategory" && chosenData?.map((subcategory) => (
+      {mode === 'subCategory' && (
+        <div className="absolute z-20 w-full flex gap-2 justify-center">
+          {chosenData?.map((subcategory) => (
             <Card
-                img={(subcategory as Subcategory).img}
-                key={(subcategory as Subcategory).card}
-                openable
-                cardTitle={(subcategory as Subcategory).title}
-                points={(subcategory as Subcategory).text}
+              img={(subcategory as Subcategory).img}
+              key={(subcategory as Subcategory).card}
+              openable
+              cardTitle={(subcategory as Subcategory).title}
+              points={(subcategory as Subcategory).text}
             />
-        ))}
-        {mode === 'category' && chosenData?.map((item) =>
+          ))}
+        </div>
+      )}
+      {mode === 'category' && (
+        <div
+          className={cn('absolute z-10 w-full flex gap-2 justify-center', {
+            'top-12': state.lang !== 'noLang' && state.category !== 'noCategory'
+          })}
+        >
+          {chosenData?.map((item) =>
             (item as DatasetItem).categories.map((categoryItem) => (
-                <Card
-                    img={categoryItem.img}
-                    isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
-                    cardTitle={categoryItem.title}
-                    key={categoryItem.category}
-                    onCardClick={() => onCategoryChange(categoryItem.category)}
-                />
+              <Card
+                img={categoryItem.img}
+                isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
+                cardTitle={categoryItem.title}
+                key={categoryItem.category}
+                onCardClick={() => onCategoryChange(categoryItem.category)}
+              />
             ))
-        )}
-        {mode === 'language' && chosenData?.map((languageItem) => (
+          )}
+        </div>
+      )}
+      {mode === 'language' && (
+        <div
+          className={cn(
+            'absolute flex gap-2 justify-center w-full z-0',
+            {
+              'top-12': state.lang !== 'noLang' && state.category === 'noCategory'
+            },
+            {
+              'top-24': state.lang !== 'noLang' && state.category !== 'noCategory'
+            }
+          )}
+        >
+          {chosenData?.map((languageItem) => (
             <Card
-                img={(languageItem as DatasetItem).img}
-                isSecondPlan={state.lang !== 'noLang' && state.category === 'noCategory'}
-                isThirdPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
-                cardTitle={(languageItem as DatasetItem).lang}
-                key={(languageItem as DatasetItem).lang}
-                onCardClick={() => onLanguageChange((languageItem as DatasetItem).lang as Language)}
+              img={(languageItem as DatasetItem).img}
+              isSecondPlan={state.lang !== 'noLang' && state.category === 'noCategory'}
+              isThirdPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
+              cardTitle={(languageItem as DatasetItem).lang}
+              key={(languageItem as DatasetItem).lang}
+              onCardClick={() => onLanguageChange((languageItem as DatasetItem).lang as Language)}
             />
-        ))}
+          ))}
+        </div>
+      )}
     </>
   );
 };
 
-CategoryLine.displayName = 'CategoryLine';
+CardLine.displayName = 'CardLine';
 
-export default CategoryLine;
+export default CardLine;
