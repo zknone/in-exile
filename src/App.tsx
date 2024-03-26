@@ -4,7 +4,7 @@ import './App.css';
 import data from './consts/data';
 import EntranceScreen from './components/entrance-screen/entrance-screen';
 import { CategoryCard, Language } from './types/data';
-import CardLine from './components/category-line/category-line';
+import CardLine from './components/card-line/card-line';
 
 type AppState = {
   lang: Language;

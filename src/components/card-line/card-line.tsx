@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { CategoryCard, Dataset, DatasetItem, Language, Subcategory } from '../../types/data';
 import Card from '../card/card';
 import cn from 'classnames';
@@ -16,10 +16,11 @@ const CardLine = (props: {
 }) => {
   const { data, mode, state, setState } = props;
 
+  const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
+
   const onCategoryChange = (category: CategoryCard) => {
     if (state.category !== category) {
       setState({ ...state, category: category });
-      console.log(category);
     } else {
       setState({ ...state, category: 'noCategory' });
     }
@@ -53,21 +54,23 @@ const CardLine = (props: {
     if (mode === 'category') return data.filter((item) => item.lang === state.lang);
   };
 
-  console.log(state.lang !== 'noLang' && state.category !== 'noCategory');
-
   const chosenData = checkData();
 
   return (
     <>
       {mode === 'subCategory' && (
         <div className="absolute z-20 w-full flex gap-2 justify-center">
-          {chosenData?.map((subcategory) => (
+          {chosenData?.map((subcategory, index) => (
             <Card
               img={(subcategory as Subcategory).img}
               key={(subcategory as Subcategory).card}
               openable
               cardTitle={(subcategory as Subcategory).title}
               points={(subcategory as Subcategory).text}
+              isNothingHovered={activeCardIndex === null}
+              isHovered={index === activeCardIndex}
+              onMouseEnter={() => setActiveCardIndex(index)}
+              onMouseLeave={() => setActiveCardIndex(null)}
             />
           ))}
         </div>
@@ -78,7 +81,7 @@ const CardLine = (props: {
             'top-12': state.lang !== 'noLang' && state.category !== 'noCategory'
           })}
         >
-          {chosenData?.map((item) =>
+          {chosenData?.map((item, index) =>
             (item as DatasetItem).categories.map((categoryItem) => (
               <Card
                 img={categoryItem.img}
@@ -86,6 +89,10 @@ const CardLine = (props: {
                 cardTitle={categoryItem.title}
                 key={categoryItem.category}
                 onCardClick={() => onCategoryChange(categoryItem.category)}
+                isNothingHovered={activeCardIndex === null}
+                isHovered={index === activeCardIndex}
+                onMouseEnter={() => setActiveCardIndex(index)}
+                onMouseLeave={() => setActiveCardIndex(null)}
               />
             ))
           )}
@@ -103,7 +110,7 @@ const CardLine = (props: {
             }
           )}
         >
-          {chosenData?.map((languageItem) => (
+          {chosenData?.map((languageItem, index) => (
             <Card
               img={(languageItem as DatasetItem).img}
               isSecondPlan={state.lang !== 'noLang' && state.category === 'noCategory'}
@@ -111,6 +118,10 @@ const CardLine = (props: {
               cardTitle={(languageItem as DatasetItem).lang}
               key={(languageItem as DatasetItem).lang}
               onCardClick={() => onLanguageChange((languageItem as DatasetItem).lang as Language)}
+              isNothingHovered={activeCardIndex === null}
+              isHovered={index === activeCardIndex}
+              onMouseEnter={() => setActiveCardIndex(index)}
+              onMouseLeave={() => setActiveCardIndex(null)}
             />
           ))}
         </div>

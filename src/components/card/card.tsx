@@ -10,8 +10,12 @@ export default function Card(props: {
   isThirdPlan?: boolean;
   openable?: boolean;
   active?: boolean;
+  isHovered?: boolean;
+  isNothingHovered?: boolean;
   altImg?: string;
   size?: 'normal' | 'big';
+  onMouseEnter?: () => void; 
+  onMouseLeave?: () => void;
 }) {
   const {
     cardTitle,
@@ -21,7 +25,11 @@ export default function Card(props: {
     isThirdPlan,
     openable,
     active,
-    size = 'normal'
+    size = 'normal',
+    onMouseEnter,
+    onMouseLeave,
+    isHovered,
+    isNothingHovered
   } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -44,6 +52,8 @@ export default function Card(props: {
     }
   }, [openable]);
 
+
+
   return (
     <div
       className={cn(
@@ -54,8 +64,11 @@ export default function Card(props: {
         { 'border-[#008AFF] bg-white': !active },
         { 'border-[#396E9A] bg-[#008AFF] border-1': active },
         { 'border-[#008AFF]/[0.8]': isSecondPlan },
-        { 'border-[#008AFF]/[0.6]': isThirdPlan }
+        { 'border-[#008AFF]/[0.6]': isThirdPlan },
       )}
+
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {isOpen && (
         <>
@@ -104,6 +117,8 @@ export default function Card(props: {
           )}
         >
           {cardTitle}
+          {(!isHovered && !isNothingHovered) && '  not Hovered'}
+          {isHovered && 'Hovered'}
         </div>
       </div>
     </div>
