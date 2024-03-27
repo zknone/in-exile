@@ -31,7 +31,7 @@ function App() {
             {state.lang !== 'noLang' && (
               <CardLine data={data} mode="category" state={state} setState={setState} />
             )}
-              <CardLine data={data} mode="language" state={state} setState={setState} />
+            <CardLine data={data} mode="language" state={state} setState={setState} />
           </>
         )}
       </div>

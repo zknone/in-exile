@@ -2,6 +2,7 @@ import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 
 export default function Card(props: {
+  rotation?: number;
   cardTitle: string;
   img: string;
   points?: string[];
@@ -29,7 +30,8 @@ export default function Card(props: {
     onMouseEnter,
     onMouseLeave,
     isHovered,
-    isNothingHovered
+    isNothingHovered,
+    rotation = 0,
   } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -53,6 +55,7 @@ export default function Card(props: {
   }, [openable]);
 
 
+  console.log(rotation);
 
   return (
     <div
@@ -64,9 +67,9 @@ export default function Card(props: {
         { 'border-[#008AFF] bg-white': !active },
         { 'border-[#396E9A] bg-[#008AFF] border-1': active },
         { 'border-[#008AFF]/[0.8]': isSecondPlan },
-        { 'border-[#008AFF]/[0.6]': isThirdPlan },
+        { 'border-[#008AFF]/[0.6]': isThirdPlan }
       )}
-
+      style={{ transform: `rotate(${rotation}deg)` }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

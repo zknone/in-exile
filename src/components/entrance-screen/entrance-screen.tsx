@@ -69,12 +69,12 @@ export default function EntranceScreen(props: { onClick: () => void }) {
       </div>
       <section className="absolute flex right-[50%] justify-center">
         <div className="absolute flex gap-[240px] justify-center">
-          <Card img="school" key="artist" cardTitle="artist" size="big" />
-          <Card img="school" key="school" cardTitle="school" size="big" />
+          <Card img="school" key="artist" cardTitle="artist" size="big" rotation={isCardActive? 0 : 12}/>
+          <Card img="school" key="school" cardTitle="school" size="big" rotation={isCardActive? 0: -12}/>
         </div>
         <div className="absolute -top-[20px] flex gap-[270px] justify-center">
-          <Card img="school" key="artist" cardTitle="artist" size="big" />
-          <Card img="school" key="school" cardTitle="school" size="big" />
+          <Card img="school" key="artist" cardTitle="artist" size="big" rotation={isCardActive? 0: -12}/>
+          <Card img="school" key="school" cardTitle="school" size="big" rotation={isCardActive? 0: 12}/>
         </div>
         <div className="absolute -top-[40px] flex gap-[300px] justify-center">
           <Card
