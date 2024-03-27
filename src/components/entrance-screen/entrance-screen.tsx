@@ -11,10 +11,11 @@ export default function EntranceScreen(props: { onClick: () => void }) {
   const handlePopupLeave = () => {
     setCardsActive(false);
   };
+
   return (
     <div className="relative">
       <div className="absolute right-[50%] -top-[130px] flex gap-2 justify-center">
-        <div className="popup-background"></div>
+        {/* <div className="popup-background"></div> */}
         <div
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
@@ -113,6 +114,8 @@ export default function EntranceScreen(props: { onClick: () => void }) {
             size="big"
             cardTitle="artist"
             active={isCardActive}
+            isNothingHovered={isCardActive}
+            isHovered={isCardActive}
           />
           <Card
             img="school"
@@ -121,6 +124,8 @@ export default function EntranceScreen(props: { onClick: () => void }) {
             size="big"
             cardTitle="school"
             active={isCardActive}
+            isNothingHovered={isCardActive}
+            isHovered={isCardActive}
           />
         </div>
       </section>
