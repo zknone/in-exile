@@ -58,7 +58,32 @@ export default function Card(props: {
   console.log(rotation);
 
   return (
-    <div
+
+    <div className='relative'>
+      {isOpen && 
+        <>
+          <div className="popup-background"></div>
+          <div
+              ref={cardRef}
+              className="block absolute z-50 -left-[35%] -top-[42%]  w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
+              onClick={() => setOpen(false)}
+            >
+              <div className="popup-content w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white hover:border-[#F93598] card">
+                <ul className="p-12 my-auto">
+                  {points &&
+                    points.map((item, index) => (
+                      <li className="pb-5" key={index}>
+                        {item}
+                      </li>
+                    ))}
+                </ul>
+                <div className="font-bold text-center py-2 text-2xl">{cardTitle}</div>
+              </div>
+            </div>
+        </>
+}
+
+        <div
       className={cn(
         'relative h-min-content rounded-[20px] border-2 p-[6px] shadow-card',
         { 'w-[223px]': size === 'normal' },
@@ -73,28 +98,6 @@ export default function Card(props: {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {isOpen && (
-        <>
-          <div className="popup-background"></div>
-          <div
-            ref={cardRef}
-            className="block absolute z-50 -left-[35%] -top-[42%] w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
-            onClick={() => setOpen(false)}
-          >
-            <div className="popup-content w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white hover:border-[#F93598] card">
-              <ul className="p-12 my-auto">
-                {points &&
-                  points.map((item, index) => (
-                    <li className="pb-5" key={index}>
-                      {item}
-                    </li>
-                  ))}
-              </ul>
-              <div className="font-bold text-center py-2 text-2xl">{cardTitle}</div>
-            </div>
-          </div>
-        </>
-      )}
       <div
         className={cn(
           'z-0 border-2 border-[#008AFF] rounded-[15px] bg-white truncate',
@@ -125,5 +128,7 @@ export default function Card(props: {
         </div>
       </div>
     </div>
+    </div>
+
   );
 }
