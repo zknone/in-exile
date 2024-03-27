@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App flex bg-white h-screen justify-center items-center font-body">
-      <div className="relative block w-full h-[380px] my-auto">
+      <div className="relative block min-w-[1196px] h-[380px] my-auto">
         {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
         {!isOpen && (
           <>
