@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Card from '../card/card';
-
+import cn from 'classnames';
 export default function EntranceScreen(props: { onClick: () => void }) {
   const { onClick } = props;
   const [isCardActive, setCardsActive] = useState(false);
@@ -62,21 +62,25 @@ export default function EntranceScreen(props: { onClick: () => void }) {
                 rencontre dans les écoles supérieures d&rsquo;art, et ces « cartes d&rsquo;accueil »
                 sont là pour aider et accompagner.
               </div>
-              <div className="font-bold text-center text-2xl">Сlick on the card to continue</div>
+              <div>Картинка</div>
+              <div className="font-bold text-center">Cliquez sur la carte pour continuer</div>
             </div>
           </div>
         </div>
       </div>
       <section className="absolute flex right-[50%] justify-center">
-        <div className="absolute flex gap-[240px] justify-center">
-          <Card img="school" key="artist" cardTitle="artist" size="big" rotation={isCardActive? 0 : 12}/>
-          <Card img="school" key="school" cardTitle="school" size="big" rotation={isCardActive? 0: -12}/>
+        <div className={cn(
+          "absolute flex gap-[320px] justify-center",
+          {"-top-[60px]": !isCardActive}
+        )}>
+          <Card img="school" key="artist" cardTitle="artist" size="big" rotation={isCardActive? 0 : 3}/>
+          <Card img="school" key="school" cardTitle="school" size="big" rotation={isCardActive? 0: -3}/>
         </div>
-        <div className="absolute -top-[20px] flex gap-[270px] justify-center">
-          <Card img="school" key="artist" cardTitle="artist" size="big" rotation={isCardActive? 0: -12}/>
-          <Card img="school" key="school" cardTitle="school" size="big" rotation={isCardActive? 0: 12}/>
+        <div className="absolute -top-[20px] flex gap-[340px] justify-center">
+          <Card img="school" key="artist" cardTitle="artist" size="big" rotation={isCardActive? 0: -3}/>
+          <Card img="school" key="school" cardTitle="school" size="big" rotation={isCardActive? 0: 3}/>
         </div>
-        <div className="absolute -top-[40px] flex gap-[300px] justify-center">
+        <div className="absolute -top-[40px] flex gap-[380px] justify-center">
           <Card
             img="school"
             altImg="social-life"
