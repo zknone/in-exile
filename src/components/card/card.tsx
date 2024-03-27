@@ -86,7 +86,7 @@ export default function Card(props: {
           'relative h-min-content rounded-[20px] border-2 p-[6px] shadow-card',
           { 'w-[223px]': size === 'normal' },
           { 'w-[303px]': size === 'big' },
-          {'border-[#2FA2FB]': !isHovered && !isNothingHovered},
+          { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
           { 'border-[#396E9A] bg-[#008AFF] border-1': active },
@@ -100,7 +100,7 @@ export default function Card(props: {
         <div
           className={cn(
             'z-0 border-2 border-[#008AFF] rounded-[15px] bg-white truncate',
-            {'border-[#2FA2FB]': !isHovered && !isNothingHovered},
+            { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#008AFF]/[0.8]': isSecondPlan },
             { 'border-[#008AFF]/[0.6]': isThirdPlan }
           )}
@@ -110,7 +110,7 @@ export default function Card(props: {
             className={cn(
               { 'w-[223px]': size === 'normal' },
               { 'w-[303px]': size === 'big' },
-              {'opacity-[0.7]':!isHovered && !isNothingHovered},
+              { 'opacity-[0.7]': !isHovered && !isNothingHovered },
               'h-min-content'
             )}
             src={active ? altImgUrl : imgUrl}
@@ -119,7 +119,7 @@ export default function Card(props: {
           <div
             className={cn(
               'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]',
-              {'text-[#505050] border-[#2FA2FB]':!isHovered && !isNothingHovered},
+              { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%]': isSecondPlan },
               { 'opacity-[60%]': isThirdPlan }
             )}

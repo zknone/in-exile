@@ -82,7 +82,7 @@ const CardLine = (props: {
           })}
         >
           {chosenData?.map((item, index) =>
-            (item as DatasetItem).categories.map((categoryItem) => (
+            (item as DatasetItem).categories.map((categoryItem, categoryIndex) => (
               <Card
                 img={categoryItem.img}
                 isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
@@ -90,14 +90,15 @@ const CardLine = (props: {
                 key={categoryItem.category}
                 onCardClick={() => onCategoryChange(categoryItem.category)}
                 isNothingHovered={activeCardIndex === null}
-                isHovered={index === activeCardIndex}
-                onMouseEnter={() => setActiveCardIndex(index)}
+                isHovered={categoryIndex === activeCardIndex}
+                onMouseEnter={() => setActiveCardIndex(categoryIndex)}
                 onMouseLeave={() => setActiveCardIndex(null)}
               />
             ))
           )}
         </div>
       )}
+
       {mode === 'language' && (
         <div
           className={cn(
