@@ -81,7 +81,7 @@ const CardLine = (props: {
             'top-12': state.lang !== 'noLang' && state.category !== 'noCategory'
           })}
         >
-          {chosenData?.map((item, index) =>
+          {chosenData?.map((item) =>
             (item as DatasetItem).categories.map((categoryItem, categoryIndex) => (
               <Card
                 img={categoryItem.img}

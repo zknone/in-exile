@@ -90,8 +90,8 @@ export default function Card(props: {
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
           { 'border-[#396E9A] bg-[#008AFF] border-1': active },
-          { 'border-[#008AFF]/[0.8]': isSecondPlan },
-          { 'border-[#008AFF]/[0.6]': isThirdPlan }
+          { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
+          { 'border-[#2FA2FB]/[0.5]': isThirdPlan }
         )}
         style={{ transform: `rotate(${rotation}deg)` }}
         onMouseEnter={onMouseEnter}
@@ -99,10 +99,11 @@ export default function Card(props: {
       >
         <div
           className={cn(
-            'z-0 border-2 border-[#008AFF] rounded-[15px] bg-white truncate',
+            'z-0 border-2 rounded-[15px] bg-white truncate',
+            {'border-[#008AFF]': !isSecondPlan && !isThirdPlan},
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
-            { 'border-[#008AFF]/[0.8]': isSecondPlan },
-            { 'border-[#008AFF]/[0.6]': isThirdPlan }
+            { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
+            { 'border-[#2FA2FB]/[0.5]': isThirdPlan }
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
         >
@@ -120,8 +121,8 @@ export default function Card(props: {
             className={cn(
               'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]',
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
-              { 'opacity-[80%]': isSecondPlan },
-              { 'opacity-[60%]': isThirdPlan }
+              { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
+              { 'opacity-[60%] text-[#727272] !important': isThirdPlan }
             )}
           >
             {cardTitle}
