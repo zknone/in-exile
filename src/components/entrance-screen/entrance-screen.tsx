@@ -69,16 +69,41 @@ export default function EntranceScreen(props: { onClick: () => void }) {
         </div>
       </div>
       <section className="absolute flex right-[50%] justify-center">
-        <div className={cn(
-          "absolute flex gap-[320px] justify-center",
-          {"-top-[60px]": !isCardActive}
-        )}>
-          <Card img="school" key="artist" cardTitle="artist" size="big" rotation={isCardActive? 0 : 3}/>
-          <Card img="school" key="school" cardTitle="school" size="big" rotation={isCardActive? 0: -3}/>
+        <div
+          className={cn('absolute flex gap-[320px] justify-center', {
+            '-top-[60px]': !isCardActive
+          })}
+        >
+          <Card
+            img="school"
+            key="artist"
+            cardTitle="artist"
+            size="big"
+            rotation={isCardActive ? 0 : 3}
+          />
+          <Card
+            img="school"
+            key="school"
+            cardTitle="school"
+            size="big"
+            rotation={isCardActive ? 0 : -3}
+          />
         </div>
         <div className="absolute -top-[20px] flex gap-[340px] justify-center">
-          <Card img="school" key="artist" cardTitle="artist" size="big" rotation={isCardActive? 0: -3}/>
-          <Card img="school" key="school" cardTitle="school" size="big" rotation={isCardActive? 0: 3}/>
+          <Card
+            img="school"
+            key="artist"
+            cardTitle="artist"
+            size="big"
+            rotation={isCardActive ? 0 : -3}
+          />
+          <Card
+            img="school"
+            key="school"
+            cardTitle="school"
+            size="big"
+            rotation={isCardActive ? 0 : 3}
+          />
         </div>
         <div className="absolute -top-[40px] flex gap-[380px] justify-center">
           <Card
