@@ -15,14 +15,13 @@ export default function EntranceScreen(props: { onClick: () => void }) {
   return (
     <div className="relative">
       <div className="absolute right-[50%] -top-[130px] flex gap-2 justify-center">
-        {/* <div className="popup-background"></div> */}
         <div
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
-          className="block absolute z-50 w-[407px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
+          className="block absolute z-50 w-[407px] h-[647px] rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
           onClick={onClick}
         >
-          <div className="absolute popup-content w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
+          <div className="absolute popup-content w-full flex flex-col justify-between h-full border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
             <div className="absolute px-9 my-12 mx-3 max-h-[505px] overflow-auto flex flex-col gap-y-5">
               <div className="font-bold">
                 Cartes d&rsquo;accueil en résidence d&rsquo;un·e artiste en exil dans une école
@@ -72,7 +71,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
       <section className="absolute flex right-[50%] justify-center">
         <div
           className={cn('absolute flex gap-[320px] justify-center', {
-            '-top-[60px]': !isCardActive
+            '-top-[45px]': !isCardActive
           })}
         >
           <Card
@@ -90,7 +89,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
             rotation={isCardActive ? 0 : -3}
           />
         </div>
-        <div className="absolute -top-[20px] flex gap-[340px] justify-center">
+        <div className="absolute -top-[15px] flex gap-[340px] justify-center">
           <Card
             img="school"
             key="artist"
@@ -106,7 +105,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
             rotation={isCardActive ? 0 : 3}
           />
         </div>
-        <div className="absolute -top-[40px] flex gap-[380px] justify-center">
+        <div className="absolute -top-[30px] flex gap-[380px] justify-center">
           <Card
             img="school"
             altImg="social-life"

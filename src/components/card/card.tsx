@@ -63,10 +63,16 @@ export default function Card(props: {
           <div className="popup-background"></div>
           <div
             ref={cardRef}
-            className="block absolute z-50 -left-[35%] -top-[42%]  w-[408px] h-[647px] rounded-[35px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
+            className={cn(
+              'block rounded-[40px] absolute z-50 -left-[35%] p-[11px] -top-[42%]  w-[408px] h-[647px] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup'
+            )}
             onClick={() => setOpen(false)}
           >
-            <div className="popup-content w-full flex flex-col justify-between h-full border-2 rounded-[25px] border-[#FF6CFF] bg-white hover:border-[#F93598] card">
+            <div
+              className={cn(
+                'popup-content w-full rounded-[30px] flex flex-col justify-between h-full border-[2px] border-[#FF6CFF] bg-white hover:border-[#F93598] card'
+              )}
+            >
               <ul className="p-12 my-auto">
                 {points &&
                   points.map((item, index) => (
@@ -83,9 +89,9 @@ export default function Card(props: {
 
       <div
         className={cn(
-          'relative h-min-content rounded-[20px] border-2 p-[6px] shadow-card',
-          { 'w-[223px]': size === 'normal' },
-          { 'w-[303px]': size === 'big' },
+          'relative h-min-content rounded-[20px] border-[2px] shadow-card',
+          { 'w-[223px] p-[6px]': size === 'normal' },
+          { 'w-[303px] p-[8px]': size === 'big' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -99,8 +105,8 @@ export default function Card(props: {
       >
         <div
           className={cn(
-            'z-0 border-2 rounded-[15px] bg-white truncate',
-            {'border-[#008AFF]': !isSecondPlan && !isThirdPlan},
+            'z-0 border-[2px] rounded-[15px] bg-white truncate',
+            { 'border-[#008AFF]': !isSecondPlan && !isThirdPlan },
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
             { 'border-[#2FA2FB]/[0.5]': isThirdPlan }
