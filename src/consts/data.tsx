@@ -13,52 +13,54 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'artist-position',
-            title: "place de l'artiste invité·e",
+            title: "Place de l'artiste en résidence",
             img: 'artist-position',
             text: [
-              "présentation de l'artiste et de son travail à l'équipe de l'école, au personnel enseignant, aux étudiant·es",
-              "association de l'artiste aux projets de l'école sur la base de ses propositions (workshops, programmes de recherche, enseignement, événements publics...)",
-              "définition des responsabilités et des obligations de l'artiste vis-à- vis de l'école, du personnel enseignant, des étudiant·es"
+              "présentation de l'artiste et de son travail à l'équipe de l'école, aux professeur·es, aux étudiant·es, à prévoir en début de séjour",
+              "association de l'artiste aux projets de l'école selon les orientations de l'artiste et de l'école : workshops, programmes de recherche, enseignement, événements publics...",
+              "définition du rôle et des responsabilités de l'artiste vis-à-vis de l'école, des professeur·es, des étudiant·es formulation des intérêts et des intentions respectifs de l'artiste et de l'école"
             ]
           },
           {
             card: 'referents',
-            title: '2 référents',
+            title: 'Personnes Référentes',
             img: 'referents',
             text: [
-              'mise en relation avec les référents et définition de leur accompagnement',
-              "1 personne de l'administration de l'école habitant l'agglomération",
-              "1 professeur·e lié·e à la pratique de l'artiste"
+              "désignation de deux personnes référentes de la résidence une personne de l'équipe habitant l'agglomération un·e professeur·e lié·e à la pratique de l'artiste privilégier des personnes qui partagent une langue commune avec l'artiste",
+              "mise en relation des personnes référentes avec l'artiste",
+              "définition et paramètres de l'accompagnement des personnes référentes"
             ]
           },
           {
             card: 'school-familiarization',
-            title: 'découverte de l’école',
+            title: "Présentation de l'école",
             img: 'school-familiarization',
             text: [
-              "visite de l'établissement et explication du fonctionnement des différents bâtiments, salles et ateliers",
+              "fonctionnement d'une école d'art",
+              "visite de l'établissement",
+              'explication du fonctionnement des différents bâtiments, salles et ateliers',
               "horaires et modalités d'accès",
               "règlement intérieur de l'établissement"
             ]
           },
           {
             card: 'workspace',
-            title: 'espace de travail',
+            title: 'Espace de travail',
             img: 'workspace',
             text: [
-              "accès à un ou des espaces de travail dans ou en dehors de l'école en accord avec la discipline de l'artiste et de ses besoins",
-              "horaires et modalités d'accès",
-              'accès à internet'
+              "aménagement d'un espace de travail dans ou en dehors de l'école ou facilité d'accès à un atelier selon le champ d'intervention artistique de l'artiste et la nature de son projet selon les ressources de l'école",
+              "communication des horaires et des modalités d'accès",
+              "facilité d'accès à internet"
             ]
           },
           {
             card: 'equipment',
-            title: 'équipements et matériel',
+            title: 'Équipements et matériel',
             img: 'equipment',
             text: [
-              "horaires et modalités d'accès aux équipements et au matériel de l'école",
-              "définition de la prise en charge du matériel ou des frais de production par l'école",
-              'définition de la prise en charge du matériel ou des frais de production par le programme de résidence'
+              "modalités d'accès aux équipements et au matériel de l'école",
+              "définition du matériel ou des frais de production pris en charge par l'école",
+              'définition du matériel ou des frais de production pris en charge par le programme de résidence'
             ]
           }
         ]
@@ -70,47 +72,50 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'lodging',
-            title: 'logement',
+            title: 'Logement',
             img: 'lodging',
             text: [
-              "mise à disposition et prise en charge par l'établissement d'accueil d'un logement meublé (logement de l'école, location appartement, accord avec une résidence...)",
-              'équipement de base',
-              'accès à internet',
-              'souscription à une assurance habitation'
+              "facilité d'accès, aide à la recherche d'un logement selon les ressources locales : logement de l'école, location d'un appartement ou d'une chambre, accord avec une résidence… ; de préférence une solution meublée",
+              "aménagement d'un équipement de base appel à don, récupération, seconde main",
+              "facilité d'accès à internet",
+              "souscription à une assurance habitation au nom de l'artiste"
             ]
           },
           {
-            card: 'city familiarization',
-            title: 'découverte de la ville',
+            card: 'city-familiarization',
+            title: 'Découverte de la ville',
             img: 'city-familiarization',
             text: [
-              'tour de la ville et de ses environs',
-              "liste des adresses utiles pour l'artiste (culture, culte, bien-être, magasins...)"
+              "organisation du tour de la ville et de ses environs avec l'aide de relais bénévoles",
+              "identification d'adresses utiles pour l'artiste culture, culte, bien-être, magasins, administrations"
             ]
           },
           {
             card: 'transport',
-            title: 'transport',
+            title: 'Transports',
             img: 'transport',
             text: [
-              'types et réseaux de transports pour se déplacer dans la ville et ses environs',
-              'abonnements et cartes'
+              'explication des modes et réseaux de transports de la ville et de ses environs de préférence une solution écoresponsable',
+              "informations sur les abonnements et cartes de réduction selon le statut administratif de l'artiste"
             ]
           },
           {
             card: 'social-life',
-            title: 'vie sociale',
+            title: 'Vie sociale',
             img: 'social-life',
             text: [
-              "accès à un ou des espaces de travail dans ou en dehors de l'école en accord avec la discipline de l'artiste et de ses besoins"
+              'mise en lien avec des relais bénévoles associations locales, habitant·es',
+              "organisation de sorties en soirée ou les week-ends avec l'aide des relais bénévoles"
             ]
           },
           {
             card: 'professional-activity',
-            title: 'professional activity',
+            title: 'Vie professionnelle',
             img: 'professional-activity',
             text: [
-              "getting to know cultural partners, institutions, associations, local artists or any other structures related to the artist's project."
+              'invitation à des événements artistiques et culturels',
+              "introduction auprès de partenaires, institutions, associations ou de toute autre entité en lien avec le projet de l'artiste",
+              "mise en relation avec d'autres artistes"
             ]
           }
         ]
@@ -122,50 +127,51 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'administrative-support',
-            title: 'suivi administratif',
+            title: 'Suivi administratif',
             img: 'administrative-support',
             text: [
-              'montant et répartition de la bourse (modalité de payement et déclaration)',
-              'affiliation aux caisses sociales et professionnelles',
-              'obtention ou renouvellement du titre de séjour'
+              'montant et répartition de la bourse modalité de paiement et déclaration, recours à une association tiers',
+              "affiliation aux caisses sociales et professionnelles avec l'aide d'une association spécialisée",
+              "obtention ou renouvellement du titre de séjour avec l'aide d'une association spécialisée"
             ]
           },
           {
             card: 'bank-phone',
-            title: 'banque et téléphone',
+            title: 'Banque et Téléphone',
             img: 'bank-phone',
             text: [
-              "ouverture d'un compte en banque et obtention d'une carte de payement (selon le statut administratif et les documents demandés : banque locale ou en ligne)",
+              "ouverture d'un compte en banque, obtention d'une carte de paiement banque physique ou en ligne selon le statut administratif et l'origine de l'artiste",
               'souscription à un abonnement téléphonique'
             ]
           },
           {
             card: 'education',
-            title: 'formation',
+            title: 'Formations',
             img: 'education',
             text: [
-              "cours de français en fonction d'un test de placement (université, association locale, cours municipal...)",
-              "formations internes ou externes en fonction des besoins de l'artiste"
+              "inscription à des cours de français après test de placement sauf niveau débutant université, associations, cours municipaux, cours dispensés par l'école, enseignement en ligne…",
+              "formations internes ou externes en fonction des besoins de l'artiste guidance, langue anglais, formations techniques…"
             ]
           },
           {
             card: 'family',
-            title: 'famille',
+            title: 'Famille',
             img: 'family',
             text: [
-              "prise en compte de la composition familiale de l'artiste",
-              'inscription des enfants dans un établissement scolaire ou universitaire, dans un institut spécialisé, à des activités périscolaires',
-              'assistance des conjoint·es'
+              "prise en compte de la composition familiale de l'artiste logement adéquat, aménagements horaires…",
+              "scolarisation et loisirs des enfants inscription école, université, institut spécialisé, centre de loisir ou d'animation, conservatoire…",
+              'assistance des conjoint·es dans la mesure du possible et selon les besoins'
             ]
           },
           {
             card: 'medical-care',
-            title: 'soins',
+            title: 'Soins',
             img: 'medical-care',
             text: [
-              "explication du fonctionnement de la - médecine dans le pays d'accueil",
-              'médecins généralistes et spécialisés',
-              'institutions et numéros d’urgence'
+              "inscription à la Sécurité sociale, à la Complémentaire santé solidaire, voire à l'Aide médicale de l'État (AME) selon le statut administratif de l'artiste",
+              "explication du fonctionnement du système de santé et de mutuelle selon le statut de l'artiste et sa couverture santé",
+              'identification de médecins généralistes et spécialisés, de thérapeutes expliciter les tarifications',
+              "transmission de numéros d'urgence"
             ]
           }
         ]
@@ -184,52 +190,55 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'artist-position',
-            title: 'guest artist position',
+            title: "Artist in Residence's Role",
             img: 'artist-position',
             text: [
-              'presentation of the artist and his/her work to the school team, teaching staff and students',
-              'participation of the artist in the school projects based on his/her proposals (workshops, research programmes, teaching, public events, etc.)',
-              "defining the artist's responsibility and commitment to the school, teaching staff and students"
+              'Introduction of the artist and their work to the school team, teachers, and students, planned at the beginning of the stay.',
+              'Inclusion of the artist in school projects according to the orientations of the artist and the school: workshops, research programs, teaching, public events...',
+              "Definition of the artist's role and responsibilities towards the school, teachers, and students.",
+              'Expression of the respective interests and intentions of the artist and the school.'
             ]
           },
           {
             card: 'referents',
-            title: '2 referents',
+            title: 'Reference Persons',
             img: 'referents',
             text: [
-              'contact with referents and identify their support',
-              '1 person from the school administration living in an urban area',
-              "1 teacher linked to the artist's practice"
+              "Assignment of two reference persons for the residency: one person from the team living in the urban area and one teacher related to the artist's practice. Preference should be given to individuals who share a common language with the artist.",
+              'Connection of the reference persons with the artist.',
+              'Definition and parameters of the support provided by the reference persons.'
             ]
           },
           {
             card: 'school-familiarization',
-            title: 'school familiarization',
+            title: 'School Introduction',
             img: 'school-familiarization',
             text: [
-              'a tour of the school and an explanation of how the different buildings, classrooms and workshops work',
-              'opening hours and access procedures',
-              'school rules and regulations'
+              'Overview of how an art school operates.',
+              'Tour of the facility.',
+              'Explanation of the function of different buildings, rooms, and workshops.',
+              'Hours and access procedures.',
+              "The institution's internal regulations."
             ]
           },
           {
             card: 'workspace',
-            title: 'workspace',
+            title: 'Workspace',
             img: 'workspace',
             text: [
-              'access to one or more jobs in or out of school according to the discipline and needs of the artist',
-              'opening hours and access arrangements',
-              'access to the Internet'
+              "Arrangement of a workspace inside or outside the school, or facilitated access to a studio, depending on the artist's field of artistic intervention and the nature of their project, as well as the school's resources.",
+              "Communication of the workspace's hours and access procedures.",
+              'Provision of internet access.'
             ]
           },
           {
             card: 'equipment',
-            title: 'equipment and materials',
+            title: 'Equipment and Materials',
             img: 'equipment',
             text: [
-              "schedule and procedure for accessing the school's equipment and materials",
-              'definition of what the school will pay from material or production costs',
-              'definition of what the residency programme will pay from material or production costs'
+              "Procedures for accessing the school's equipment and materials.",
+              'Definition of the materials or production costs covered by the school.',
+              'Definition of the materials or production costs covered by the residency program.'
             ]
           }
         ]
@@ -241,47 +250,50 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'lodging',
-            title: 'lodging',
+            title: 'Accommodation',
             img: 'lodging',
             text: [
-              'furnished accommodation provided and paid for by the host organization (school accommodation, flat rental, hostel contract, etc.)',
-              'basic equipment',
-              'internet access',
-              'housing insurance'
+              'Facilitation of access and assistance in finding accommodation based on local resources: school housing, renting an apartment or a room, agreement with a residence…; preferably a furnished solution.',
+              'Arrangement of basic equipment through donations, recovery, second-hand.',
+              'Provision of internet access.',
+              "Subscription to a homeowner's insurance in the artist's name."
             ]
           },
           {
-            card: 'city familiarization',
-            title: 'city familiarization',
+            card: 'city-familiarization',
+            title: 'City Discovery',
             img: 'city-familiarization',
             text: [
-              'a tour of the city and its neighborhood',
-              'list of useful addresses for the artist (culture, cult, care, shops...)'
+              'Organization of city and surrounding area tours with the help of volunteer contacts.',
+              'Identification of useful addresses for the artist including cultural sites, places of worship, wellness, shops, and administrative services.'
             ]
           },
           {
             card: 'transport',
-            title: 'transport',
+            title: 'Transportation',
             img: 'transport',
             text: [
-              'views and networks for traveling in the city and surroundings',
-              'season tickets and travel passes'
+              "Explanation of the city and surrounding area's modes and networks of transportation, preferably an eco-friendly solution.",
+              "Information on subscriptions and discount cards according to the artist's administrative status."
             ]
           },
           {
             card: 'social-life',
-            title: 'social life',
+            title: 'Social Life',
             img: 'social-life',
             text: [
-              'making contact with local residents or associations that can offer evening or weekend outings'
+              'Connection with volunteer contacts from local associations, residents.',
+              'Organization of evening or weekend outings with the help of volunteer contacts.'
             ]
           },
           {
             card: 'professional-activity',
-            title: 'professional activity',
+            title: 'Professional Life',
             img: 'professional-activity',
             text: [
-              "getting to know cultural partners, institutions, associations, local artists or any other structures related to the artist's project"
+              'Invitation to artistic and cultural events.',
+              "Introduction to partners, institutions, associations, or any other entity related to the artist's project.",
+              'Networking with other artists.'
             ]
           }
         ]
@@ -293,50 +305,51 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'administrative-support',
-            title: 'administrative support',
+            title: 'Administrative Follow-up',
             img: 'administrative-support',
             text: [
-              'amount and distribution of the grant (method of payment and declaration)',
-              'joining social and professional funds',
-              'obtaining or extending a residence permit'
+              'Amount and distribution of the grant, terms of payment and declaration, use of a third-party association.',
+              'Affiliation with social and professional insurance funds, with the help of a specialized association.',
+              'Obtaining or renewing a residency permit, with the help of a specialized association.'
             ]
           },
           {
             card: 'bank-phone',
-            title: 'bank and phone',
+            title: 'Bank and Phone',
             img: 'bank-phone',
             text: [
-              'opening a bank account and obtaining a payment card (depending on the administrative status and requested documents: local or internet bank)',
-              'registration of a telephone subscription'
+              'Opening of a bank account, obtaining a payment card—physical or online bank—depending on the administrative status and origin of the artist.',
+              'Subscription to a telephone plan.'
             ]
           },
           {
             card: 'education',
-            title: 'education',
+            title: 'Training',
             img: 'education',
             text: [
-              'French language courses based on an entrance test (university, local association, e-learning, municipal courses, etc.)',
-              "internal or external training depending on the artist's needs"
+              'Registration for French courses after placement test, unless beginner level—university, associations, municipal courses, school-taught courses, online education…',
+              'Internal or external training depending on the needs of the artist—guidance, English language, technical training…'
             ]
           },
           {
             card: 'family',
-            title: 'family',
+            title: 'Family',
             img: 'family',
             text: [
-              "consideration of the artist's family composition",
-              'enrolment of children in school or university, in a specialized institute, in extracurricular activities',
-              'assistance to spouses'
+              "Consideration of the artist's family composition—appropriate housing, schedule arrangements…",
+              'Schooling and recreation for children—registration for school, university, specialized institute, recreation or animation center, conservatory…',
+              'Spousal assistance where possible and according to needs.'
             ]
           },
           {
             card: 'medical-care',
-            title: 'medical care',
+            title: 'Care',
             img: 'medical-care',
             text: [
-              'explanation of how medicine works in the host country',
-              'general practitioners and specialists',
-              'institutions and emergency telephone numbers'
+              "Registration for Social Security, the Complementary Solidarity Health scheme, or even State Medical Aid (AME), depending on the artist's administrative status.",
+              "Explanation of how the health care system and mutual insurance funds operate, depending on the artist's status and health coverage.",
+              'Identification of general and specialist doctors, therapists—clarification of fees.',
+              'Provision of emergency numbers.'
             ]
           }
         ]

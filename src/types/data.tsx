@@ -9,7 +9,7 @@ type SubcategoryCard =
   | 'workspace'
   | 'equipment'
   | 'lodging'
-  | 'city familiarization'
+  | 'city-familiarization'
   | 'transport'
   | 'social-life'
   | 'professional-activity'
