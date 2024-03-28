@@ -2,7 +2,7 @@ import { Dataset } from '../types/data';
 
 const data: Dataset = [
   {
-    lang: 'francais',
+    lang: 'Français',
     img: 'french',
     imgFocus: 'french-focus',
     categories: [
@@ -177,7 +177,7 @@ const data: Dataset = [
     ]
   },
   {
-    lang: 'english',
+    lang: 'English',
     img: 'english',
     imgFocus: 'french-focus',
     categories: [
