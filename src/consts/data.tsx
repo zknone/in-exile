@@ -18,7 +18,8 @@ const data: Dataset = [
             text: [
               "présentation de l'artiste et de son travail à l'équipe de l'école, aux professeur·es, aux étudiant·es, à prévoir en début de séjour",
               "association de l'artiste aux projets de l'école selon les orientations de l'artiste et de l'école : workshops, programmes de recherche, enseignement, événements publics...",
-              "définition du rôle et des responsabilités de l'artiste vis-à-vis de l'école, des professeur·es, des étudiant·es formulation des intérêts et des intentions respectifs de l'artiste et de l'école"
+              "définition du rôle et des responsabilités de l'artiste vis-à-vis de l'école, des professeur·es, des étudiant·es",
+              // "formulation des intérêts et des intentions respectifs de l'artiste et de l'école",
             ]
           },
           {
@@ -171,7 +172,7 @@ const data: Dataset = [
               "inscription à la Sécurité sociale, à la Complémentaire santé solidaire, voire à l'Aide médicale de l'État (AME) selon le statut administratif de l'artiste",
               "explication du fonctionnement du système de santé et de mutuelle selon le statut de l'artiste et sa couverture santé",
               'identification de médecins généralistes et spécialisés, de thérapeutes expliciter les tarifications',
-              "transmission de numéros d'urgence"
+              // "transmission de numéros d'urgence"
             ]
           }
         ]
@@ -196,7 +197,7 @@ const data: Dataset = [
               'Introduction of the artist and their work to the school team, teachers, and students, planned at the beginning of the stay.',
               'Inclusion of the artist in school projects according to the orientations of the artist and the school: workshops, research programs, teaching, public events...',
               "Definition of the artist's role and responsibilities towards the school, teachers, and students.",
-              'Expression of the respective interests and intentions of the artist and the school.'
+              // 'Expression of the respective interests and intentions of the artist and the school.'
             ]
           },
           {
@@ -349,7 +350,7 @@ const data: Dataset = [
               "Registration for Social Security, the Complementary Solidarity Health scheme, or even State Medical Aid (AME), depending on the artist's administrative status.",
               "Explanation of how the health care system and mutual insurance funds operate, depending on the artist's status and health coverage.",
               'Identification of general and specialist doctors, therapists—clarification of fees.',
-              'Provision of emergency numbers.'
+              // 'Provision of emergency numbers.'
             ]
           }
         ]
