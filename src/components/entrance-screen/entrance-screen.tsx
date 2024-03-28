@@ -62,7 +62,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
                 rencontre dans les écoles supérieures d&rsquo;art, et ces « cartes d&rsquo;accueil »
                 sont là pour aider et accompagner.
               </div>
-              <div>Картинка</div>
+              <img src='/images/euro-logo.jpg'/>
               <div className="font-bold text-center">Cliquez sur la carte pour continuer</div>
             </div>
           </div>
@@ -107,8 +107,8 @@ export default function EntranceScreen(props: { onClick: () => void }) {
         </div>
         <div className="absolute -top-[30px] flex gap-[380px] justify-center">
           <Card
-            img="school"
-            altImg="social-life"
+            img="home-artist"
+            altImg="home-artist-alt"
             key="artist"
             size="big"
             cardTitle="artist"
@@ -117,8 +117,8 @@ export default function EntranceScreen(props: { onClick: () => void }) {
             isHovered={isCardActive}
           />
           <Card
-            img="school"
-            altImg="social-life"
+            img="home-school"
+            altImg="home-school-alt"
             key="school"
             size="big"
             cardTitle="school"
