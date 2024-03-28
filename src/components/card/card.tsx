@@ -90,6 +90,7 @@ export default function Card(props: {
       <div
         className={cn(
           'relative h-min-content rounded-[20px] border-[2px] shadow-card',
+          'hover:animate',
           { 'w-[223px] p-[6px]': size === 'normal' },
           { 'w-[303px] p-[8px]': size === 'big' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
