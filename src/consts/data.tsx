@@ -18,7 +18,6 @@ const data: Dataset = [
             text: [
               "présentation de l'artiste et de son travail à l'équipe de l'école, aux professeur·es, aux étudiant·es, à prévoir en début de séjour",
               "association de l'artiste aux projets de l'école selon les orientations de l'artiste et de l'école : workshops, programmes de recherche, enseignement, événements publics...",
-              "définition du rôle et des responsabilités de l'artiste vis-à-vis de l'école",
             ]
           },
           {
@@ -194,7 +193,6 @@ const data: Dataset = [
             text: [
               'Introduction of the artist and their work to the school team, teachers, and students, planned at the beginning of the stay.',
               'Inclusion of the artist in school projects according to the orientations of the artist and the school: workshops, research programs, teaching, public events...',
-              "Definition of the artist's role and responsibilities towards the school, teachers, and students.",
             ]
           },
           {
