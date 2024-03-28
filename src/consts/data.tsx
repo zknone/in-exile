@@ -8,7 +8,7 @@ const data: Dataset = [
     categories: [
       {
         category: 'school',
-        title: 'école',
+        title: 'École',
         img: 'school',
         subcategories: [
           {
@@ -65,7 +65,7 @@ const data: Dataset = [
       },
       {
         category: 'city',
-        title: 'ville',
+        title: 'Ville',
         img: 'city',
         subcategories: [
           {
@@ -117,7 +117,7 @@ const data: Dataset = [
       },
       {
         category: 'general',
-        title: 'général',
+        title: 'Général',
         img: 'general',
         subcategories: [
           {
@@ -179,7 +179,7 @@ const data: Dataset = [
     categories: [
       {
         category: 'school',
-        title: 'school',
+        title: 'School',
         img: 'school',
         subcategories: [
           {
@@ -236,7 +236,7 @@ const data: Dataset = [
       },
       {
         category: 'city',
-        title: 'city',
+        title: 'City',
         img: 'city',
         subcategories: [
           {
@@ -288,7 +288,7 @@ const data: Dataset = [
       },
       {
         category: 'general',
-        title: 'general',
+        title: 'General',
         img: 'general',
         subcategories: [
           {
