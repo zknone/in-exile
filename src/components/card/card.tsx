@@ -35,7 +35,7 @@ export default function Card(props: {
   } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const imgUrl = `/images/${props.img}.jpg`;
+  const imgUrl = `images/${props.img}.jpg`;
   const altImgUrl = `images/${props.altImg}.jpg`;
 
   useEffect(() => {
