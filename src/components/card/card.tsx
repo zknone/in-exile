@@ -118,6 +118,7 @@ export default function Card(props: {
               className={cn(
                 { 'w-[223px]': size === 'normal' },
                 { 'w-[303px]': size === 'big' },
+                'animate',
                 'h-min-content'
               )}
               src={active ? altImgUrl : imgUrl}
