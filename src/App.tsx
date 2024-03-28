@@ -16,7 +16,6 @@ function App() {
     lang: 'noLang',
     category: 'noCategory'
   });
-
   const [isOpen, setOpen] = useState(true);
 
   return (
