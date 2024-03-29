@@ -116,7 +116,7 @@ export default function Card(props: {
           <div className={cn('', { 'opacity-[0.7]': !isHovered && !isNothingHovered })}>
             <img
               className={cn(
-                'transition-transform duration-300 transform hover:scale-110 absolute inset-0',
+                'transition-transform duration-300 transform hover:scale-110 inset-0',
                 { 'w-[223px]': size === 'normal', 'w-[303px]': size === 'big' }
               )}
               src={active ? altImgUrl : imgUrl}
