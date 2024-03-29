@@ -113,11 +113,11 @@ export default function Card(props: {
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
         >
-          <div className={cn({ 'opacity-[0.7]': !isHovered && !isNothingHovered })}>
+          <div className={cn("",{ 'opacity-[0.7]': !isHovered && !isNothingHovered })}>
             <img
-              className={cn(
-                { 'w-[223px]': size === 'normal' },
-                { 'w-[303px]': size === 'big' },
+              className={cn("w-full h-full",
+                { 'max-w-[223px]': size === 'normal' },
+                { 'max-w-[303px]': size === 'big' },
                 'h-min-content'
               )}
               src={active ? altImgUrl : imgUrl}
