@@ -35,8 +35,8 @@ export default function Card(props: {
   } = props;
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  const imgUrl = `images/${props.img}.jpg`;
-  const altImgUrl = `images/${props.altImg}.jpg`;
+  const imgUrl = `/images/${props.img}.jpg`;
+  const altImgUrl = `/images/${props.altImg}.jpg`;
 
   useEffect(() => {
     if (openable) {
@@ -115,14 +115,14 @@ export default function Card(props: {
         >
           <div
             className={cn(
-              { 'w-[201px] h-full': size === 'normal', 'w-[303px] h-full': size === 'big' },
+              { 'w-[208px] h-full': size === 'normal', 'w-[300px] h-full': size === 'big' },
               { 'opacity-[0.7]': !isHovered && !isNothingHovered }
             )}
           >
             <img
               className={cn('transition-transform duration-300 transform hover:scale-110 inset-0', {
-                'w-[211px] h-full': size === 'normal',
-                'w-[303px] h-full': size === 'big'
+                'w-[208px] h-full': size === 'normal',
+                'w-[300px] h-full': size === 'big'
               })}
               src={active ? altImgUrl : imgUrl}
               alt="cardTitle"
