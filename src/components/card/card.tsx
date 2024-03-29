@@ -115,14 +115,14 @@ export default function Card(props: {
         >
           <div
             className={cn(
-              { 'w-[223px] h-full': size === 'normal', 'w-[321px] h-full': size === 'big' },
+              { 'w-[201px] h-full': size === 'normal', 'w-[303px] h-full': size === 'big' },
               { 'opacity-[0.7]': !isHovered && !isNothingHovered }
             )}
           >
             <img
               className={cn('transition-transform duration-300 transform hover:scale-110 inset-0', {
-                'w-[223px] h-full': size === 'normal',
-                'w-[321px] h-full': size === 'big'
+                'w-[211px] h-full': size === 'normal',
+                'w-[303px] h-full': size === 'big'
               })}
               src={active ? altImgUrl : imgUrl}
               alt="cardTitle"
