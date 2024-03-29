@@ -105,7 +105,7 @@ export default function Card(props: {
       >
         <div
           className={cn(
-            'z-0 border-[2px] rounded-[15px] bg-white truncate',
+            'grid z-0 border-[2px] rounded-[15px] bg-white truncate',
             { 'border-[#008AFF]': !isSecondPlan && !isThirdPlan },
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
@@ -113,21 +113,24 @@ export default function Card(props: {
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
         >
-          <div className={cn(
-            { 'w-[211px] h-[302px]': size === 'normal', 'w-[303px] h-[434px]': size === 'big' }, 
-            { 'opacity-[0.7]': !isHovered && !isNothingHovered })}>
+          <div
+            className={cn(
+              { 'w-[211px] h-[302px]': size === 'normal', 'w-[303px] h-[434px]': size === 'big' },
+              { 'opacity-[0.7]': !isHovered && !isNothingHovered }
+            )}
+          >
             <img
-              className={cn(
-                'transition-transform duration-300 transform hover:scale-110 inset-0',
-                { 'w-[211px] h-[302px]': size === 'normal', 'w-[303px] h-[434px]': size === 'big' }
-              )}
+              className={cn('transition-transform duration-300 transform hover:scale-110 inset-0', {
+                'w-[211px] h-[302px]': size === 'normal',
+                'w-[303px] h-[434px]': size === 'big'
+              })}
               src={active ? altImgUrl : imgUrl}
               alt="cardTitle"
             />
           </div>
           <div
             className={cn(
-              'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF]',
+              'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan }
