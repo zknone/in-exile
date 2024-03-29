@@ -115,7 +115,8 @@ export default function Card(props: {
         >
           <div className={cn("",{ 'opacity-[0.7]': !isHovered && !isNothingHovered })}>
             <img
-              className={cn("w-full h-full",
+              className={cn(
+                "w-full h-full transition-transform duration-300 transform hover:scale-110 absolute inset-0",
                 { 'max-w-[223px]': size === 'normal' },
                 { 'max-w-[303px]': size === 'big' },
                 'h-min-content'
