@@ -91,7 +91,7 @@ export default function Card(props: {
         className={cn(
           'relative h-min-content rounded-[20px] border-[2px] shadow-card',
           { 'w-[223px] p-[6px]': size === 'normal' },
-          { 'w-[303px] p-[8px]': size === 'big' },
+          { 'w-[321px] p-[8px]': size === 'big' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -115,14 +115,14 @@ export default function Card(props: {
         >
           <div
             className={cn(
-              { 'w-[211px] h-[302px]': size === 'normal', 'w-[303px] h-[434px]': size === 'big' },
+              { 'w-[223px] h-full': size === 'normal', 'w-[321px] h-full': size === 'big' },
               { 'opacity-[0.7]': !isHovered && !isNothingHovered }
             )}
           >
             <img
               className={cn('transition-transform duration-300 transform hover:scale-110 inset-0', {
-                'w-[211px] h-[302px]': size === 'normal',
-                'w-[303px] h-[434px]': size === 'big'
+                'w-[223px] h-full': size === 'normal',
+                'w-[321px] h-full': size === 'big'
               })}
               src={active ? altImgUrl : imgUrl}
               alt="cardTitle"
