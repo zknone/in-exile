@@ -123,8 +123,9 @@ export default function Card(props: {
             )}
           >
             <img
-              className={cn('transition-transform duration-300 transform hover:scale-110 inset-0', {
-                'w-[208px] h-full': size === 'normal',
+              className={cn({
+                'w-[208px] h-full transition-transform duration-300 transform hover:scale-110 inset-0':
+                  size === 'normal',
                 'w-[300px] h-full': size === 'big'
               })}
               src={active ? altImgUrl : imgUrl}
