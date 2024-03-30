@@ -70,8 +70,9 @@ export default function EntranceScreen(props: { onClick: () => void }) {
       </div>
       <section className="absolute flex right-[50%] justify-center">
         <div
-          className={cn('absolute -top-[15px] flex gap-[320px] justify-center', {
-            '-top-[55px]': !isCardActive
+          className={cn('absolute  flex gap-[320px] justify-center', {
+            '-top-[25px]': isCardActive,
+            '-top-[65px]': !isCardActive
           })}
         >
           <Card
@@ -89,7 +90,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
             rotation={isCardActive ? 0 : -3}
           />
         </div>
-        <div className="absolute -top-[30px] flex gap-[340px] justify-center">
+        <div className="absolute -top-[40px] flex gap-[340px] justify-center">
           <Card
             img="school"
             key="artist"
@@ -105,7 +106,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
             rotation={isCardActive ? 0 : 3}
           />
         </div>
-        <div className="absolute -top-[45px] flex gap-[380px] justify-center">
+        <div className="absolute -top-[55px] flex gap-[380px] justify-center">
           <Card
             img="home-artist"
             altImg="home-artist-alt"
