@@ -57,8 +57,6 @@ export default function Card(props: {
     }
   }, [openable]);
 
-  console.log(rotation);
-
   return (
     <div className="relative">
       {isOpen && (

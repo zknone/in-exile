@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Card from '../card/card';
 import cn from 'classnames';
-export default function EntranceScreen(props: { onClick: () => void }) {
-  const { onClick } = props;
+export default function EntranceScreen(props: { onClick: () => void, isMobile: boolean }) {
+  const { onClick, isMobile } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
     setCardsActive(true);
@@ -68,7 +68,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
           </div>
         </div>
       </div>
-      <section className="absolute flex right-[50%] justify-center">
+      {!isMobile && <section className="absolute flex right-[50%] justify-center">
         <div
           className={cn('absolute  flex gap-[320px] justify-center', {
             '-top-[25px]': isCardActive,
@@ -128,7 +128,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
             isHovered={isCardActive}
           />
         </div>
-      </section>
+      </section>}
     </div>
   );
 }

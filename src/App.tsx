@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 import data from './consts/data';
@@ -18,6 +18,22 @@ function App() {
     category: 'noCategory'
   });
   const [isOpen, setOpen] = useState(true);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 768);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  console.log(isMobile);
 
   const imagesToPreload: string[] = [
     'images/administrative-support.jpg',
@@ -51,7 +67,7 @@ function App() {
     <div className="App flex bg-white h-screen justify-center items-center font-body mx-auto">
       <PreloadImages images={imagesToPreload} />
       <div className="relative block w-[1196px] h-[380px] my-auto">
-        {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
+        {isOpen && <EntranceScreen onClick={() => setOpen(false)} isMobile={isMobile}/>}
         {!isOpen && (
           <>
             {state.category !== 'noCategory' && (
