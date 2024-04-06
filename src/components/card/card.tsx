@@ -38,8 +38,8 @@ export default function Card(props: {
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const imgUrl = `images/${img}.jpg`;
-  const altImgUrl = `images/${altImg}.jpg`;
+  const imgUrl = `/images/${img}.jpg`;
+  const altImgUrl = `/images/${altImg}.jpg`;
 
   useEffect(() => {
     if (openable) {

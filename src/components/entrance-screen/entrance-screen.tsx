@@ -62,7 +62,7 @@ export default function EntranceScreen(props: { onClick: () => void }) {
                 rencontre dans les écoles supérieures d&rsquo;art, et ces « cartes d&rsquo;accueil »
                 sont là pour aider et accompagner.
               </div>
-              <img src="images/euro-logo.jpg" />
+              <img src="/images/euro-logo.jpg" />
               <div className="font-bold text-center">Cliquez sur la carte pour continuer</div>
             </div>
           </div>
