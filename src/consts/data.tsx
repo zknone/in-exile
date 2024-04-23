@@ -219,7 +219,7 @@ const data: Dataset = [
           },
           {
             card: 'workspace',
-            title: 'Workspace',
+            title: 'workspace',
             img: 'workspace',
             text: [
               "Arrangement of a workspace inside or outside the school, or facilitated access to a studio, depending on the artist's field of artistic intervention and the nature of their project, as well as the school's resources.",
@@ -229,7 +229,7 @@ const data: Dataset = [
           },
           {
             card: 'equipment',
-            title: 'Equipment and Materials',
+            title: 'equipment and materials',
             img: 'equipment',
             text: [
               "Procedures for accessing the school's equipment and materials.",
@@ -241,12 +241,12 @@ const data: Dataset = [
       },
       {
         category: 'city',
-        title: 'City',
+        title: 'city',
         img: 'city',
         subcategories: [
           {
             card: 'lodging',
-            title: 'Accommodation',
+            title: 'accommodation',
             img: 'lodging',
             text: [
               'Facilitation of access and assistance in finding accommodation based on local resources: school housing, renting an apartment or a room, agreement with a residence…; preferably a furnished solution.',
@@ -257,7 +257,7 @@ const data: Dataset = [
           },
           {
             card: 'city-familiarization',
-            title: 'City Discovery',
+            title: 'city discovery',
             img: 'city-familiarization',
             text: [
               'Organization of city and surrounding area tours with the help of volunteer contacts.',
@@ -266,7 +266,7 @@ const data: Dataset = [
           },
           {
             card: 'transport',
-            title: 'Transportation',
+            title: 'transportation',
             img: 'transport',
             text: [
               "Explanation of the city and surrounding area's modes and networks of transportation, preferably an eco-friendly solution.",
@@ -275,7 +275,7 @@ const data: Dataset = [
           },
           {
             card: 'social-life',
-            title: 'Social Life',
+            title: 'social Life',
             img: 'social-life',
             text: [
               'Connection with volunteer contacts from local associations, residents.',
@@ -284,7 +284,7 @@ const data: Dataset = [
           },
           {
             card: 'professional-activity',
-            title: 'Professional Life',
+            title: 'professional Life',
             img: 'professional-activity',
             text: [
               'Invitation to artistic and cultural events.',
@@ -296,12 +296,12 @@ const data: Dataset = [
       },
       {
         category: 'general',
-        title: 'General',
+        title: 'general',
         img: 'general',
         subcategories: [
           {
             card: 'administrative-support',
-            title: 'Administrative Follow-up',
+            title: 'administrative follow-up',
             img: 'administrative-support',
             text: [
               'Amount and distribution of the grant, terms of payment and declaration, use of a third-party association.',
@@ -311,7 +311,7 @@ const data: Dataset = [
           },
           {
             card: 'bank-phone',
-            title: 'Bank and Phone',
+            title: 'bank and phone',
             img: 'bank-phone',
             text: [
               'Opening of a bank account, obtaining a payment card—physical or online bank—depending on the administrative status and origin of the artist.',
@@ -320,7 +320,7 @@ const data: Dataset = [
           },
           {
             card: 'education',
-            title: 'Training',
+            title: 'training',
             img: 'education',
             text: [
               'Registration for French courses after placement test, unless beginner level—university, associations, municipal courses, school-taught courses, online education…',
@@ -329,7 +329,7 @@ const data: Dataset = [
           },
           {
             card: 'family',
-            title: 'Family',
+            title: 'family',
             img: 'family',
             text: [
               "Consideration of the artist's family composition—appropriate housing, schedule arrangements…",
@@ -339,7 +339,7 @@ const data: Dataset = [
           },
           {
             card: 'medical-care',
-            title: 'Care',
+            title: 'care',
             img: 'medical-care',
             text: [
               "Registration for Social Security, the Complementary Solidarity Health scheme, or even State Medical Aid (AME), depending on the artist's administrative status.",
