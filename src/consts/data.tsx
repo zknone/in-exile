@@ -229,7 +229,7 @@ const data: Dataset = [
           },
           {
             card: 'equipment',
-            title: 'equipment and materials',
+            title: 'equipment & materials',
             img: 'equipment',
             text: [
               "Procedures for accessing the school's equipment and materials.",
@@ -301,7 +301,7 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'administrative-support',
-            title: 'administrative follow-up',
+            title: 'administrative support',
             img: 'administrative-support',
             text: [
               'Amount and distribution of the grant, terms of payment and declaration, use of a third-party association.',
@@ -311,7 +311,7 @@ const data: Dataset = [
           },
           {
             card: 'bank-phone',
-            title: 'bank and phone',
+            title: 'bank & phone',
             img: 'bank-phone',
             text: [
               'Opening of a bank account, obtaining a payment card—physical or online bank—depending on the administrative status and origin of the artist.',
