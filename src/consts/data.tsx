@@ -2,18 +2,18 @@ import { Dataset } from '../types/data';
 
 const data: Dataset = [
   {
-    lang: 'Français',
+    lang: 'français',
     img: 'french',
     imgFocus: 'french-focus',
     categories: [
       {
         category: 'school',
-        title: 'École',
+        title: 'école',
         img: 'school',
         subcategories: [
           {
             card: 'artist-position',
-            title: "Place de l'artiste en résidence",
+            title: "l'artiste en résidence",
             img: 'artist-position',
             text: [
               "présentation de l'artiste et de son travail à l'équipe de l'école, aux professeur·es, aux étudiant·es, à prévoir en début de séjour",
@@ -22,7 +22,7 @@ const data: Dataset = [
           },
           {
             card: 'referents',
-            title: 'Personnes Référentes',
+            title: 'personnes référentes',
             img: 'referents',
             text: [
               "désignation de deux personnes référentes de la résidence une personne de l'équipe habitant l'agglomération un·e professeur·e lié·e à la pratique de l'artiste privilégier des personnes qui partagent une langue commune avec l'artiste",
@@ -32,7 +32,7 @@ const data: Dataset = [
           },
           {
             card: 'school-familiarization',
-            title: "Présentation de l'école",
+            title: "présentation de l'école",
             img: 'school-familiarization',
             text: [
               "fonctionnement d'une école d'art",
@@ -44,7 +44,7 @@ const data: Dataset = [
           },
           {
             card: 'workspace',
-            title: 'Espace de travail',
+            title: 'espace de travail',
             img: 'workspace',
             text: [
               "aménagement d'un espace de travail dans ou en dehors de l'école ou facilité d'accès à un atelier selon le champ d'intervention artistique de l'artiste et la nature de son projet selon les ressources de l'école",
@@ -54,7 +54,7 @@ const data: Dataset = [
           },
           {
             card: 'equipment',
-            title: 'Équipements et matériel',
+            title: 'équipements et matériel',
             img: 'equipment',
             text: [
               "modalités d'accès aux équipements et au matériel de l'école",
@@ -66,12 +66,12 @@ const data: Dataset = [
       },
       {
         category: 'city',
-        title: 'Ville',
+        title: 'ville',
         img: 'city',
         subcategories: [
           {
             card: 'lodging',
-            title: 'Logement',
+            title: 'logement',
             img: 'lodging',
             text: [
               "facilité d'accès, aide à la recherche d'un logement selon les ressources locales : logement de l'école, location d'un appartement ou d'une chambre, accord avec une résidence… ; de préférence une solution meublée",
@@ -82,7 +82,7 @@ const data: Dataset = [
           },
           {
             card: 'city-familiarization',
-            title: 'Découverte de la ville',
+            title: 'découverte de la ville',
             img: 'city-familiarization',
             text: [
               "organisation du tour de la ville et de ses environs avec l'aide de relais bénévoles",
@@ -91,7 +91,7 @@ const data: Dataset = [
           },
           {
             card: 'transport',
-            title: 'Transports',
+            title: 'transports',
             img: 'transport',
             text: [
               'explication des modes et réseaux de transports de la ville et de ses environs de préférence une solution écoresponsable',
@@ -100,7 +100,7 @@ const data: Dataset = [
           },
           {
             card: 'social-life',
-            title: 'Vie sociale',
+            title: 'vie sociale',
             img: 'social-life',
             text: [
               'mise en lien avec des relais bénévoles associations locales, habitant·es',
@@ -109,7 +109,7 @@ const data: Dataset = [
           },
           {
             card: 'professional-activity',
-            title: 'Vie professionnelle',
+            title: 'vie professionnelle',
             img: 'professional-activity',
             text: [
               'invitation à des événements artistiques et culturels',
@@ -121,12 +121,12 @@ const data: Dataset = [
       },
       {
         category: 'general',
-        title: 'Général',
+        title: 'général',
         img: 'general',
         subcategories: [
           {
             card: 'administrative-support',
-            title: 'Suivi administratif',
+            title: 'suivi administratif',
             img: 'administrative-support',
             text: [
               'montant et répartition de la bourse modalité de paiement et déclaration, recours à une association tiers',
@@ -136,7 +136,7 @@ const data: Dataset = [
           },
           {
             card: 'bank-phone',
-            title: 'Banque et Téléphone',
+            title: 'banque et téléphone',
             img: 'bank-phone',
             text: [
               "ouverture d'un compte en banque, obtention d'une carte de paiement banque physique ou en ligne selon le statut administratif et l'origine de l'artiste",
@@ -154,7 +154,7 @@ const data: Dataset = [
           },
           {
             card: 'family',
-            title: 'Famille',
+            title: 'famille',
             img: 'family',
             text: [
               "prise en compte de la composition familiale de l'artiste logement adéquat, aménagements horaires…",
@@ -164,7 +164,7 @@ const data: Dataset = [
           },
           {
             card: 'medical-care',
-            title: 'Soins',
+            title: 'soins',
             img: 'medical-care',
             text: [
               "inscription à la Sécurité sociale, à la Complémentaire santé solidaire, voire à l'Aide médicale de l'État (AME) selon le statut administratif de l'artiste",
@@ -177,18 +177,18 @@ const data: Dataset = [
     ]
   },
   {
-    lang: 'English',
+    lang: 'english',
     img: 'english',
     imgFocus: 'french-focus',
     categories: [
       {
         category: 'school',
-        title: 'School',
+        title: 'school',
         img: 'school',
         subcategories: [
           {
             card: 'artist-position',
-            title: "Artist in Residence's Role",
+            title: "artist in residence",
             img: 'artist-position',
             text: [
               'Introduction of the artist and their work to the school team, teachers, and students, planned at the beginning of the stay.',
@@ -197,7 +197,7 @@ const data: Dataset = [
           },
           {
             card: 'referents',
-            title: 'Reference Persons',
+            title: 'reference persons',
             img: 'referents',
             text: [
               "Assignment of two reference persons for the residency: one person from the team living in the urban area and one teacher related to the artist's practice. Preference should be given to individuals who share a common language with the artist.",
@@ -207,7 +207,7 @@ const data: Dataset = [
           },
           {
             card: 'school-familiarization',
-            title: 'School Introduction',
+            title: 'school introduction',
             img: 'school-familiarization',
             text: [
               'Overview of how an art school operates.',
