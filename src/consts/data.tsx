@@ -13,7 +13,7 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'artist-position',
-            title: "l'artiste en résidence",
+            title: "artiste en résidence",
             img: 'artist-position',
             text: [
               "présentation de l'artiste et de son travail à l'équipe de l'école, aux professeur·es, aux étudiant·es, à prévoir en début de séjour",
@@ -145,7 +145,7 @@ const data: Dataset = [
           },
           {
             card: 'education',
-            title: 'Formations',
+            title: 'formations',
             img: 'education',
             text: [
               "inscription à des cours de français après test de placement sauf niveau débutant université, associations, cours municipaux, cours dispensés par l'école, enseignement en ligne…",

@@ -78,14 +78,14 @@ export default function EntranceScreen(props: { onClick: () => void, isMobile: b
           <Card
             img="school"
             key="artist"
-            cardTitle="Artist"
+            cardTitle="artist"
             size="big"
             rotation={isCardActive ? 0 : 3}
           />
           <Card
             img="school"
             key="school"
-            cardTitle="School"
+            cardTitle="school"
             size="big"
             rotation={isCardActive ? 0 : -3}
           />
@@ -94,14 +94,14 @@ export default function EntranceScreen(props: { onClick: () => void, isMobile: b
           <Card
             img="school"
             key="artist"
-            cardTitle="Artist"
+            cardTitle="artist"
             size="big"
             rotation={isCardActive ? 0 : -3}
           />
           <Card
             img="school"
             key="school"
-            cardTitle="School"
+            cardTitle="school"
             size="big"
             rotation={isCardActive ? 0 : 3}
           />
@@ -112,7 +112,7 @@ export default function EntranceScreen(props: { onClick: () => void, isMobile: b
             altImg="home-artist-alt"
             key="artist"
             size="big"
-            cardTitle="Artiste"
+            cardTitle="artiste"
             active={isCardActive}
             isNothingHovered={isCardActive}
             isHovered={isCardActive}
@@ -122,7 +122,7 @@ export default function EntranceScreen(props: { onClick: () => void, isMobile: b
             altImg="home-school-alt"
             key="school"
             size="big"
-            cardTitle="École"
+            cardTitle="école"
             active={isCardActive}
             isNothingHovered={isCardActive}
             isHovered={isCardActive}
