@@ -22,7 +22,7 @@ const CardLine = (props: {
 
   useEffect(() => {
     function handleResize() {
-      setIsMacAir(window.innerWidth < 1201);
+      setIsMacAir(window.innerWidth < 1300);
     }
 
     window.addEventListener('resize', handleResize);

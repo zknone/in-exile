@@ -42,7 +42,7 @@
 
     useEffect(() => {
       function handleResize() {
-        setIsMacAir(window.innerWidth < 1201);
+        setIsMacAir(window.innerWidth < 1300);
       }
 
       window.addEventListener('resize', handleResize);
@@ -79,7 +79,9 @@
             <div
               ref={cardRef}
               className={cn(
-                'block rounded-[40px] absolute z-50 -left-[35%] p-[11px] -top-[42%]  w-[408px] h-[647px] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup'
+                'block rounded-[40px] absolute z-50 -left-[35%] p-[11px] -top-[42%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
+                {'w-[408px] h-[647px] text-xl ': !isMacAir},
+                {'w-[320px] h-[508px] text-m': isMacAir}
               )}
               onClick={() => setOpen(false)}
             >
@@ -88,15 +90,27 @@
                   'popup-content w-full rounded-[30px] flex flex-col justify-between h-full border-[2px] border-[#FF6CFF] bg-white hover:border-[#F93598] card'
                 )}
               >
-                <ul className="p-12 my-auto">
+                <ul className={cn(
+                  'my-auto',
+                  {
+                    'p-6': isMacAir,
+                    'p-12': !isMacAir,
+                  }
+                )}>
                   {points &&
                     points.map((item, index) => (
-                      <li className="pb-5" key={index}>
+                      <li className="pb-5 last:pb-0" key={index}>
                         {item}
                       </li>
                     ))}
                 </ul>
-                <div className="font-bold text-center py-2 text-2xl">{cardTitle}</div>
+                <div className={cn(
+                  'font-title font-bold text-center py-2',
+                  {
+                    "text-l": isMacAir,
+                    "text-2xl": !isMacAir
+                  }
+                )}>{cardTitle}</div>
               </div>
             </div>
           </>
