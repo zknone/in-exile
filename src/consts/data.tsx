@@ -284,7 +284,7 @@ const data: Dataset = [
           },
           {
             card: 'professional-activity',
-            title: 'professional Life',
+            title: 'professional life',
             img: 'professional-activity',
             text: [
               'Invitation to artistic and cultural events.',
