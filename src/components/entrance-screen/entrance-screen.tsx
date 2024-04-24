@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from '../card/card';
 import cn from 'classnames';
 export default function EntranceScreen(props: { onClick: () => void; isMobile?: boolean }) {
@@ -12,17 +12,45 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
     setCardsActive(false);
   };
 
+
+  const [isMacAir, setIsMacAir] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMacAir(window.innerWidth < 1300);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="relative">
-      <div className="absolute right-[50%] -top-[130px] flex gap-2 justify-center">
+      <div className={cn(
+        "absolute right-[50%] flex gap-2 justify-center",
+        {"-top-[130px]": !isMacAir},
+        {"-top-[130px]": isMacAir},
+      )}>
         <div
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
-          className="block absolute z-50 w-[407px] h-[647px] rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup"
+          className={cn(
+            "block absolute z-50 w-[407px] rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup",
+            {"h-[647px]": !isMacAir},
+            {"h-[607px]": isMacAir},
+            
+          )}
           onClick={onClick}
         >
           <div className="absolute popup-content w-full flex flex-col justify-between h-full border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
-            <div className="absolute px-9 my-12 mx-3 max-h-[505px] overflow-auto flex flex-col gap-y-5">
+            <div className={cn(
+              "absolute px-9 mx-3 max-h-[505px] overflow-auto flex flex-col gap-y-5",
+              {"my-12": !isMacAir},
+              {"my-10": isMacAir},
+            )}>
               <div className="font-bold">
                 Cartes d&rsquo;accueil en résidence d&rsquo;un·e artiste en exil dans une école
                 d&rsquo;art
