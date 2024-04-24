@@ -151,11 +151,11 @@ export default function Card(props: {
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
         >
           <div
-            className={cn('w-full h-full', { 'opacity-[0.7]': !isHovered && !isNothingHovered })}
+            className={cn('basis-full', { 'opacity-[0.7]': !isHovered && !isNothingHovered })}
           >
             <img
               className={cn(
-                'h-full transition-transform duration-300 transform hover:scale-110 inset-0'
+                'w-full h-full transition-transform duration-300 transform hover:scale-110 inset-0'
               )}
               src={active ? altImgUrl : imgUrl}
               alt="cardTitle"
@@ -163,8 +163,10 @@ export default function Card(props: {
           </div>
           <div
             className={cn(
-              'font-bold font-title text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
+              'basis-[] font-bold font-title text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
               { 'text-[11px]': isMacAir && size === 'normal' },
+              { 'text-2xl': !isMacAir && size === 'big' },
+              { 'text-l': isMacAir && size === 'big' },
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan }

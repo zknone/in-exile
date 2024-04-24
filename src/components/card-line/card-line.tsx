@@ -92,7 +92,7 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn('absolute z-10 w-full flex gap-2 justify-center', {
-            'top-[49px]': state.lang !== 'noLang' && state.category !== 'noCategory',
+            'top-[49px]': state.lang !== 'noLang' && state.category !== 'noCategory' && !isMacAir,
             'top-[36px]': state.lang !== 'noLang' && state.category !== 'noCategory' && isMacAir
           })}
         >
@@ -119,13 +119,13 @@ const CardLine = (props: {
           className={cn(
             'absolute flex gap-2 justify-center w-full z-0',
             {
-              'top-[49px]': state.lang !== 'noLang' && state.category === 'noCategory',
+              'top-[49px]': state.lang !== 'noLang' && state.category === 'noCategory' && !isMacAir,
               'top-[36px]': state.lang !== 'noLang' && state.category === 'noCategory' && isMacAir
             },
             {
-              'top-[98px]': state.lang !== 'noLang' && state.category !== 'noCategory',
+              'top-[98px]': state.lang !== 'noLang' && state.category !== 'noCategory' && !isMacAir,
               'top-[74px]': state.lang !== 'noLang' && state.category !== 'noCategory' && isMacAir
-            }
+            } 
           )}
         >
           {chosenData?.map((languageItem, index) => (

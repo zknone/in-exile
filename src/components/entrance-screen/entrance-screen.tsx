@@ -77,14 +77,14 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
             })}
           >
             <Card
-              img="school"
+              img="home-school"
               key="artist"
               cardTitle="artist"
               size="big"
               rotation={isCardActive ? 0 : 3}
             />
             <Card
-              img="school"
+              img="home-school"
               key="school"
               cardTitle="school"
               size="big"
@@ -93,14 +93,14 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
           </div>
           <div className="absolute -top-[40px] flex gap-[340px] justify-center">
             <Card
-              img="school"
+              img="home-school"
               key="artist"
               cardTitle="artist"
               size="big"
               rotation={isCardActive ? 0 : -3}
             />
             <Card
-              img="school"
+              img="home-school"
               key="school"
               cardTitle="school"
               size="big"
