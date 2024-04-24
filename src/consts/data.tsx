@@ -275,7 +275,7 @@ const data: Dataset = [
           },
           {
             card: 'social-life',
-            title: 'social Life',
+            title: 'social life',
             img: 'social-life',
             text: [
               'Connection with volunteer contacts from local associations, residents.',

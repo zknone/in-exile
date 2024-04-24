@@ -38,6 +38,20 @@ export default function Card(props: {
   const [isOpen, setOpen] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const [isMacAir, setIsMacAir] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMacAir(window.innerWidth < 1024);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const imgUrl = `/images/${img}.jpg`;
   const altImgUrl = `/images/${altImg}.jpg`;
 
@@ -91,8 +105,9 @@ export default function Card(props: {
       <div
         className={cn(
           'relative h-min-content rounded-[20px] border-[2px] shadow-card',
-          { 'w-[223px] p-[6px]': size === 'normal' },
-          { 'w-[321px] p-[8px]': size === 'big' },
+          { 'min-w-[145px] max-w-[223px]': isMacAir},
+          { 'w-[223px] p-[6px]': size === 'normal' && !isMacAir },
+          { 'w-[321px] p-[8px]': size === 'big' && isMacAir },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -116,7 +131,11 @@ export default function Card(props: {
         >
           <div
             className={cn(
-              { 'w-[208px] h-full': size === 'normal', 'w-[300px] h-full': size === 'big' },
+              { 
+                'max-w-[208px]': isMacAir,
+                'w-[208px] h-full': size === 'normal' && !isMacAir, 
+                'w-[300px] h-full': size === 'big' && !isMacAir
+              },
               { 'opacity-[0.7]': !isHovered && !isNothingHovered }
             )}
           >

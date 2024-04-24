@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import cn from 'classnames';
 import './App.css';
 
 import data from './consts/data';
@@ -19,11 +20,11 @@ function App() {
   });
   const [isOpen, setOpen] = useState(true);
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMacAir, setIsMacAir] = useState(false);
 
   useEffect(() => {
     function handleResize() {
-      setIsMobile(window.innerWidth < 768);
+      setIsMacAir(window.innerWidth < 1024);
     }
 
     window.addEventListener('resize', handleResize);
@@ -32,8 +33,6 @@ function App() {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  console.log(isMobile);
 
   const imagesToPreload: string[] = [
     'images/administrative-support.jpg',
@@ -63,11 +62,15 @@ function App() {
     'images/workspace.jpg'
   ];
 
+  console.log(isMacAir);
+
   return (
     <div className="App flex bg-white h-screen justify-center items-center font-body mx-auto">
       <PreloadImages images={imagesToPreload} />
-      <div className="relative block w-[1196px] h-[380px] my-auto">
-        {isOpen && <EntranceScreen onClick={() => setOpen(false)} isMobile={isMobile}/>}
+      <div className={cn("relative block h-[380px] my-auto", {
+        "max-w-[768px]": isMacAir
+      })}>
+        {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
         {!isOpen && (
           <>
             {state.category !== 'noCategory' && (

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Card from '../card/card';
 import cn from 'classnames';
-export default function EntranceScreen(props: { onClick: () => void, isMobile: boolean }) {
+export default function EntranceScreen(props: { onClick: () => void, isMobile?: boolean }) {
   const { onClick, isMobile } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
