@@ -145,8 +145,8 @@
             </div>
             <div
               className={cn(
-                'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
-                {'text-[11px]': isMacAir},
+                'font-bold font-title text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
+                {'text-[11px]': isMacAir && size === 'normal'},
                 { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
                 { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
                 { 'opacity-[60%] text-[#727272] !important': isThirdPlan }
