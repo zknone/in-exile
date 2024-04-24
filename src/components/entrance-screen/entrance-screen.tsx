@@ -44,7 +44,7 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
                 des artistes en exil.
               </div>
               <div>
-                Ces « cartes d&rsquo;accueil » se nourrissent de discussions avec les partenaires de
+                Ces «&#x202F;cartes d&rsquo;accueil&#x202F;» se nourrissent de discussions avec les partenaires de
                 PUZLP, les écoles d&rsquo;art et les acteurs du projet belge «&#x202F;Exil et création&#x202F;»,
                 et de dialogues avec des artistes en exil accueilli·es dans des écoles d&rsquo;art.
                 Un premier prototype de résidence mené en 2020 à l&rsquo;ESAAA à Annecy avec des
