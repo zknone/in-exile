@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Card from '../card/card';
 import cn from 'classnames';
-export default function EntranceScreen(props: { onClick: () => void, isMobile?: boolean }) {
+export default function EntranceScreen(props: { onClick: () => void; isMobile?: boolean }) {
   const { onClick, isMobile } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
@@ -28,8 +28,8 @@ export default function EntranceScreen(props: { onClick: () => void, isMobile?: 
                 d&rsquo;art
               </div>
               <div>
-                Ce projet est né dans le cadre de « PUZLP – artistes en exil dans les écoles
-                d&rsquo;art », qui réunit des écoles d&rsquo;art belges (ESA Saint-Luc Bruxelles,
+                Ce projet est né dans le cadre de «&#x202F;PUZLP – artistes en exil dans les écoles
+                d&rsquo;art&#x202F;», qui réunit des écoles d&rsquo;art belges (ESA Saint-Luc Bruxelles,
                 l&rsquo;ERG), l&rsquo;Association Nationale des Écoles supérieures d&rsquo;Art
                 françaises (ANdÉA) et l&rsquo;atelier des artistes en exil (aa-e) avec le soutien du
                 programme Erasmus+ de l&rsquo;Union Européenne.
@@ -45,7 +45,7 @@ export default function EntranceScreen(props: { onClick: () => void, isMobile?: 
               </div>
               <div>
                 Ces « cartes d&rsquo;accueil » se nourrissent de discussions avec les partenaires de
-                PUZLP, les écoles d&rsquo;art et les acteurs du projet belge « Exil et création »,
+                PUZLP, les écoles d&rsquo;art et les acteurs du projet belge «&#x202F;Exil et création&#x202F;»,
                 et de dialogues avec des artistes en exil accueilli·es dans des écoles d&rsquo;art.
                 Un premier prototype de résidence mené en 2020 à l&rsquo;ESAAA à Annecy avec des
                 membres de l&rsquo;aa-e, a contribué à adapter aux artistes le programme Pause porté
@@ -68,67 +68,69 @@ export default function EntranceScreen(props: { onClick: () => void, isMobile?: 
           </div>
         </div>
       </div>
-      {!isMobile && <section className="absolute flex right-[50%] justify-center">
-        <div
-          className={cn('absolute  flex gap-[320px] justify-center', {
-            '-top-[25px]': isCardActive,
-            '-top-[65px]': !isCardActive
-          })}
-        >
-          <Card
-            img="school"
-            key="artist"
-            cardTitle="artist"
-            size="big"
-            rotation={isCardActive ? 0 : 3}
-          />
-          <Card
-            img="school"
-            key="school"
-            cardTitle="school"
-            size="big"
-            rotation={isCardActive ? 0 : -3}
-          />
-        </div>
-        <div className="absolute -top-[40px] flex gap-[340px] justify-center">
-          <Card
-            img="school"
-            key="artist"
-            cardTitle="artist"
-            size="big"
-            rotation={isCardActive ? 0 : -3}
-          />
-          <Card
-            img="school"
-            key="school"
-            cardTitle="school"
-            size="big"
-            rotation={isCardActive ? 0 : 3}
-          />
-        </div>
-        <div className="absolute -top-[55px] flex gap-[380px] justify-center">
-          <Card
-            img="home-artist"
-            altImg="home-artist-alt"
-            key="artist"
-            size="big"
-            cardTitle="artiste"
-            active={isCardActive}
-            isNothingHovered={isCardActive}
-            isHovered={isCardActive}
-          />
-          <Card
-            img="home-school"
-            altImg="home-school-alt"
-            key="school"
-            size="big"
-            cardTitle="école"
-            active={isCardActive}
-            isNothingHovered={isCardActive}
-            isHovered={isCardActive}
-          />
-        </div>
-      </section>}
+      {!isMobile && (
+        <section className="absolute flex right-[50%] justify-center">
+          <div
+            className={cn('absolute  flex gap-[320px] justify-center', {
+              '-top-[25px]': isCardActive,
+              '-top-[65px]': !isCardActive
+            })}
+          >
+            <Card
+              img="school"
+              key="artist"
+              cardTitle="artist"
+              size="big"
+              rotation={isCardActive ? 0 : 3}
+            />
+            <Card
+              img="school"
+              key="school"
+              cardTitle="school"
+              size="big"
+              rotation={isCardActive ? 0 : -3}
+            />
+          </div>
+          <div className="absolute -top-[40px] flex gap-[340px] justify-center">
+            <Card
+              img="school"
+              key="artist"
+              cardTitle="artist"
+              size="big"
+              rotation={isCardActive ? 0 : -3}
+            />
+            <Card
+              img="school"
+              key="school"
+              cardTitle="school"
+              size="big"
+              rotation={isCardActive ? 0 : 3}
+            />
+          </div>
+          <div className="absolute -top-[55px] flex gap-[380px] justify-center">
+            <Card
+              img="home-artist"
+              altImg="home-artist-alt"
+              key="artist"
+              size="big"
+              cardTitle="artiste"
+              active={isCardActive}
+              isNothingHovered={isCardActive}
+              isHovered={isCardActive}
+            />
+            <Card
+              img="home-school"
+              altImg="home-school-alt"
+              key="school"
+              size="big"
+              cardTitle="école"
+              active={isCardActive}
+              isNothingHovered={isCardActive}
+              isHovered={isCardActive}
+            />
+          </div>
+        </section>
+      )}
     </div>
   );
 }

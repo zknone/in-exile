@@ -124,7 +124,7 @@ const CardLine = (props: {
             },
             {
               'top-[98px]': state.lang !== 'noLang' && state.category !== 'noCategory',
-              'top-[74px]': state.lang !== 'noLang' && state.category !== 'noCategory' && isMacAir,
+              'top-[74px]': state.lang !== 'noLang' && state.category !== 'noCategory' && isMacAir
             }
           )}
         >

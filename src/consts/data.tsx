@@ -13,7 +13,7 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'artist-position',
-            title: "artiste en résidence",
+            title: 'artiste en résidence',
             img: 'artist-position',
             text: [
               "présentation de l'artiste et de son travail à l'équipe de l'école, aux professeur·es, aux étudiant·es, à prévoir en début de séjour",
@@ -188,7 +188,7 @@ const data: Dataset = [
         subcategories: [
           {
             card: 'artist-position',
-            title: "artist in residence",
+            title: 'artist in residence',
             img: 'artist-position',
             text: [
               'Introduction of the artist and their work to the school team, teachers, and students, planned at the beginning of the stay.',
