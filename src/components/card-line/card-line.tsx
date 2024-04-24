@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { CategoryCard, Dataset, DatasetItem, Language, Subcategory } from '../../types/data';
 import Card from '../card/card';
 import cn from 'classnames';
@@ -17,6 +17,20 @@ const CardLine = (props: {
   const { data, mode, state, setState } = props;
 
   const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
+
+  const [isMacAir, setIsMacAir] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMacAir(window.innerWidth < 1201);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const onCategoryChange = (category: CategoryCard) => {
     if (state.category !== category) {
@@ -78,7 +92,8 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn('absolute z-10 w-full flex gap-2 justify-center', {
-            'top-[49px]': state.lang !== 'noLang' && state.category !== 'noCategory'
+            'top-[49px]': state.lang !== 'noLang' && state.category !== 'noCategory',
+            'top-[36px]': state.lang !== 'noLang' && state.category !== 'noCategory' && isMacAir
           })}
         >
           {chosenData?.map((item) =>
@@ -104,10 +119,12 @@ const CardLine = (props: {
           className={cn(
             'absolute flex gap-2 justify-center w-full z-0',
             {
-              'top-[49px]': state.lang !== 'noLang' && state.category === 'noCategory'
+              'top-[49px]': state.lang !== 'noLang' && state.category === 'noCategory',
+              'top-[36px]': state.lang !== 'noLang' && state.category === 'noCategory' && isMacAir
             },
             {
-              'top-[98px]': state.lang !== 'noLang' && state.category !== 'noCategory'
+              'top-[98px]': state.lang !== 'noLang' && state.category !== 'noCategory',
+              'top-[74px]': state.lang !== 'noLang' && state.category !== 'noCategory' && isMacAir,
             }
           )}
         >

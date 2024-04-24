@@ -6,7 +6,8 @@ export const theme = {
       card: '0px 10px 25px 5px rgba(0, 0, 0, 0.30)'
     },
     fontFamily: {
-      body: ['Suise', 'sans-serif']
+      body: ['Suise', 'sans-serif'],
+      title: ['Roboto serif', 'serif']
     }
   }
 };

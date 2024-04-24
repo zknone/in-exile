@@ -104,10 +104,11 @@
 
         <div
           className={cn(
-            'flex relative h-min-content rounded-[20px] border-[2px] shadow-card',
-            { 'w-[154px] p-[2px]': isMacAir},
+            'flex relative rounded-[20px] border-[2px] shadow-card',
+            { 'w-[154px] p-[2px]': size === 'normal' && isMacAir },
             { 'w-[223px] p-[6px]': size === 'normal' && !isMacAir },
-            { 'w-[321px] p-[8px]': size === 'big' && isMacAir },
+            { 'w-[321px] p-[8px] h-[504px]': size === 'big' && !isMacAir },
+            { 'w-[280px] p-[4px] h-[441px]': size === 'big' && isMacAir },
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
             { 'border-[#008AFF] bg-white': !active },
@@ -145,6 +146,7 @@
             <div
               className={cn(
                 'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
+                {'text-[11px]': isMacAir},
                 { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
                 { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
                 { 'opacity-[60%] text-[#727272] !important': isThirdPlan }

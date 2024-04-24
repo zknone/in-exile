@@ -68,7 +68,7 @@ function App() {
     <div className="App flex bg-white h-screen justify-center items-center font-body mx-auto">
       <PreloadImages images={imagesToPreload} />
       <div className={cn("relative block h-[380px] my-auto", {
-        "max-w-[768px]": isMacAir
+        "max-w-[810px]": isMacAir
       })}>
         {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
         {!isOpen && (
