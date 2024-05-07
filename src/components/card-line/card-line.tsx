@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction, useState } from 'react';
-import { CategoryCard, Dataset, DatasetItem, Language, Subcategory, ScreenSize } from '../../types/data';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { CategoryCard, Dataset, DatasetItem, Language, ScreenSize, Subcategory } from '../../types/data';
 import Card from '../card/card';
 import cn from 'classnames';
 
@@ -9,13 +9,13 @@ type AppState = {
 };
 
 const CardLine = (props: {
-  state: AppState;
   screenSize: ScreenSize;
+  state: AppState;
   data: Dataset;
   mode: 'category' | 'default' | 'language' | 'subCategory';
   setState: Dispatch<SetStateAction<AppState>>;
 }) => {
-  const { data, mode, state, setState } = props;
+  const { data, mode, state, setState, screenSize } = props;
 
   const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
 
@@ -57,16 +57,13 @@ const CardLine = (props: {
 
   const chosenData = checkData();
 
-
-  const isBackPlan = state.lang !== 'noLang' && state.category !== 'noCategory';
-
   return (
     <>
       {mode === 'subCategory' && (
         <div className="absolute z-20 w-full flex gap-2 justify-center">
           {chosenData?.map((subcategory, index) => (
             <Card
-              screenSize={props.screenSize}
+              screenSize={screenSize}
               img={(subcategory as Subcategory).img}
               key={(subcategory as Subcategory).card}
               openable
@@ -83,16 +80,16 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn('absolute z-10 w-full flex gap-2 justify-center', {
-            'top-[49px]': isBackPlan && props.screenSize === 'tabletop',
-            'top-[36px]': isBackPlan && props.screenSize === 'tablet-l'
+            'top-[49px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'tabletop',
+            'top-[36px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'tablet-l'
           })}
         >
           {chosenData?.map((item) =>
             (item as DatasetItem).categories.map((categoryItem, categoryIndex) => (
               <Card
-                screenSize={props.screenSize}
+                screenSize={screenSize}
                 img={categoryItem.img}
-                isSecondPlan={isBackPlan}
+                isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
                 cardTitle={categoryItem.title}
                 key={categoryItem.category}
                 onCardClick={() => onCategoryChange(categoryItem.category)}
@@ -111,21 +108,21 @@ const CardLine = (props: {
           className={cn(
             'absolute flex gap-2 justify-center w-full z-0',
             {
-              'top-[49px]': !isBackPlan && props.screenSize === 'tabletop',
-              'top-[36px]': !isBackPlan && props.screenSize === 'tablet-l'
+              'top-[49px]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'tabletop',
+              'top-[36px]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'tablet-l'
             },
             {
-              'top-[98px]': isBackPlan && props.screenSize === 'tabletop',
-              'top-[74px]': isBackPlan && props.screenSize === 'tablet-l'
+              'top-[98px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'tabletop',
+              'top-[74px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'tablet-l'
             } 
           )}
         >
           {chosenData?.map((languageItem, index) => (
             <Card
-              screenSize={props.screenSize}
+              screenSize={screenSize}
               img={(languageItem as DatasetItem).img}
-              isSecondPlan={isBackPlan}
-              isThirdPlan={isBackPlan}
+              isSecondPlan={state.lang !== 'noLang' && state.category === 'noCategory'}
+              isThirdPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
               cardTitle={(languageItem as DatasetItem).lang}
               key={(languageItem as DatasetItem).lang}
               onCardClick={() => onLanguageChange((languageItem as DatasetItem).lang as Language)}
