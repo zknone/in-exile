@@ -66,6 +66,7 @@ const CardLine = (props: {
         <div className="absolute z-20 w-full flex gap-2 justify-center">
           {chosenData?.map((subcategory, index) => (
             <Card
+              screenSize={props.screenSize}
               img={(subcategory as Subcategory).img}
               key={(subcategory as Subcategory).card}
               openable
@@ -89,6 +90,7 @@ const CardLine = (props: {
           {chosenData?.map((item) =>
             (item as DatasetItem).categories.map((categoryItem, categoryIndex) => (
               <Card
+                screenSize={props.screenSize}
                 img={categoryItem.img}
                 isSecondPlan={isBackPlan}
                 cardTitle={categoryItem.title}
@@ -120,6 +122,7 @@ const CardLine = (props: {
         >
           {chosenData?.map((languageItem, index) => (
             <Card
+              screenSize={props.screenSize}
               img={(languageItem as DatasetItem).img}
               isSecondPlan={isBackPlan}
               isThirdPlan={isBackPlan}

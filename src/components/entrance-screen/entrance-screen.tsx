@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import Card from '../card/card';
 import cn from 'classnames';
-export default function EntranceScreen(props: { onClick: () => void; isMobile?: boolean }) {
+import { ScreenSize } from '../../types/data';
+export default function EntranceScreen(props: { onClick: () => void; isMobile?: boolean; screenSize: ScreenSize }) {
   const { onClick, isMobile } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
@@ -105,6 +106,7 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
             })}
           >
             <Card
+              screenSize={props.screenSize}
               img="home-school"
               key="artist"
               cardTitle="artist"
@@ -112,6 +114,7 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
               rotation={isCardActive ? 0 : 3}
             />
             <Card
+              screenSize={props.screenSize}
               img="home-school"
               key="school"
               cardTitle="school"
@@ -121,6 +124,7 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
           </div>
           <div className="absolute -top-[40px] flex gap-[340px] justify-center">
             <Card
+              screenSize={props.screenSize}
               img="home-school"
               key="artist"
               cardTitle="artist"
@@ -128,6 +132,7 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
               rotation={isCardActive ? 0 : -3}
             />
             <Card
+              screenSize={props.screenSize}
               img="home-school"
               key="school"
               cardTitle="school"
@@ -137,6 +142,7 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
           </div>
           <div className="absolute -top-[55px] flex gap-[380px] justify-center">
             <Card
+              screenSize={props.screenSize}
               img="home-artist"
               altImg="home-artist-alt"
               key="artist"
@@ -147,6 +153,7 @@ export default function EntranceScreen(props: { onClick: () => void; isMobile?: 
               isHovered={isCardActive}
             />
             <Card
+              screenSize={props.screenSize}
               img="home-school"
               altImg="home-school-alt"
               key="school"

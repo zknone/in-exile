@@ -1,7 +1,9 @@
 import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
+import { ScreenSize } from '../../types/data';
 
 export default function Card(props: {
+  screenSize: ScreenSize;
   rotation?: number;
   cardTitle: string;
   img: string;
@@ -36,21 +38,8 @@ export default function Card(props: {
     altImg
   } = props;
   const [isOpen, setOpen] = useState(false);
+  const { screenSize } = props;
   const cardRef = useRef<HTMLDivElement>(null);
-
-  const [isMacAir, setIsMacAir] = useState(false);
-
-  useEffect(() => {
-    function handleResize() {
-      setIsMacAir(window.innerWidth < 1300);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const imgUrl = `/images/${img}.jpg`;
   const altImgUrl = `/images/${altImg}.jpg`;
@@ -80,22 +69,22 @@ export default function Card(props: {
             ref={cardRef}
             className={cn(
               'block absolute z-50 -left-[35%] p-[11px] -top-[42%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
-              { 'w-[408px] h-[647px] rounded-[40px] text-xl ': !isMacAir },
-              { 'w-[320px] h-[508px] rounded-[35px] text-l': isMacAir }
+              { 'w-[408px] h-[647px] rounded-[40px] text-xl ': screenSize === 'tabletop'},
+              { 'w-[320px] h-[508px] rounded-[35px] text-l': screenSize === 'tablet-l'}
             )}
             onClick={() => setOpen(false)}
           >
             <div
               className={cn(
                 'popup-content w-full flex flex-col justify-between h-full border-[2px] border-[#FF6CFF] bg-white hover:border-[#F93598] card',
-                { 'rounded-[30px]': !isMacAir },
-                { 'rounded-[27px]': isMacAir }
+                { 'rounded-[30px]': screenSize === 'tabletop' },
+                { 'rounded-[27px]': screenSize === 'tablet-l' }
               )}
             >
               <ul
                 className={cn('my-auto', {
-                  'p-6': isMacAir,
-                  'p-12': !isMacAir
+                  'p-6': screenSize === 'tabletop',
+                  'p-12': screenSize === 'tablet-l'
                 })}
               >
                 {points &&
@@ -107,8 +96,8 @@ export default function Card(props: {
               </ul>
               <div
                 className={cn('font-title font-bold text-center py-2', {
-                  'text-xl': isMacAir,
-                  'text-2xl': !isMacAir
+                  'text-xl': screenSize === 'tabletop',
+                  'text-2xl': screenSize === 'tablet-l'
                 })}
               >
                 {cardTitle}
@@ -121,10 +110,10 @@ export default function Card(props: {
       <div
         className={cn(
           'flex relative border-[2px] shadow-card',
-          { 'w-[154px] p-[2px] rounded-[15px] ': size === 'normal' && isMacAir },
-          { 'w-[223px] p-[6px] rounded-[20px]': size === 'normal' && !isMacAir },
-          { 'w-[321px] p-[8px] h-[504px] rounded-[20px]': size === 'big' && !isMacAir },
-          { 'w-[280px] p-[4px] h-[441px] rounded-[20px]': size === 'big' && isMacAir },
+          { 'w-[154px] p-[2px] rounded-[15px] ': size === 'normal' && screenSize === 'tablet-l' },
+          { 'w-[223px] p-[6px] rounded-[20px]': size === 'normal' && screenSize === 'tabletop' },
+          { 'w-[321px] p-[8px] h-[504px] rounded-[20px]': size === 'big' && screenSize === 'tabletop' },
+          { 'w-[280px] p-[4px] h-[441px] rounded-[20px]': size === 'big' && screenSize === 'tablet-l' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -143,10 +132,10 @@ export default function Card(props: {
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
             { 'border-[#2FA2FB]/[0.5]': isThirdPlan },
-            { 'rounded-[12px]': size === 'normal' && isMacAir },
-            { 'rounded-[15px]': size === 'normal' && !isMacAir },
-            { 'rounded-[15px]': size === 'big' && !isMacAir },
-            { 'rounded-[15px]': size === 'big' && isMacAir }
+            { 'rounded-[12px]': size === 'normal' && screenSize === 'tablet-l' },
+            { 'rounded-[15px]': size === 'normal' && screenSize === 'tabletop' },
+            { 'rounded-[15px]': size === 'big' && screenSize === 'tabletop' },
+            { 'rounded-[15px]': size === 'big' && screenSize === 'tablet-l' }
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
         >
@@ -164,9 +153,9 @@ export default function Card(props: {
           <div
             className={cn(
               'basis-[] font-bold font-title text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
-              { 'text-[11px]': isMacAir && size === 'normal' },
-              { 'text-2xl': !isMacAir && size === 'big' },
-              { 'text-l': isMacAir && size === 'big' },
+              { 'text-[11px]': screenSize === 'tablet-l' && size === 'normal' },
+              { 'text-2xl': screenSize === 'tabletop' && size === 'big' },
+              { 'text-l': screenSize === 'tablet-l' && size === 'big' },
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan }

@@ -75,7 +75,7 @@ function App() {
               'max-w-[810px]': screenSize === 'tablet-l'
             })}
           >
-            {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
+            {isOpen && <EntranceScreen onClick={() => setOpen(false)} screenSize={screenSize}/>}
             {!isOpen && (
               <>
                 {state.category !== 'noCategory' && (
