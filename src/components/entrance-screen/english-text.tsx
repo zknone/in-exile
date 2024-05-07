@@ -1,9 +1,7 @@
-export default function EnglishText () {
-    return (
-        <>
-            <div>
-                english
-              </div>
-        </>
-    )
+export default function EnglishText() {
+  return (
+    <>
+      <div>english</div>
+    </>
+  );
 }

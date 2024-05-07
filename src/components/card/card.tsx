@@ -89,7 +89,7 @@ export default function Card(props: {
               )}
               src={active ? altImgUrl : imgUrl}
               alt="cardTitle"
-            />  
+            />
           </div>
           <div
             className={cn(

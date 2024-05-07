@@ -80,33 +80,39 @@ function App() {
           {/* {isOpen && <EntranceScreen onClick={() => setOpen(false)} screenSize={screenSize} />}
           {!isOpen && (
             <> */}
-              {state.category !== 'noCategory' && (
-                <CardLine
-                  state={state}
-                  data={data}
-                  mode="subCategory"
-                  setState={setState}
-                  screenSize={screenSize}
-                />
-              )}
-              {state.lang !== 'noLang' && (
-                <CardLine
-                  data={data}
-                  mode="category"
-                  state={state}
-                  setState={setState}
-                  screenSize={screenSize}
-                />
-              )}
-              <CardLine
-                data={data}
-                mode="language"
-                state={state}
-                setState={setState}
-                screenSize={screenSize}
-              />
-              { (state.lang !== 'noLang' && isOpen) && <EntranceScreen onClick={() => setOpen(false)} screenSize={screenSize} language={state.lang}/>} 
-            {/* </> */}
+          {state.category !== 'noCategory' && (
+            <CardLine
+              state={state}
+              data={data}
+              mode="subCategory"
+              setState={setState}
+              screenSize={screenSize}
+            />
+          )}
+          {state.lang !== 'noLang' && (
+            <CardLine
+              data={data}
+              mode="category"
+              state={state}
+              setState={setState}
+              screenSize={screenSize}
+            />
+          )}
+          <CardLine
+            data={data}
+            mode="language"
+            state={state}
+            setState={setState}
+            screenSize={screenSize}
+          />
+          {state.lang !== 'noLang' && isOpen && (
+            <EntranceScreen
+              onClick={() => setOpen(false)}
+              screenSize={screenSize}
+              language={state.lang}
+            />
+          )}
+          {/* </> */}
           {/* )} */}
         </div>
       </div>

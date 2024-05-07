@@ -10,7 +10,7 @@ export default function EntranceScreen(props: {
   screenSize: ScreenSize;
   language?: Language;
 }) {
-  const { onClick, isMobile, screenSize, language} = props;
+  const { onClick, isMobile, screenSize, language } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
     setCardsActive(true);
@@ -47,8 +47,8 @@ export default function EntranceScreen(props: {
                 { 'my-10 max-h-[461px]': screenSize === 'tablet-l' }
               )}
             >
-              {language === 'français' && <FrenchText/>}
-              {language === 'english' && <EnglishText/>}
+              {language === 'français' && <FrenchText />}
+              {language === 'english' && <EnglishText />}
               <img src="/images/euro-logo.jpg" />
             </div>
             <div className="mask top-[calc(100%-100px)]"></div>
@@ -91,45 +91,49 @@ export default function EntranceScreen(props: {
               rotation={isCardActive ? 0 : -3}
             />
           </div>
-          {/* <div className="absolute -top-[40px] flex gap-[340px] justify-center">
-            <Card
-              screenSize={props.screenSize}
-              img="home-school"
-              key="artist"
-              cardTitle="artist"
-              rotation={isCardActive ? 0 : -3}
-            />
-            <Card
-              screenSize={props.screenSize}
-              img="home-school"
-              key="school"
-              cardTitle="school"
-              rotation={isCardActive ? 0 : 3}
-            />
-          </div> */}
+          {!isCardActive && (
+            <div className="absolute -top-[40px] flex gap-[340px] justify-center">
+              <Card
+                screenSize={props.screenSize}
+                img="home-school"
+                key="artist"
+                cardTitle="artist"
+                rotation={isCardActive ? 0 : -3}
+              />
+              <Card
+                screenSize={props.screenSize}
+                img="home-school"
+                key="school"
+                cardTitle="school"
+                rotation={isCardActive ? 0 : 3}
+              />
+            </div>
+          )}
           {/* на второй будет карточка с текущим языком */}
-          {/* <div className="absolute -top-[55px] flex gap-[380px] justify-center">
-            <Card
-              screenSize={props.screenSize}
-              img="home-artist"
-              altImg="home-artist-alt"
-              key="artist"
-              cardTitle="artiste"
-              active={isCardActive}
-              isNothingHovered={isCardActive}
-              isHovered={isCardActive}
-            />
-            <Card
-              screenSize={props.screenSize}
-              img="home-school"
-              altImg="home-school-alt"
-              key="school"
-              cardTitle="école"
-              active={isCardActive}
-              isNothingHovered={isCardActive}
-              isHovered={isCardActive}
-            />
-          </div> */}
+          {!isCardActive && (
+            <div className="absolute -top-[55px] flex gap-[380px] justify-center">
+              <Card
+                screenSize={props.screenSize}
+                img="home-artist"
+                altImg="home-artist-alt"
+                key="artist"
+                cardTitle="artiste"
+                active={isCardActive}
+                isNothingHovered={isCardActive}
+                isHovered={isCardActive}
+              />
+              <Card
+                screenSize={props.screenSize}
+                img="home-school"
+                altImg="home-school-alt"
+                key="school"
+                cardTitle="école"
+                active={isCardActive}
+                isNothingHovered={isCardActive}
+                isHovered={isCardActive}
+              />
+            </div>
+          )}
         </section>
       )}
     </div>
