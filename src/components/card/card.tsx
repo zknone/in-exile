@@ -35,10 +35,12 @@ export default function Card(props: {
     isNothingHovered,
     rotation = 0,
     img,
-    altImg
+    altImg,
+    screenSize
   } = props;
+  
   const [isOpen, setOpen] = useState(false);
-  const { screenSize } = props;
+
   const cardRef = useRef<HTMLDivElement>(null);
 
   const imgUrl = `/images/${img}.jpg`;
@@ -69,8 +71,8 @@ export default function Card(props: {
             ref={cardRef}
             className={cn(
               'block absolute z-50 -left-[35%] p-[11px] -top-[42%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
-              { 'w-[408px] h-[647px] rounded-[40px] text-xl ': screenSize === 'tabletop'},
-              { 'w-[320px] h-[508px] rounded-[35px] text-l': screenSize === 'tablet-l'}
+              { 'w-[408px] h-[647px] rounded-[40px] text-xl ': screenSize === 'tabletop' },
+              { 'w-[320px] h-[508px] rounded-[35px] text-l': screenSize === 'tablet-l' }
             )}
             onClick={() => setOpen(false)}
           >
@@ -83,8 +85,8 @@ export default function Card(props: {
             >
               <ul
                 className={cn('my-auto', {
-                  'p-6': screenSize === 'tabletop',
-                  'p-12': screenSize === 'tablet-l'
+                  'p-6': screenSize === 'tablet-l',
+                  'p-12': screenSize === 'tabletop'
                 })}
               >
                 {points &&
@@ -96,8 +98,8 @@ export default function Card(props: {
               </ul>
               <div
                 className={cn('font-title font-bold text-center py-2', {
-                  'text-xl': screenSize === 'tabletop',
-                  'text-2xl': screenSize === 'tablet-l'
+                  'text-xl': screenSize === 'tablet-l',
+                  'text-2xl': screenSize === 'tabletop'
                 })}
               >
                 {cardTitle}
