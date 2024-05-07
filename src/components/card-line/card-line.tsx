@@ -1,5 +1,12 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
-import { CategoryCard, Dataset, DatasetItem, Language, ScreenSize, Subcategory } from '../../types/data';
+import {
+  CategoryCard,
+  Dataset,
+  DatasetItem,
+  Language,
+  ScreenSize,
+  Subcategory
+} from '../../types/data';
 import Card from '../card/card';
 import cn from 'classnames';
 
@@ -80,8 +87,14 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn('absolute z-10 w-full flex gap-2 justify-center', {
-            'top-[49px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'tabletop',
-            'top-[36px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'tablet-l'
+            'top-[49px]':
+              state.lang !== 'noLang' &&
+              state.category !== 'noCategory' &&
+              screenSize === 'tabletop',
+            'top-[36px]':
+              state.lang !== 'noLang' &&
+              state.category !== 'noCategory' &&
+              screenSize === 'tablet-l'
           })}
         >
           {chosenData?.map((item) =>
@@ -108,13 +121,25 @@ const CardLine = (props: {
           className={cn(
             'absolute flex gap-2 justify-center w-full z-0',
             {
-              'top-[49px]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'tabletop',
-              'top-[36px]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'tablet-l'
+              'top-[49px]':
+                state.lang !== 'noLang' &&
+                state.category === 'noCategory' &&
+                screenSize === 'tabletop',
+              'top-[36px]':
+                state.lang !== 'noLang' &&
+                state.category === 'noCategory' &&
+                screenSize === 'tablet-l'
             },
             {
-              'top-[98px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'tabletop',
-              'top-[74px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'tablet-l'
-            } 
+              'top-[98px]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize === 'tabletop',
+              'top-[74px]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize === 'tablet-l'
+            }
           )}
         >
           {chosenData?.map((languageItem, index) => (

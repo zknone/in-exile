@@ -63,7 +63,7 @@ export default function Popup(props: {
                   ))}
               </ul>
               <div
-                className={cn('font-title font-bold text-center py-2', {
+                className={cn('font-bold text-center py-2', {
                   'text-xl': screenSize === 'tablet-l',
                   'text-2xl': screenSize === 'tabletop'
                 })}
