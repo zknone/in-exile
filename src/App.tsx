@@ -67,27 +67,32 @@ function App() {
   console.log(isMacAir);
 
   return (
-    <div className="App flex bg-white h-screen justify-center items-center font-body mx-auto">
-      <PreloadImages images={imagesToPreload} />
-      <div
-        className={cn('relative block h-[380px] my-auto', {
-          'max-w-[810px]': isMacAir
-        })}
-      >
-        {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
-        {!isOpen && (
-          <>
-            {state.category !== 'noCategory' && (
-              <CardLine state={state} data={data} mode="subCategory" setState={setState} />
+    <>
+      <Helmet>
+        <title>Welcome Cards</title>
+      </Helmet>
+        <div className="App flex bg-white h-screen justify-center items-center font-body mx-auto">
+          <PreloadImages images={imagesToPreload} />
+          <div
+            className={cn('relative block h-[380px] my-auto', {
+              'max-w-[810px]': isMacAir
+            })}
+          >
+            {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
+            {!isOpen && (
+              <>
+                {state.category !== 'noCategory' && (
+                  <CardLine state={state} data={data} mode="subCategory" setState={setState} />
+                )}
+                {state.lang !== 'noLang' && (
+                  <CardLine data={data} mode="category" state={state} setState={setState} />
+                )}
+                <CardLine data={data} mode="language" state={state} setState={setState} />
+              </>
             )}
-            {state.lang !== 'noLang' && (
-              <CardLine data={data} mode="category" state={state} setState={setState} />
-            )}
-            <CardLine data={data} mode="language" state={state} setState={setState} />
-          </>
-        )}
+          </div>
       </div>
-    </div>
+    </>
   );
 }
 
