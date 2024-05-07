@@ -69,7 +69,7 @@ export default function EntranceScreen(props: {
         </div>
       </div>
       {!isMobile && (
-        <section className="absolute flex right-[50%] justify-center">
+        <section className="absolute flex right-[50%] justify-center z-10">
           <div
             className={cn('absolute  flex gap-[320px] justify-center', {
               '-top-[25px]': isCardActive,
