@@ -1,6 +1,8 @@
-import { MouseEventHandler, useEffect, useRef, useState } from 'react';
+import { MouseEventHandler } from 'react';
 import cn from 'classnames';
 import { ScreenSize } from '../../types/data';
+import Popup from '../popup/popup';
+import usePopup from '../../hooks/usePopUp';
 
 export default function Card(props: {
   screenSize: ScreenSize;
@@ -26,7 +28,7 @@ export default function Card(props: {
     onCardClick,
     isSecondPlan,
     isThirdPlan,
-    openable,
+    openable = false,
     active,
     size = 'normal',
     onMouseEnter,
@@ -38,77 +40,22 @@ export default function Card(props: {
     altImg,
     screenSize
   } = props;
-  
-  const [isOpen, setOpen] = useState(false);
 
-  const cardRef = useRef<HTMLDivElement>(null);
+  const { isOpen, setOpen, cardRef } = usePopup();
 
   const imgUrl = `/images/${img}.jpg`;
   const altImgUrl = `/images/${altImg}.jpg`;
 
-  useEffect(() => {
-    if (openable) {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
-          setOpen(false);
-        }
-      };
-
-      document.addEventListener('mousedown', handleClickOutside);
-
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }
-  }, [openable]);
-
   return (
     <div className="relative">
-      {isOpen && (
-        <>
-          <div className="popup-background"></div>
-          <div
-            ref={cardRef}
-            className={cn(
-              'block absolute z-50 -left-[35%] p-[11px] -top-[42%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
-              { 'w-[408px] h-[647px] rounded-[40px] text-xl ': screenSize === 'tabletop' },
-              { 'w-[320px] h-[508px] rounded-[35px] text-l': screenSize === 'tablet-l' }
-            )}
-            onClick={() => setOpen(false)}
-          >
-            <div
-              className={cn(
-                'popup-content w-full flex flex-col justify-between h-full border-[2px] border-[#FF6CFF] bg-white hover:border-[#F93598] card',
-                { 'rounded-[30px]': screenSize === 'tabletop' },
-                { 'rounded-[27px]': screenSize === 'tablet-l' }
-              )}
-            >
-              <ul
-                className={cn('my-auto', {
-                  'p-6': screenSize === 'tablet-l',
-                  'p-12': screenSize === 'tabletop'
-                })}
-              >
-                {points &&
-                  points.map((item, index) => (
-                    <li className="pb-5 last:pb-0" key={index}>
-                      {item}
-                    </li>
-                  ))}
-              </ul>
-              <div
-                className={cn('font-title font-bold text-center py-2', {
-                  'text-xl': screenSize === 'tablet-l',
-                  'text-2xl': screenSize === 'tabletop'
-                })}
-              >
-                {cardTitle}
-              </div>
-            </div>
-          </div>
-        </>
-      )}
-
+      <Popup
+        isOpen={isOpen}
+        setOpen={setOpen}
+        cardRef={cardRef}
+        screenSize={screenSize}
+        points={points}
+        cardTitle={cardTitle}
+      />
       <div
         className={cn(
           'flex relative border-[2px] shadow-card',
