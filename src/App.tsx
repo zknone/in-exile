@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import './App.css';
+import React from "react";
+import { Helmet } from "react-helmet";
 
 import data from './consts/data';
 import EntranceScreen from './components/entrance-screen/entrance-screen';
