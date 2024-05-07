@@ -1,4 +1,4 @@
-export type Language = 'francais' | 'english' | 'noLang';
+export type Language = 'français' | 'english' | 'noLang';
 type ImgPath = string;
 type TextArray = string[];
 export type CategoryCard = 'school' | 'city' | 'general' | 'noCategory';

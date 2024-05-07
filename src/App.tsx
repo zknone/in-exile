@@ -63,6 +63,8 @@ function App() {
     'images/workspace.jpg'
   ];
 
+  console.log(state.lang);
+
   return (
     <>
       <Helmet>
@@ -75,9 +77,9 @@ function App() {
             'max-w-[810px]': screenSize === 'tablet-l'
           })}
         >
-          {isOpen && <EntranceScreen onClick={() => setOpen(false)} screenSize={screenSize} />}
+          {/* {isOpen && <EntranceScreen onClick={() => setOpen(false)} screenSize={screenSize} />}
           {!isOpen && (
-            <>
+            <> */}
               {state.category !== 'noCategory' && (
                 <CardLine
                   state={state}
@@ -103,8 +105,9 @@ function App() {
                 setState={setState}
                 screenSize={screenSize}
               />
-            </>
-          )}
+              { (state.lang !== 'noLang' && isOpen) && <EntranceScreen onClick={() => setOpen(false)} screenSize={screenSize} language={state.lang}/>} 
+            {/* </> */}
+          {/* )} */}
         </div>
       </div>
     </>
