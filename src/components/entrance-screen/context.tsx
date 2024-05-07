@@ -4,7 +4,7 @@ import cn from 'classnames';
 import FrenchText from './french-text';
 import { Language, ScreenSize } from '../../types/data';
 import EnglishText from './english-text';
-export default function EntranceScreen(props: {
+export default function Context(props: {
   onClick: () => void;
   isMobile?: boolean;
   screenSize: ScreenSize;

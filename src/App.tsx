@@ -4,10 +4,10 @@ import './App.css';
 import { Helmet } from 'react-helmet';
 
 import data from './consts/data';
-import EntranceScreen from './components/entrance-screen/entrance-screen';
 import { CategoryCard, Language, ScreenSize } from './types/data';
 import CardLine from './components/card-line/card-line';
 import PreloadImages from './components/preload-images/preload-images';
+import Context from './components/entrance-screen/context';
 
 type AppState = {
   lang: Language;
@@ -77,9 +77,6 @@ function App() {
             'max-w-[810px]': screenSize === 'tablet-l'
           })}
         >
-          {/* {isOpen && <EntranceScreen onClick={() => setOpen(false)} screenSize={screenSize} />}
-          {!isOpen && (
-            <> */}
           {state.category !== 'noCategory' && (
             <CardLine
               state={state}
@@ -106,7 +103,7 @@ function App() {
             screenSize={screenSize}
           />
           {state.lang !== 'noLang' && isOpen && (
-            <EntranceScreen
+            <Context
               onClick={() => setOpen(false)}
               screenSize={screenSize}
               language={state.lang}
