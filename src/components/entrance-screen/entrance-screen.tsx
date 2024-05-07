@@ -30,18 +30,18 @@ export default function EntranceScreen(props: {
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
           className={cn(
-            'block absolute z-50 rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-[15px] shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup',
+            'block absolute z-50 rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-[16px] shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup',
             { 'h-[669px] w-[429px]': screenSize === 'tabletop' },
-            { 'h-[607px]': screenSize === 'tablet-l' }
+            { 'h-[607px] w-[389px]': screenSize === 'tablet-l' }
           )}
           onClick={onClick}
         >
           <div className="absolute popup-content w-full flex flex-col justify-between h-full border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
             <div
               className={cn(
-                'absolute px-[50px] mx-3 max-h-[535px] overflow-auto flex flex-col gap-y-5',
-                { 'my-12': screenSize === 'tabletop' },
-                { 'my-10': screenSize === 'tablet-l' }
+                'absolute px-[50px] mx-3 overflow-auto flex flex-col gap-y-5',
+                { 'my-12 max-h-[512px]': screenSize === 'tabletop' },
+                { 'my-10 max-h-[461px]': screenSize === 'tablet-l' }
               )}
             >
               <div>
@@ -85,14 +85,16 @@ export default function EntranceScreen(props: {
             <div className="mask top-[calc(100%-100px)]"></div>
             <div
               className={cn(
-                'absolute bottom-0 w-full font-bold text-center py-2 border-t-[2px] border-[#ff6cb6]',
+                'absolute bottom-0 w-full font-bold text-center pb-[22px] pt-[14px] border-t-[2px]',
                 {
+                  'border-[#ff6cb6]': !isCardActive,
+                  'border-[#F93598]': isCardActive,
                   'text-xl': screenSize === 'tablet-l',
                   'text-2xl': screenSize === 'tabletop'
                 }
               )}
             >
-              Context
+              context
             </div>
           </div>
         </div>
