@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
-import { CategoryCard, Dataset, DatasetItem, Language, Subcategory } from '../../types/data';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { CategoryCard, Dataset, DatasetItem, Language, Subcategory, ScreenSize } from '../../types/data';
 import Card from '../card/card';
 import cn from 'classnames';
 
@@ -10,6 +10,7 @@ type AppState = {
 
 const CardLine = (props: {
   state: AppState;
+  screenSize: ScreenSize;
   data: Dataset;
   mode: 'category' | 'default' | 'language' | 'subCategory';
   setState: Dispatch<SetStateAction<AppState>>;
@@ -17,20 +18,6 @@ const CardLine = (props: {
   const { data, mode, state, setState } = props;
 
   const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
-
-  const [isMacAir, setIsMacAir] = useState(false);
-
-  useEffect(() => {
-    function handleResize() {
-      setIsMacAir(window.innerWidth < 1300);
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const onCategoryChange = (category: CategoryCard) => {
     if (state.category !== category) {
@@ -70,6 +57,9 @@ const CardLine = (props: {
 
   const chosenData = checkData();
 
+
+  const isBackPlan = state.lang !== 'noLang' && state.category !== 'noCategory';
+
   return (
     <>
       {mode === 'subCategory' && (
@@ -92,15 +82,15 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn('absolute z-10 w-full flex gap-2 justify-center', {
-            'top-[49px]': state.lang !== 'noLang' && state.category !== 'noCategory' && !isMacAir,
-            'top-[36px]': state.lang !== 'noLang' && state.category !== 'noCategory' && isMacAir
+            'top-[49px]': isBackPlan && props.screenSize === 'tabletop',
+            'top-[36px]': isBackPlan && props.screenSize === 'tablet-l'
           })}
         >
           {chosenData?.map((item) =>
             (item as DatasetItem).categories.map((categoryItem, categoryIndex) => (
               <Card
                 img={categoryItem.img}
-                isSecondPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
+                isSecondPlan={isBackPlan}
                 cardTitle={categoryItem.title}
                 key={categoryItem.category}
                 onCardClick={() => onCategoryChange(categoryItem.category)}
@@ -119,20 +109,20 @@ const CardLine = (props: {
           className={cn(
             'absolute flex gap-2 justify-center w-full z-0',
             {
-              'top-[49px]': state.lang !== 'noLang' && state.category === 'noCategory' && !isMacAir,
-              'top-[36px]': state.lang !== 'noLang' && state.category === 'noCategory' && isMacAir
+              'top-[49px]': !isBackPlan && props.screenSize === 'tabletop',
+              'top-[36px]': !isBackPlan && props.screenSize === 'tablet-l'
             },
             {
-              'top-[98px]': state.lang !== 'noLang' && state.category !== 'noCategory' && !isMacAir,
-              'top-[74px]': state.lang !== 'noLang' && state.category !== 'noCategory' && isMacAir
+              'top-[98px]': isBackPlan && props.screenSize === 'tabletop',
+              'top-[74px]': isBackPlan && props.screenSize === 'tablet-l'
             } 
           )}
         >
           {chosenData?.map((languageItem, index) => (
             <Card
               img={(languageItem as DatasetItem).img}
-              isSecondPlan={state.lang !== 'noLang' && state.category === 'noCategory'}
-              isThirdPlan={state.lang !== 'noLang' && state.category !== 'noCategory'}
+              isSecondPlan={isBackPlan}
+              isThirdPlan={isBackPlan}
               cardTitle={(languageItem as DatasetItem).lang}
               key={(languageItem as DatasetItem).lang}
               onCardClick={() => onLanguageChange((languageItem as DatasetItem).lang as Language)}

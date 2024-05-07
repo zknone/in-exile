@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import './App.css';
-import React from "react";
 import { Helmet } from "react-helmet";
 
 import data from './consts/data';
 import EntranceScreen from './components/entrance-screen/entrance-screen';
-import { CategoryCard, Language } from './types/data';
+import { CategoryCard, Language, ScreenSize } from './types/data';
 import CardLine from './components/card-line/card-line';
 import PreloadImages from './components/preload-images/preload-images';
 
@@ -22,11 +21,11 @@ function App() {
   });
   const [isOpen, setOpen] = useState(true);
 
-  const [isMacAir, setIsMacAir] = useState(false);
+  const [screenSize, setScreenSize] = useState<ScreenSize>('tabletop');
 
   useEffect(() => {
     function handleResize() {
-      setIsMacAir(window.innerWidth < 1024);
+      if (window.innerWidth < 1300) setScreenSize('tablet-l')
     }
 
     window.addEventListener('resize', handleResize);
@@ -64,8 +63,6 @@ function App() {
     'images/workspace.jpg'
   ];
 
-  console.log(isMacAir);
-
   return (
     <>
       <Helmet>
@@ -75,19 +72,19 @@ function App() {
           <PreloadImages images={imagesToPreload} />
           <div
             className={cn('relative block h-[380px] my-auto', {
-              'max-w-[810px]': isMacAir
+              'max-w-[810px]': screenSize === 'tablet-l'
             })}
           >
             {isOpen && <EntranceScreen onClick={() => setOpen(false)} />}
             {!isOpen && (
               <>
                 {state.category !== 'noCategory' && (
-                  <CardLine state={state} data={data} mode="subCategory" setState={setState} />
+                  <CardLine state={state} data={data} mode="subCategory" setState={setState} screenSize={screenSize}/>
                 )}
                 {state.lang !== 'noLang' && (
-                  <CardLine data={data} mode="category" state={state} setState={setState} />
+                  <CardLine data={data} mode="category" state={state} setState={setState} screenSize={screenSize}/>
                 )}
-                <CardLine data={data} mode="language" state={state} setState={setState} />
+                <CardLine data={data} mode="language" state={state} setState={setState} screenSize={screenSize}/>
               </>
             )}
           </div>
