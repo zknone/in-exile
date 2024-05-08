@@ -57,8 +57,8 @@ export default function Card(props: {
       <div
         className={cn(
           'flex relative border-[2px] shadow-card',
-          { 'w-[154px] p-[2px] rounded-[15px] ': screenSize === 'tablet-l' },
-          { 'w-[280px] p-[6px] rounded-[20px]': screenSize === 'tabletop' },
+          { 'w-[208px] p-[2px] rounded-[15px] ': screenSize === 'tabletop' },
+          { 'w-[280px] p-[6px] rounded-[20px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -77,8 +77,8 @@ export default function Card(props: {
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
             { 'border-[#2FA2FB]/[0.5]': isThirdPlan },
-            { 'rounded-[12px]': screenSize === 'tablet-l' },
-            { 'rounded-[15px]': screenSize === 'tabletop' }
+            { 'rounded-[12px]': screenSize === 'tabletop' },
+            { 'rounded-[15px]': screenSize === 'default' }
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
         >
@@ -94,7 +94,7 @@ export default function Card(props: {
           <div
             className={cn(
               'basis-[] font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
-              { 'text-[11px]': screenSize === 'tablet-l' },
+              { 'text-[11px]': screenSize === 'tabletop' },
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan }

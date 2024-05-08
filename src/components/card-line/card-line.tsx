@@ -90,11 +90,11 @@ const CardLine = (props: {
             'top-[49px]':
               state.lang !== 'noLang' &&
               state.category !== 'noCategory' &&
-              screenSize === 'tabletop',
+              screenSize === 'default',
             'top-[36px]':
               state.lang !== 'noLang' &&
               state.category !== 'noCategory' &&
-              screenSize === 'tablet-l'
+              screenSize === 'tabletop'
           })}
         >
           {chosenData?.map((item) =>
@@ -124,21 +124,21 @@ const CardLine = (props: {
               'top-[49px]':
                 state.lang !== 'noLang' &&
                 state.category === 'noCategory' &&
-                screenSize === 'tabletop',
+                screenSize === 'default',
               'top-[36px]':
                 state.lang !== 'noLang' &&
                 state.category === 'noCategory' &&
-                screenSize === 'tablet-l'
+                screenSize === 'tabletop'
             },
             {
               'top-[98px]':
                 state.lang !== 'noLang' &&
                 state.category !== 'noCategory' &&
-                screenSize === 'tabletop',
+                screenSize === 'default',
               'top-[74px]':
                 state.lang !== 'noLang' &&
                 state.category !== 'noCategory' &&
-                screenSize === 'tablet-l'
+                screenSize === 'tabletop'
             }
           )}
         >

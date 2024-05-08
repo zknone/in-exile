@@ -21,12 +21,21 @@ function App() {
   });
   const [isOpen, setOpen] = useState(true);
 
-  const [screenSize, setScreenSize] = useState<ScreenSize>('tabletop');
+  const [screenSize, setScreenSize] = useState<ScreenSize>('default');
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 1300) setScreenSize('tablet-l');
+      if (window.innerWidth <= 834 && window.innerWidth > 667) {
+        setScreenSize('tablet-m');
+      } else if (window.innerWidth <= 1280 && window.innerWidth > 834) {
+        setScreenSize('tablet-l');
+      } else if (window.innerWidth > 1280 && window.innerWidth <= 1600) {
+        setScreenSize('tabletop');
+      } else {
+        setScreenSize('default');
+      }
     }
+    
 
     window.addEventListener('resize', handleResize);
 
@@ -34,6 +43,8 @@ function App() {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  console.log(screenSize);
 
   const imagesToPreload: string[] = [
     'images/administrative-support.jpg',
