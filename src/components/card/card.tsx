@@ -56,9 +56,11 @@ export default function Card(props: {
       />
       <div
         className={cn(
-          'flex relative border-[2px] shadow-card',
-          { 'w-[208px] p-[2px] rounded-[15px] ': screenSize === 'tabletop' },
-          { 'w-[280px] p-[6px] rounded-[20px]': screenSize === 'default' },
+          'flex w-full relative border-[2px] shadow-card',
+          { 'p-[2px] rounded-[15px] ': screenSize === 'tabletop' },
+          { 'p-[6px] rounded-[20px]': screenSize === 'default' },
+          // { 'w-[208px] p-[2px] rounded-[15px] ': screenSize === 'tabletop' },
+          // { 'w-[280px] p-[6px] rounded-[20px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
