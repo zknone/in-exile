@@ -45,7 +45,7 @@ export default function Card(props: {
   const altImgUrl = `/images/${altImg}.jpg`;
 
   return (
-    <div className="relative">
+    <>
       <Popup
         isOpen={isOpen}
         setOpen={setOpen}
@@ -56,11 +56,9 @@ export default function Card(props: {
       />
       <div
         className={cn(
-          'flex w-full relative border-[2px] shadow-card',
+          'flex flex-col w-max h-full relative border-[2px] shadow-card',
           { 'p-[2px] rounded-[15px] ': screenSize === 'tabletop' },
           { 'p-[6px] rounded-[20px]': screenSize === 'default' },
-          // { 'w-[208px] p-[2px] rounded-[15px] ': screenSize === 'tabletop' },
-          // { 'w-[280px] p-[6px] rounded-[20px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -74,7 +72,7 @@ export default function Card(props: {
       >
         <div
           className={cn(
-            'flex flex-col z-0 border-[2px] rounded-[15px] bg-white truncate',
+            'flex flex-col justify-between z-0 border-[2px] rounded-[15px] bg-white truncate',
             { 'border-[#008AFF]': !isSecondPlan && !isThirdPlan },
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
@@ -84,10 +82,10 @@ export default function Card(props: {
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
         >
-          <div className={cn('basis-full', { 'opacity-[0.7]': !isHovered && !isNothingHovered })}>
+          <div className="flex flex-1">
             <img
               className={cn(
-                'w-full h-full transition-transform duration-300 transform hover:scale-110 inset-0'
+                'object-cover w-auto h-auto transition-transform duration-300 transform hover:scale-110'
               )}
               src={active ? altImgUrl : imgUrl}
               alt="cardTitle"
@@ -95,7 +93,7 @@ export default function Card(props: {
           </div>
           <div
             className={cn(
-              'basis-[] font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
+              'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
               { 'text-[11px]': screenSize === 'tabletop' },
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
@@ -106,6 +104,6 @@ export default function Card(props: {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

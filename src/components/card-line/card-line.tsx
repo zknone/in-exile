@@ -67,7 +67,7 @@ const CardLine = (props: {
   return (
     <>
       {mode === 'subCategory' && (
-        <div className="absolute z-20 w-full flex gap-2 justify-center">
+        <div className={cn('absolute z-20 flex justify-center gap-x-2')}>
           {chosenData?.map((subcategory, index) => (
             <Card
               screenSize={screenSize}
@@ -86,9 +86,8 @@ const CardLine = (props: {
       )}
       {mode === 'category' && (
         <div
-          className={cn('absolute z-10 w-full flex gap-2 justify-center', {
-            'top-[10%]':
-              state.lang !== 'noLang' && state.category !== 'noCategory'
+          className={cn('absolute z-10 flex justify-center gap-x-2', {
+            'top-[10px]': state.lang !== 'noLang' && state.category !== 'noCategory'
           })}
         >
           {chosenData?.map((item) =>
@@ -113,12 +112,12 @@ const CardLine = (props: {
       {mode === 'language' && (
         <div
           className={cn(
-            'absolute flex gap-2 justify-center w-full z-0',
+            'absolute flex justify-center gap-x-2',
             {
-              'top-[10%]': state.lang !== 'noLang' && state.category === 'noCategory'
+              'top-[10px]': state.lang !== 'noLang' && state.category === 'noCategory'
             },
             {
-              'top-[20%]': state.lang !== 'noLang' && state.category !== 'noCategory'
+              'top-[20px]': state.lang !== 'noLang' && state.category !== 'noCategory'
             }
           )}
         >
@@ -137,8 +136,6 @@ const CardLine = (props: {
               onMouseLeave={() => setActiveCardIndex(null)}
             />
           ))}
-
-          
         </div>
       )}
     </>
