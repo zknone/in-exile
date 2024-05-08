@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import {
   CategoryCard,
   Dataset,
@@ -87,14 +87,8 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn('absolute z-10 w-full flex gap-2 justify-center', {
-            'top-[49px]':
-              state.lang !== 'noLang' &&
-              state.category !== 'noCategory' &&
-              screenSize === 'default',
-            'top-[36px]':
-              state.lang !== 'noLang' &&
-              state.category !== 'noCategory' &&
-              screenSize === 'tabletop'
+            'top-[10%]':
+              state.lang !== 'noLang' && state.category !== 'noCategory'
           })}
         >
           {chosenData?.map((item) =>
@@ -121,24 +115,10 @@ const CardLine = (props: {
           className={cn(
             'absolute flex gap-2 justify-center w-full z-0',
             {
-              'top-[49px]':
-                state.lang !== 'noLang' &&
-                state.category === 'noCategory' &&
-                screenSize === 'default',
-              'top-[36px]':
-                state.lang !== 'noLang' &&
-                state.category === 'noCategory' &&
-                screenSize === 'tabletop'
+              'top-[10%]': state.lang !== 'noLang' && state.category === 'noCategory'
             },
             {
-              'top-[98px]':
-                state.lang !== 'noLang' &&
-                state.category !== 'noCategory' &&
-                screenSize === 'default',
-              'top-[74px]':
-                state.lang !== 'noLang' &&
-                state.category !== 'noCategory' &&
-                screenSize === 'tabletop'
+              'top-[20%]': state.lang !== 'noLang' && state.category !== 'noCategory'
             }
           )}
         >

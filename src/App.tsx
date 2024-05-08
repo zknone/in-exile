@@ -8,7 +8,6 @@ import { CategoryCard, Language, ScreenSize } from './types/data';
 import CardLine from './components/card-line/card-line';
 import PreloadImages from './components/preload-images/preload-images';
 import Context from './components/entrance-screen/context';
-
 type AppState = {
   lang: Language;
   category: CategoryCard;
@@ -35,7 +34,6 @@ function App() {
         setScreenSize('default');
       }
     }
-    
 
     window.addEventListener('resize', handleResize);
 
@@ -83,10 +81,16 @@ function App() {
       </Helmet>
       <div className="App flex bg-white h-screen justify-center items-center font-body mx-auto">
         <PreloadImages images={imagesToPreload} />
+        {state.lang !== 'noLang' && isOpen && (
+          <Context
+            containerClass="fixed z-50 top-[40%]"
+            onClick={() => setOpen(false)}
+            screenSize={screenSize}
+            language={state.lang}
+          />
+        )}
         <div
-          className={cn('relative block h-[380px] my-auto', {
-            'max-w-[810px]': screenSize === 'tablet-l'
-          })}
+          className={cn('relative h-[380px] my-auto')}
         >
           {state.category !== 'noCategory' && (
             <CardLine
@@ -113,15 +117,6 @@ function App() {
             setState={setState}
             screenSize={screenSize}
           />
-          {state.lang !== 'noLang' && isOpen && (
-            <Context
-              onClick={() => setOpen(false)}
-              screenSize={screenSize}
-              language={state.lang}
-            />
-          )}
-          {/* </> */}
-          {/* )} */}
         </div>
       </div>
     </>

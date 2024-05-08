@@ -1,7 +1,7 @@
-export default function Menu () {
-    return (
-        <>
-            <div className='relative'></div>
-        </>
-    )
+export default function Menu() {
+  return (
+    <>
+      <div className="relative">123</div>
+    </>
+  );
 }

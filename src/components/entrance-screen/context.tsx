@@ -9,8 +9,9 @@ export default function Context(props: {
   isMobile?: boolean;
   screenSize: ScreenSize;
   language?: Language;
+  containerClass: string;
 }) {
-  const { onClick, isMobile, screenSize, language } = props;
+  const { onClick, isMobile, screenSize, language, containerClass } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
     setCardsActive(true);
@@ -21,10 +22,10 @@ export default function Context(props: {
   };
 
   return (
-    <div className="relative">
+    <div className={cn(containerClass)}>
       <div
         className={cn(
-          'absolute right-[50%] flex gap-2 justify-center',
+          'right-[50%] flex gap-2 justify-center',
           { '-top-[130px]': screenSize === 'tabletop' },
           { '-top-[130px]': screenSize === 'tablet-l' }
         )}
@@ -33,13 +34,11 @@ export default function Context(props: {
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
           className={cn(
-            'block absolute z-50 rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-[16px] shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup',
-            { 'h-[669px] w-[429px]': screenSize === 'tabletop' },
-            { 'h-[607px] w-[389px]': screenSize === 'tablet-l' }
+            'z-50 rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-[16px] shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup'
           )}
           onClick={onClick}
         >
-          <div className="absolute popup-content w-full flex flex-col justify-between h-full border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
+          <div className="popup-content w-full flex flex-col justify-between h-full border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
             <div
               className={cn(
                 'block px-[50px] mx-3 overflow-auto flex flex-col gap-y-5',
@@ -54,7 +53,7 @@ export default function Context(props: {
             <div className="mask top-[calc(100%-100px)]"></div>
             <div
               className={cn(
-                'absolute bottom-0 w-full font-bold text-center pb-[22px] pt-[14px] border-t-[2px]',
+                'bottom-0 w-full font-bold text-center pb-[22px] pt-[14px] border-t-[2px]',
                 {
                   'border-[#ff6cb6]': !isCardActive,
                   'border-[#F93598]': isCardActive,
@@ -69,7 +68,7 @@ export default function Context(props: {
         </div>
       </div>
       {!isMobile && (
-        <section className="absolute flex right-[50%] justify-center z-10">
+        <section className="flex right-[50%] justify-center z-10">
           <div
             className={cn('absolute  flex gap-[320px] justify-center', {
               '-top-[25px]': isCardActive,
