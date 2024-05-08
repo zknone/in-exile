@@ -42,7 +42,7 @@ export default function Context(props: {
           <div className="absolute popup-content w-full flex flex-col justify-between h-full border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
             <div
               className={cn(
-                'absolute px-[50px] mx-3 overflow-auto flex flex-col gap-y-5',
+                'block px-[50px] mx-3 overflow-auto flex flex-col gap-y-5',
                 { 'my-12 max-h-[512px]': screenSize === 'tabletop' },
                 { 'my-10 max-h-[461px]': screenSize === 'tablet-l' }
               )}
