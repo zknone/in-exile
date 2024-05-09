@@ -67,7 +67,11 @@ const CardLine = (props: {
   return (
     <>
       {mode === 'subCategory' && (
-        <div className={cn('absolute z-20 flex justify-center gap-x-2')}>
+        <div
+          className={cn('absolute z-20 flex justify-center gap-x-2', {
+            'max-w-[100%] mx-auto': screenSize === 'default'
+          })}
+        >
           {chosenData?.map((subcategory, index) => (
             <Card
               screenSize={screenSize}
@@ -86,9 +90,13 @@ const CardLine = (props: {
       )}
       {mode === 'category' && (
         <div
-          className={cn('absolute z-10 flex justify-center gap-x-2', {
-            'top-[10%]': state.lang !== 'noLang' && state.category !== 'noCategory'
-          })}
+          className={cn(
+            'absolute flex justify-center mx-auto  z-10 gap-x-2',
+            { 'max-w-[60%] mx-auto': screenSize === 'default' },
+            {
+              'top-[14%]': state.lang !== 'noLang' && state.category !== 'noCategory'
+            }
+          )}
         >
           {chosenData?.map((item) =>
             (item as DatasetItem).categories.map((categoryItem, categoryIndex) => (
@@ -113,11 +121,12 @@ const CardLine = (props: {
         <div
           className={cn(
             'absolute flex justify-center gap-x-2',
+            { 'max-w-[40%] mx-auto': screenSize === 'default' },
             {
-              'top-[10%]': state.lang !== 'noLang' && state.category === 'noCategory'
+              'top-[14%]': state.lang !== 'noLang' && state.category === 'noCategory'
             },
             {
-              'top-[20%]': state.lang !== 'noLang' && state.category !== 'noCategory'
+              'top-[26%]': state.lang !== 'noLang' && state.category !== 'noCategory'
             }
           )}
         >

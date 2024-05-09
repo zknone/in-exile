@@ -93,8 +93,9 @@ function App() {
 
         <div
           className={cn(
-            'relative flex flex-col bg-white justify-center items-center h-full w-full',
-            ' max-h-[423px] max-w-[70%]'
+            'relative flex flex-col bg-white justify-center items-center h-full w-full max-w-[75%]',
+            { 'max-h-[423px]': screenSize === 'default' },
+            { 'max-h-[324px]': screenSize === 'tabletop' }
           )}
         >
           {state.category !== 'noCategory' && (
