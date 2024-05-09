@@ -87,7 +87,7 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn('absolute z-10 flex justify-center gap-x-2', {
-            'top-[10px]': state.lang !== 'noLang' && state.category !== 'noCategory'
+            'top-[10%]': state.lang !== 'noLang' && state.category !== 'noCategory'
           })}
         >
           {chosenData?.map((item) =>
@@ -114,10 +114,10 @@ const CardLine = (props: {
           className={cn(
             'absolute flex justify-center gap-x-2',
             {
-              'top-[10px]': state.lang !== 'noLang' && state.category === 'noCategory'
+              'top-[10%]': state.lang !== 'noLang' && state.category === 'noCategory'
             },
             {
-              'top-[20px]': state.lang !== 'noLang' && state.category !== 'noCategory'
+              'top-[20%]': state.lang !== 'noLang' && state.category !== 'noCategory'
             }
           )}
         >

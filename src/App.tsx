@@ -82,18 +82,21 @@ function App() {
 
       <div className="App h-screen font-body flex justify-center items-center">
         <PreloadImages images={imagesToPreload} />
-        {/* {state.lang !== 'noLang' && isOpen && (
+        {state.lang !== 'noLang' && isOpen && (
           <Context
             containerClass="fixed z-50 top-[50%] translate-y-1/2 left-[50%] translate-x-1/2"
             onClick={() => setOpen(false)}
             screenSize={screenSize}
             language={state.lang}
           />
-        )} */}
+        )}
 
-        <div className={cn('relative flex flex-col bg-white justify-center items-center h-full w-full',
-          'max-h-[780px] max-w-[1480px]'
-        )}>
+        <div
+          className={cn(
+            'relative flex flex-col bg-white justify-center items-center h-full w-full',
+            ' max-h-[423px] max-w-[70%]'
+          )}
+        >
           {state.category !== 'noCategory' && (
             <CardLine
               state={state}
