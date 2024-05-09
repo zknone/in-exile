@@ -10,12 +10,12 @@ export const theme = {
       title: ['Roboto serif', 'serif']
     },
     fontSize: {
-      '4px': '0.25em',
-      '8px': '0.5em',
-      '11px': '0.6875em',
-      '16px': '1em',
-      '22px': '1.375em'
-    }
+      '4px': '4vw',
+      '8px': '8vw',
+      '11px': '11vw',
+      '16px': '16vw',
+      '22px': '22vw',
+    },
   }
 };
 export const plugins = [];

@@ -97,18 +97,19 @@ export default function Card(props: {
           </div>
           <div
             className={cn(
-              'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
-              { 'text-4px': screenSize === 'mobile' },
-              { 'text-8px': screenSize === 'tablet-m' },
-              { 'text-11px': screenSize === 'tablet-l' },
-              { 'text-16px': screenSize === 'tabletop' },
-              { 'text-22px': screenSize === 'default' },
+              'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white max-w-full',
+              'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]',
+              // { 'text-4px': screenSize === 'mobile' },
+              // { 'text-8px': screenSize === 'tablet-m' },
+              // { 'text-11px': screenSize === 'tablet-l' },
+              // { 'text-16px': screenSize === 'tabletop' },
+              // { 'text-22px': screenSize === 'default' },
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan }
             )}
           >
-            <div className={cn('block truncate')}>{cardTitle}</div>
+            {cardTitle}
           </div>
         </div>
       </div>
