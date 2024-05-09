@@ -8,14 +8,7 @@ export const theme = {
     fontFamily: {
       body: ['Suise', 'sans-serif'],
       title: ['Roboto serif', 'serif']
-    },
-    fontSize: {
-      '4px': '4vw',
-      '8px': '8vw',
-      '11px': '11vw',
-      '16px': '16vw',
-      '22px': '22vw',
-    },
+    }
   }
 };
 export const plugins = [];

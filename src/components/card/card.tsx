@@ -56,11 +56,12 @@ export default function Card(props: {
       />
       <div
         className={cn(
-          'flex flex-col w-max h-full relative border-[2px] shadow-card',
-          { 'p-[2px] rounded-[15px] max-w-[195px]': screenSize === 'tablet-m' },
-          { 'p-[6px] rounded-[20px] max-w-[265px]': screenSize === 'tablet-l' },
-          { 'p-[2px] rounded-[15px] max-w-[195px]': screenSize === 'tabletop' },
-          { 'p-[6px] rounded-[20px] max-w-[265px]': screenSize === 'default' },
+          'flex flex-col w-max h-full relative shadow-card',
+          { 'border-[0.5px] p-[1px] max-w-[63px]': screenSize === 'mobile' },
+          { 'border-[1px] p-[2px] rounded-[15px] max-w-[195px]': screenSize === 'tablet-m' },
+          { 'border-[2px] p-[2px] rounded-[20px] max-w-[265px]': screenSize === 'tablet-l' },
+          { 'border-[2px] p-[2px] rounded-[15px] max-w-[195px]': screenSize === 'tabletop' },
+          { 'border-[2px] p-[3.5px] rounded-[20px] max-w-[265px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -99,11 +100,6 @@ export default function Card(props: {
             className={cn(
               'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white max-w-full',
               'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]',
-              // { 'text-4px': screenSize === 'mobile' },
-              // { 'text-8px': screenSize === 'tablet-m' },
-              // { 'text-11px': screenSize === 'tablet-l' },
-              // { 'text-16px': screenSize === 'tabletop' },
-              // { 'text-22px': screenSize === 'default' },
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan }
