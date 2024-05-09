@@ -56,7 +56,9 @@ export default function Card(props: {
       />
       <div
         className={cn(
-          'flex flex-col w-full h-full relative border-[2px] shadow-card',
+          'flex flex-col w-max h-full relative border-[2px] shadow-card',
+          { 'p-[2px] rounded-[15px] max-w-[195px]': screenSize === 'tablet-m' },
+          { 'p-[6px] rounded-[20px] max-w-[265px]': screenSize === 'tablet-l' },
           { 'p-[2px] rounded-[15px] max-w-[195px]': screenSize === 'tabletop' },
           { 'p-[6px] rounded-[20px] max-w-[265px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
@@ -77,6 +79,8 @@ export default function Card(props: {
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
             { 'border-[#2FA2FB]/[0.5]': isThirdPlan },
+            { 'rounded-[12px]': screenSize === 'tablet-m' },
+            { 'rounded-[15px]': screenSize === 'tablet-l' },
             { 'rounded-[12px]': screenSize === 'tabletop' },
             { 'rounded-[15px]': screenSize === 'default' }
           )}
@@ -94,13 +98,17 @@ export default function Card(props: {
           <div
             className={cn(
               'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white',
-              { 'text-[11px]': screenSize === 'tabletop' },
+              { 'text-4px': screenSize === 'mobile' },
+              { 'text-8px': screenSize === 'tablet-m' },
+              { 'text-11px': screenSize === 'tablet-l' },
+              { 'text-16px': screenSize === 'tabletop' },
+              { 'text-22px': screenSize === 'default' },
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan }
             )}
           >
-            {cardTitle}
+            <div className={cn('block truncate')}>{cardTitle}</div>
           </div>
         </div>
       </div>

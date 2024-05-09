@@ -8,6 +8,13 @@ export const theme = {
     fontFamily: {
       body: ['Suise', 'sans-serif'],
       title: ['Roboto serif', 'serif']
+    },
+    fontSize: {
+      '4px': '0.25em',
+      '8px': '0.5em',
+      '11px': '0.6875em',
+      '16px': '1em',
+      '22px': '1.375em'
     }
   }
 };

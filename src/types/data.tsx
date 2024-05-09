@@ -42,4 +42,4 @@ export interface DatasetItem {
 
 export type Dataset = DatasetItem[];
 
-export type ScreenSize = 'tabletop' | 'tablet-l' | 'tablet-m' | 'mobile' | 'default';
+export type ScreenSize = 'tabletop' | 'tablet-l' | 'tablet-m' | 'mobile' | 'default' | 'out';
