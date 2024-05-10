@@ -68,7 +68,9 @@ const CardLine = (props: {
     <>
       {mode === 'subCategory' && (
         <div
-          className={cn('absolute z-20 flex justify-center gap-x-2 top-0 max-w-[100%] mx-auto', {})}
+          className={cn('absolute z-20 flex justify-center gap-x-2 top-0 max-w-[100%] mx-auto', {
+            
+          })}
         >
           {chosenData?.map((subcategory, index) => (
             <Card

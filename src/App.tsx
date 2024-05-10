@@ -24,9 +24,9 @@ function App() {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth <= 364) {
+      if (window.innerWidth <= 374) {
         setScreenSize('out');
-      } else if (window.innerWidth < 666 && window.innerWidth > 365) {
+      } else if (window.innerWidth < 666 && window.innerWidth >= 375) {
         setScreenSize('mobile');
       } else if (window.innerWidth <= 834 && window.innerWidth > 667) {
         setScreenSize('tablet-m');

@@ -57,11 +57,11 @@ export default function Card(props: {
       <div
         className={cn(
           'flex flex-col w-max h-full relative shadow-card',
-          { 'border-[0.5px] p-[1px] max-w-[63px]': screenSize === 'mobile' },
-          { 'border-[1px] p-[2px] rounded-[15px] max-w-[195px]': screenSize === 'tablet-m' },
-          { 'border-[2px] p-[2px] rounded-[20px] max-w-[265px]': screenSize === 'tablet-l' },
-          { 'border-[2px] p-[2px] rounded-[15px] max-w-[195px]': screenSize === 'tabletop' },
-          { 'border-[2px] p-[3.5px] rounded-[20px] max-w-[265px]': screenSize === 'default' },
+          { 'border-[0.8px] rounded-[7px] p-[1px] max-w-[63px]': screenSize === 'mobile' },
+          { 'border-[1px] p-[2px] rounded-[9px] max-w-[195px]': screenSize === 'tablet-m' },
+          { 'border-[2px] p-[2px] rounded-[12px] max-w-[265px]': screenSize === 'tablet-l' },
+          { 'border-[2px] p-[2px] rounded-[18px] max-w-[195px]': screenSize === 'tabletop' },
+          { 'border-[2px] p-[3.5px] rounded-[25px] max-w-[265px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -75,15 +75,16 @@ export default function Card(props: {
       >
         <div
           className={cn(
-            'flex flex-col justify-between z-0 border-[2px] rounded-[15px] bg-white truncate',
+            'flex flex-col justify-between z-0 bg-white truncate',
             { 'border-[#008AFF]': !isSecondPlan && !isThirdPlan },
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
             { 'border-[#2FA2FB]/[0.5]': isThirdPlan },
-            { 'rounded-[12px]': screenSize === 'tablet-m' },
-            { 'rounded-[15px]': screenSize === 'tablet-l' },
-            { 'rounded-[12px]': screenSize === 'tabletop' },
-            { 'rounded-[15px]': screenSize === 'default' }
+            { 'border-[0.5px] rounded-[5px]': screenSize === 'mobile' },
+            { 'border-[1px] rounded-[7px]': screenSize === 'tablet-m' },
+            { 'border-[2px] rounded-[9px]': screenSize === 'tablet-l' },
+            { 'border-[2px] rounded-[13px]': screenSize === 'tabletop' },
+            { 'border-[2px] rounded-[20px]': screenSize === 'default' }
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
         >
@@ -98,11 +99,16 @@ export default function Card(props: {
           </div>
           <div
             className={cn(
-              'font-bold text-center cursor-pointer py-2 border-t-2 border-[#008AFF] z-20 bg-white max-w-full',
+              'font-bold text-center cursor-pointer py-2 border-[#008AFF] z-20 bg-white max-w-full',
               'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]',
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
-              { 'opacity-[60%] text-[#727272] !important': isThirdPlan }
+              { 'opacity-[60%] text-[#727272] !important': isThirdPlan },
+              { 'pt-[2px] pb-[3px] border-t-2': screenSize === 'mobile' },
+              { 'pt-[3px] pb-[5px] border-t-2': screenSize === 'tablet-m' },
+              { 'pt-[3px] pb-[5px] border-t-2': screenSize === 'tablet-l' },
+              { 'pt-[5px] pb-[9px] border-t-2': screenSize === 'tabletop' },
+              { 'pt-[7px] pb-[12px] border-t-2': screenSize === 'default' }
             )}
           >
             {cardTitle}
