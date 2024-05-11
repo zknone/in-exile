@@ -56,7 +56,7 @@ export default function Card(props: {
       />
       <div
         className={cn(
-          'flex flex-col w-max h-full relative shadow-card',
+          'flex flex-col w-full relative shadow-card',
           { 'border-[0.8px] rounded-[7px] p-[1px] max-w-[100px]': screenSize === 'mobile' },
           { 'border-[1px] p-[2px] rounded-[9px] max-w-[128px]': screenSize === 'tablet-m' },
           { 'border-[2px] p-[2px] rounded-[12px] max-w-[195px]': screenSize === 'tablet-l' },
@@ -75,7 +75,7 @@ export default function Card(props: {
       >
         <div
           className={cn(
-            'flex flex-col justify-between z-0 bg-white truncate',
+            'flex w-full h-full flex-col justify-between z-0 bg-white truncate',
             { 'border-[#008AFF]': !isSecondPlan && !isThirdPlan },
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
@@ -99,7 +99,7 @@ export default function Card(props: {
           </div>
           <div
             className={cn(
-              'font-bold text-center cursor-pointer py-2 border-[#008AFF] z-20 bg-white max-w-full',
+              'font-bold text-center cursor-pointer py-2 border-[#008AFF] z-20 bg-white w-full',
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan },

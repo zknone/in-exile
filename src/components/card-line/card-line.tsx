@@ -5,15 +5,11 @@ import {
   DatasetItem,
   Language,
   ScreenSize,
-  Subcategory
+  Subcategory,
+  AppState
 } from '../../types/data';
 import Card from '../card/card';
 import cn from 'classnames';
-
-type AppState = {
-  lang: Language;
-  category: CategoryCard;
-};
 
 const CardLine = (props: {
   screenSize: ScreenSize;
@@ -69,7 +65,7 @@ const CardLine = (props: {
       {mode === 'subCategory' && (
         <div
           className={cn(
-            'relative z-20 flex justify-between top-0 max-w-[100%] mx-auto',
+            'relative z-30 flex justify-between top-0 max-w-[100%] mx-auto',
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
@@ -96,7 +92,7 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn(
-            'relative top-0 flex justify-between mx-auto z-10 max-w-[59.5%] mx-auto',
+            'relative top-0 flex justify-between mx-auto z-20 max-w-[60%] mx-auto',
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
@@ -137,7 +133,7 @@ const CardLine = (props: {
       {mode === 'language' && (
         <div
           className={cn(
-            'relative flex justify-between max-w-[40%] mx-auto',
+            'relative z-10 flex justify-between max-w-[40%] mx-auto',
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },

@@ -8,6 +8,7 @@ import { CategoryCard, Language, ScreenSize } from './types/data';
 import CardLine from './components/card-line/card-line';
 import PreloadImages from './components/preload-images/preload-images';
 import Context from './components/entrance-screen/context';
+import Menu from './components/menu/menu';
 type AppState = {
   lang: Language;
   category: CategoryCard;
@@ -97,10 +98,9 @@ function App() {
               />
             )}
             <div
-              className={cn(
-                'relative bg-white w-full max-w-[75%] max-h-[28vw]',
-                {'max-w-[1480px]': screenSize == 'default'}
-              )}
+              className={cn('relative bg-white w-full max-w-[75%] max-h-[28vw]', {
+                'max-w-[1480px]': screenSize == 'default'
+              })}
             >
               {state.category !== 'noCategory' && (
                 <CardLine
@@ -120,13 +120,16 @@ function App() {
                   screenSize={screenSize}
                 />
               )}
-              <CardLine
-                data={data}
-                mode="language"
-                state={state}
-                setState={setState}
-                screenSize={screenSize}
-              />
+              <div className="relative">
+                <CardLine
+                  data={data}
+                  mode="language"
+                  state={state}
+                  setState={setState}
+                  screenSize={screenSize}
+                />
+                <Menu screenSize={screenSize} state={state} />
+              </div>
             </div>
           </>
         )}

@@ -40,6 +40,11 @@ export interface DatasetItem {
   categories: Category[];
 }
 
+export type AppState = {
+  lang: Language;
+  category: CategoryCard;
+};
+
 export type Dataset = DatasetItem[];
 
 export type ScreenSize = 'tabletop' | 'tablet-l' | 'tablet-m' | 'mobile' | 'default' | 'out';
