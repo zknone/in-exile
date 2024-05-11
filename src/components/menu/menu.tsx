@@ -23,7 +23,7 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
           { 'gap-x-[8px] max-w-[40%]': screenSize === 'tablet-m' },
           { 'gap-x-[10px] max-w-[40%]': screenSize === 'tablet-l' },
           { 'gap-x-[15px] max-w-[40%]': screenSize === 'tabletop' },
-          { 'gap-x-[20px] max-w-[580px]': screenSize === 'default' }
+          { 'gap-x-[32px] max-w-[592px]': screenSize === 'default' }
         )}
       >
         <Card
