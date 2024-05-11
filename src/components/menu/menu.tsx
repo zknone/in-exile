@@ -7,20 +7,23 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
   return (
     <div
       className={cn(
-        'relative z-0  flex flex-col justify-between items-center top-0 mx-auto',
+        'relative z-0  flex flex-col justify-between items-center top-0 mx-auto h-[1px]',
         { 'top-[-20vw]': state.lang === 'noLang' },
         { 'top-[-40vw]': state.lang !== 'noLang' && state.category === 'noCategory' },
-        { 'top-[-60vw]': state.lang !== 'noLang' && state.category !== 'noCategory' }
+        { 'top-[-60vw]': state.lang !== 'noLang' && state.category !== 'noCategory' },
+        { 'top-[-390px]': state.lang === 'noLang' && screenSize==='default' },
+        { 'top-[-780px]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize==='default'},
+        { 'top-[-1170px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize==='default'},
       )}
     >
       <div
         className={cn(
-          'relative z-10 flex justify-between max-w-[40%] mx-auto',
-          { 'gap-x-[4px]': screenSize === 'mobile' },
-          { 'gap-x-[8px]': screenSize === 'tablet-m' },
-          { 'gap-x-[10px]': screenSize === 'tablet-l' },
-          { 'gap-x-[15px]': screenSize === 'tabletop' },
-          { 'gap-x-[20px]': screenSize === 'default' }
+          'relative z-10 flex justify-between mx-auto',
+          { 'gap-x-[4px] max-w-[40%]': screenSize === 'mobile' },
+          { 'gap-x-[8px] max-w-[40%]': screenSize === 'tablet-m' },
+          { 'gap-x-[10px] max-w-[40%]': screenSize === 'tablet-l' },
+          { 'gap-x-[15px] max-w-[40%]': screenSize === 'tabletop' },
+          { 'gap-x-[20px] max-w-[580px]': screenSize === 'default' }
         )}
       >
         <Card
@@ -44,12 +47,12 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
       </div>
       <div
         className={cn(
-          'relative z-0 top-[-20.75vw] flex justify-between max-w-[20%] mx-auto',
-          { 'mx-[4px]': screenSize === 'mobile' },
-          { 'mx-[8px]': screenSize === 'tablet-m' },
-          { 'mx-[10px]': screenSize === 'tablet-l' },
-          { 'mx-[15px]': screenSize === 'tabletop' },
-          { 'mx-[20px]': screenSize === 'default' }
+          'relative z-0 flex justify-between  mx-auto',
+          { 'mx-[4px] max-w-[19.3%] top-[-20vw]': screenSize === 'mobile' },
+          { 'mx-[8px] max-w-[19.3%] top-[-20vw]': screenSize === 'tablet-m' },
+          { 'mx-[10px] max-w-[19.3%] top-[-20vw]': screenSize === 'tablet-l' },
+          { 'mx-[15px] max-w-[19.3%] top-[-20vw]': screenSize === 'tabletop' },
+          { 'mx-[20px] max-w-[280px] top-[-390px]': screenSize === 'default' }
         )}
       >
         <Card

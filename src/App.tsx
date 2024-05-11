@@ -120,16 +120,14 @@ function App() {
                   screenSize={screenSize}
                 />
               )}
-              <div className="relative">
-                <CardLine
-                  data={data}
-                  mode="language"
-                  state={state}
-                  setState={setState}
-                  screenSize={screenSize}
-                />
-                <Menu screenSize={screenSize} state={state} />
-              </div>
+              <CardLine
+                data={data}
+                mode="language"
+                state={state}
+                setState={setState}
+                screenSize={screenSize}
+              />
+              <Menu screenSize={screenSize} state={state} />
             </div>
           </>
         )}
