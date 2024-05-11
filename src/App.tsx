@@ -85,23 +85,23 @@ function App() {
         <title>Welcome Cards</title>
       </Helmet>
 
-      <div className="App h-screen font-body flex justify-center items-center">
+      <div className="relative App h-screen font-body flex justify-center items-center">
         <PreloadImages images={imagesToPreload} />
         {screenSize !== 'out' && (
           <>
-            {state.lang !== 'noLang' && isOpen && (
-              <Context
-                containerClass="fixed z-50 top-[50%] translate-y-1/2 left-[50%] translate-x-1/2"
-                onClick={() => setOpen(false)}
-                screenSize={screenSize}
-                language={state.lang}
-              />
-            )}
             <div
               className={cn('relative bg-white w-full max-w-[75%] max-h-[28vw]', {
                 'max-w-[1480px]': screenSize == 'default'
               })}
             >
+              {state.lang !== 'noLang' && isOpen && (
+                <Context
+                  containerClass="absolute z-50 left-[50%]"
+                  onClick={() => setOpen(false)}
+                  screenSize={screenSize}
+                  language={state.lang}
+                />
+              )}
               {state.category !== 'noCategory' && (
                 <CardLine
                   state={state}

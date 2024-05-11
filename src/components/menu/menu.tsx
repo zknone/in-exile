@@ -11,9 +11,15 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
         { 'top-[-20vw]': state.lang === 'noLang' },
         { 'top-[-40vw]': state.lang !== 'noLang' && state.category === 'noCategory' },
         { 'top-[-60vw]': state.lang !== 'noLang' && state.category !== 'noCategory' },
-        { 'top-[-390px]': state.lang === 'noLang' && screenSize==='default' },
-        { 'top-[-780px]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize==='default'},
-        { 'top-[-1170px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize==='default'},
+        { 'top-[-390px]': state.lang === 'noLang' && screenSize === 'default' },
+        {
+          'top-[-780px]':
+            state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'default'
+        },
+        {
+          'top-[-1170px]':
+            state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'default'
+        }
       )}
     >
       <div
@@ -32,8 +38,8 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
           screenSize={screenSize}
           img="home-school"
           key="artist"
-          cardTitle="artist"
-          rotation={0}
+          cardTitle="context"
+          rotation={-4}
         />
         <Card
           isSecondPlan
@@ -41,8 +47,8 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
           screenSize={screenSize}
           img="home-school"
           key="artist"
-          cardTitle="artist"
-          rotation={0}
+          cardTitle="credits"
+          rotation={-2}
         />
       </div>
       <div
@@ -61,8 +67,8 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
           screenSize={screenSize}
           img="home-school"
           key="artist"
-          cardTitle="artist"
-          rotation={0}
+          cardTitle="download"
+          rotation={1.2}
         />
       </div>
     </div>
