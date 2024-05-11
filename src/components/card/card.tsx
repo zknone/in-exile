@@ -56,12 +56,14 @@ export default function Card(props: {
       />
       <div
         className={cn(
-          'flex flex-col w-max h-full relative shadow-card',
-          { 'border-[0.8px] rounded-[7px] p-[1px] max-w-[63px]': screenSize === 'mobile' },
-          { 'border-[1px] p-[2px] rounded-[9px] max-w-[195px]': screenSize === 'tablet-m' },
-          { 'border-[2px] p-[2px] rounded-[12px] max-w-[265px]': screenSize === 'tablet-l' },
-          { 'border-[2px] p-[2px] rounded-[18px] max-w-[195px]': screenSize === 'tabletop' },
-          { 'border-[2px] p-[3.5px] rounded-[25px] max-w-[265px]': screenSize === 'default' },
+          'flex flex-col w-max h-full relative shadow-card min-w-[19%]',
+
+          ///здесь переписать макс видс
+          { 'border-[0.8px] rounded-[7px] p-[1px] ': screenSize === 'mobile' },
+          { 'border-[1px] p-[2px] rounded-[9px]': screenSize === 'tablet-m' },
+          { 'border-[2px] p-[2px] rounded-[12px]': screenSize === 'tablet-l' },
+          { 'border-[2px] p-[2px] rounded-[18px]': screenSize === 'tabletop' },
+          { 'border-[2px] p-[3.5px] rounded-[25px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
