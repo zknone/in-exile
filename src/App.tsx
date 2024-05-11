@@ -99,12 +99,12 @@ function App() {
             )}
             <div
               className={cn(
-                'relative flex flex-col bg-white justify-center items-center h-full w-full',
-                { 'max-h-[440px]': screenSize === 'default' },
-                { 'max-h-[324px]': screenSize === 'tabletop' },
-                { 'max-h-[214px]': screenSize === 'tablet-l' },
-                { 'max-h-[167px]': screenSize === 'tablet-m' },
-                { 'max-h-[99px]': screenSize === 'mobile' }
+                'relative flex flex-col bg-white justify-center items-center h-full w-full max-w-[75%] max-h-[30%]',
+                // { 'max-h-[440px]': screenSize === 'default' },
+                // { 'max-h-[324px]': screenSize === 'tabletop' },
+                // { 'max-h-[214px]': screenSize === 'tablet-l' },
+                // { 'max-h-[167px]': screenSize === 'tablet-m' },
+                // { 'max-h-[99px]': screenSize === 'mobile' }
               )}
             >
               {state.category !== 'noCategory' && (

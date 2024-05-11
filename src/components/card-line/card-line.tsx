@@ -103,7 +103,7 @@ const CardLine = (props: {
             { 'gap-x-[15px]': screenSize === 'tabletop' },
             { 'gap-x-[20px]': screenSize === 'default' },
             {
-              'top-[11%]': state.lang !== 'noLang' && state.category !== 'noCategory'
+              'top-[3vw]': state.lang !== 'noLang' && state.category !== 'noCategory'
             }
           )}
         >
@@ -125,21 +125,20 @@ const CardLine = (props: {
           )}
         </div>
       )}
-
       {mode === 'language' && (
         <div
           className={cn(
-            'absolute flex justify-center max-w-[40%] mx-auto',
+            'absolute flex justify-between max-w-[40%] mx-auto',
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
             { 'gap-x-[15px]': screenSize === 'tabletop' },
             { 'gap-x-[20px]': screenSize === 'default' },
             {
-              'top-[11%]': state.lang !== 'noLang' && state.category === 'noCategory'
+              'top-[3vw]': state.lang !== 'noLang' && state.category === 'noCategory'
             },
             {
-              'top-[22%]': state.lang !== 'noLang' && state.category !== 'noCategory'
+              'top-[6vw]': state.lang !== 'noLang' && state.category !== 'noCategory'
             }
           )}
         >
