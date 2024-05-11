@@ -28,7 +28,7 @@ function App() {
         setScreenSize('out');
       } else if (window.innerWidth < 666 && window.innerWidth >= 375) {
         setScreenSize('mobile');
-      } else if (window.innerWidth <= 834 && window.innerWidth > 667) {
+      } else if (window.innerWidth <= 834 && window.innerWidth >= 666) {
         setScreenSize('tablet-m');
       } else if (window.innerWidth <= 1280 && window.innerWidth > 834) {
         setScreenSize('tablet-l');
@@ -100,6 +100,7 @@ function App() {
             <div
               className={cn(
                 'relative bg-white justify-center items-center h-full w-full max-w-[75%]',
+                {'max-w-[1480px]': screenSize == 'default'}
               )}
             >
               {state.category !== 'noCategory' && (

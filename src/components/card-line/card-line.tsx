@@ -96,15 +96,18 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn(
-            'relative top-0 flex justify-between mx-auto z-10 max-w-[60%] mx-auto',
+            'relative top-0 flex justify-between mx-auto z-10 max-w-[59.5%] mx-auto',
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
             { 'gap-x-[15px]': screenSize === 'tabletop' },
             { 'gap-x-[20px]': screenSize === 'default' },
             {
-              'top-[-20vw]': state.lang !== 'noLang' && state.category !== 'noCategory'
-            }
+              'top-[-20vw]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize !== 'default'
+            },
+            {
+              'top-[-390px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'default'
+            },
           )}
         >
           {chosenData?.map((item) =>
@@ -135,10 +138,16 @@ const CardLine = (props: {
             { 'gap-x-[15px]': screenSize === 'tabletop' },
             { 'gap-x-[20px]': screenSize === 'default' },
             {
-              'top-[-20vw]': state.lang !== 'noLang' && state.category === 'noCategory'
+              'top-[-20vw]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize !== 'default'
             },
             {
-              'top-[-40vw]': state.lang !== 'noLang' && state.category !== 'noCategory'
+              'top-[-40vw]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize !== 'default'
+            },
+            {
+              'top-[-390px]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'default'
+            },
+            {
+              'top-[-780px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'default'
             }
           )}
         >
