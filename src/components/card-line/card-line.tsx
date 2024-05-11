@@ -68,9 +68,14 @@ const CardLine = (props: {
     <>
       {mode === 'subCategory' && (
         <div
-          className={cn('absolute z-20 flex justify-center gap-x-2 top-0 max-w-[100%] mx-auto', {
-            
-          })}
+          className={cn(
+            'absolute z-20 flex justify-between top-0 max-w-[100%] mx-auto',
+            { 'gap-x-[4px]': screenSize === 'mobile' },
+            { 'gap-x-[8px]': screenSize === 'tablet-m' },
+            { 'gap-x-[10px]': screenSize === 'tablet-l' },
+            { 'gap-x-[15px]': screenSize === 'tabletop' },
+            { 'gap-x-[20px]': screenSize === 'default' },
+          )}
         >
           {chosenData?.map((subcategory, index) => (
             <Card
@@ -90,9 +95,17 @@ const CardLine = (props: {
       )}
       {mode === 'category' && (
         <div
-          className={cn('absolute flex justify-center mx-auto z-10 gap-x-2 max-w-[60%] mx-auto', {
-            'top-[11%]': state.lang !== 'noLang' && state.category !== 'noCategory'
-          })}
+          className={cn(
+            'absolute flex justify-between mx-auto z-10 max-w-[60%] mx-auto',
+            { 'gap-x-[4px]': screenSize === 'mobile' },
+            { 'gap-x-[8px]': screenSize === 'tablet-m' },
+            { 'gap-x-[10px]': screenSize === 'tablet-l' },
+            { 'gap-x-[15px]': screenSize === 'tabletop' },
+            { 'gap-x-[20px]': screenSize === 'default' },
+            {
+              'top-[11%]': state.lang !== 'noLang' && state.category !== 'noCategory'
+            }
+          )}
         >
           {chosenData?.map((item) =>
             (item as DatasetItem).categories.map((categoryItem, categoryIndex) => (
@@ -116,7 +129,12 @@ const CardLine = (props: {
       {mode === 'language' && (
         <div
           className={cn(
-            'absolute flex justify-center gap-x-2 max-w-[40%] mx-auto',
+            'absolute flex justify-center max-w-[40%] mx-auto',
+            { 'gap-x-[4px]': screenSize === 'mobile' },
+            { 'gap-x-[8px]': screenSize === 'tablet-m' },
+            { 'gap-x-[10px]': screenSize === 'tablet-l' },
+            { 'gap-x-[15px]': screenSize === 'tabletop' },
+            { 'gap-x-[20px]': screenSize === 'default' },
             {
               'top-[11%]': state.lang !== 'noLang' && state.category === 'noCategory'
             },
