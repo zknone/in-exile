@@ -103,10 +103,22 @@ export default function Card(props: {
               { 'text-[#505050] border-[#2FA2FB]': !isHovered && !isNothingHovered },
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan },
-              { 'pt-[2px] pb-[3px] border-t-[0.8px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]': screenSize === 'mobile' },
-              { 'pt-[3px] pb-[5px] border-t-[1px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]': screenSize === 'tablet-m' },
-              { 'pt-[3px] pb-[5px] border-t-[2px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]': screenSize === 'tablet-l' },
-              { 'pt-[5px] pb-[9px] border-t-[2px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]': screenSize === 'tabletop' },
+              {
+                'pt-[2px] pb-[3px] border-t-[0.8px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  screenSize === 'mobile'
+              },
+              {
+                'pt-[3px] pb-[5px] border-t-[1px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  screenSize === 'tablet-m'
+              },
+              {
+                'pt-[3px] pb-[5px] border-t-[2px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  screenSize === 'tablet-l'
+              },
+              {
+                'pt-[5px] pb-[9px] border-t-[2px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  screenSize === 'tabletop'
+              },
               { 'pt-[7px] pb-[12px] border-t-[2px] text-[22px]': screenSize === 'default' }
             )}
           >

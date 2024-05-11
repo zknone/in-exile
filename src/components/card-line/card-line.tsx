@@ -74,7 +74,7 @@ const CardLine = (props: {
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
             { 'gap-x-[15px]': screenSize === 'tabletop' },
-            { 'gap-x-[20px]': screenSize === 'default' },
+            { 'gap-x-[20px]': screenSize === 'default' }
           )}
         >
           {chosenData?.map((subcategory, index) => (
@@ -103,11 +103,17 @@ const CardLine = (props: {
             { 'gap-x-[15px]': screenSize === 'tabletop' },
             { 'gap-x-[20px]': screenSize === 'default' },
             {
-              'top-[-20vw]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize !== 'default'
+              'top-[-20vw]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize !== 'default'
             },
             {
-              'top-[-390px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'default'
-            },
+              'top-[-390px]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize === 'default'
+            }
           )}
         >
           {chosenData?.map((item) =>
@@ -138,16 +144,28 @@ const CardLine = (props: {
             { 'gap-x-[15px]': screenSize === 'tabletop' },
             { 'gap-x-[20px]': screenSize === 'default' },
             {
-              'top-[-20vw]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize !== 'default'
+              'top-[-20vw]':
+                state.lang !== 'noLang' &&
+                state.category === 'noCategory' &&
+                screenSize !== 'default'
             },
             {
-              'top-[-40vw]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize !== 'default'
+              'top-[-40vw]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize !== 'default'
             },
             {
-              'top-[-390px]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'default'
+              'top-[-390px]':
+                state.lang !== 'noLang' &&
+                state.category === 'noCategory' &&
+                screenSize === 'default'
             },
             {
-              'top-[-780px]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize === 'default'
+              'top-[-780px]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize === 'default'
             }
           )}
         >

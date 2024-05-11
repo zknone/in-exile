@@ -86,7 +86,6 @@ function App() {
 
       <div className="App h-screen font-body flex justify-center items-center">
         <PreloadImages images={imagesToPreload} />
-
         {screenSize !== 'out' && (
           <>
             {state.lang !== 'noLang' && isOpen && (
@@ -99,7 +98,7 @@ function App() {
             )}
             <div
               className={cn(
-                'relative bg-white justify-center items-center h-full w-full max-w-[75%]',
+                'relative bg-white w-full max-w-[75%] max-h-[28vw]',
                 {'max-w-[1480px]': screenSize == 'default'}
               )}
             >
