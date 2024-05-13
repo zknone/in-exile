@@ -1,4 +1,4 @@
-import { ScreenSize } from '../../types/data';
+import { MenuCard, ScreenSize } from '../../types/data';
 import Card from '../card/card';
 import cn from 'classnames';
 import { AppState } from '../../types/data';
@@ -6,6 +6,15 @@ import { AppState } from '../../types/data';
 export default function Menu({ screenSize, state }: { screenSize: ScreenSize; state: AppState }) {
   const leftCardDisplacement = screenSize !== 'default' ? 'left-[2vw] z-10' : 'left-[50px] z-10';
   const rightCardDisplacement = screenSize !== 'default' ? 'right-[2vw]' : 'right-[50px]';
+
+
+  const onMenuChange = (menu: MenuCard) => {
+    if (state.menu !== menu) {
+      setState({ ...state, menu: menu });
+    } else {
+      setState({ ...state, category: 'closed' });
+    }
+  };
 
   return (
     <div
@@ -82,3 +91,7 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
     </div>
   );
 }
+function setState(arg0: { category: any; lang: import("../../types/data").Language; menu: "context" | "credits" | "closed"; }) {
+  throw new Error('Function not implemented.');
+}
+

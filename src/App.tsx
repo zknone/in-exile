@@ -4,20 +4,17 @@ import './App.css';
 import { Helmet } from 'react-helmet';
 
 import data from './consts/data';
-import { CategoryCard, Language, ScreenSize } from './types/data';
+import { AppState, ScreenSize } from './types/data';
 import CardLine from './components/card-line/card-line';
 import PreloadImages from './components/preload-images/preload-images';
 import Context from './components/entrance-screen/context';
 import Menu from './components/menu/menu';
-type AppState = {
-  lang: Language;
-  category: CategoryCard;
-};
 
 function App() {
   const [state, setState] = useState<AppState>({
     lang: 'noLang',
-    category: 'noCategory'
+    category: 'noCategory',
+    menu: 'closed',
   });
   const [isOpen, setOpen] = useState(true);
 
@@ -129,6 +126,7 @@ function App() {
                 screenSize={screenSize}
               />
               {state.lang !== 'noLang' && <Menu screenSize={screenSize} state={state} />}
+              {state.menu !== 'closed' && <Menu screenSize={screenSize} state={state} />}
             </div>
           </>
         )}
