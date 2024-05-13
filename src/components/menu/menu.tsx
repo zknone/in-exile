@@ -69,7 +69,7 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
           { 'mx-[8px] max-w-[19.3%] top-[-20vw]': screenSize === 'tablet-m' },
           { 'mx-[10px] max-w-[19.3%] top-[-20vw]': screenSize === 'tablet-l' },
           { 'mx-[15px] max-w-[19.3%] top-[-20vw]': screenSize === 'tabletop' },
-          { 'mx-[20px] max-w-[280px] top-[-390px]': screenSize === 'default' }
+          { 'mx-[20px] max-w-[280px] top-[-400px]': screenSize === 'default' }
         )}
       >
         <Card
