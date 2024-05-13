@@ -42,8 +42,6 @@ export interface DatasetItem {
   categories: Category[];
 }
 
-
-
 export type AppState = {
   lang: Language;
   category: CategoryCard;

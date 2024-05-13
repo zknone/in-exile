@@ -7,16 +7,14 @@ import data from './consts/data';
 import { AppState, ScreenSize } from './types/data';
 import CardLine from './components/card-line/card-line';
 import PreloadImages from './components/preload-images/preload-images';
-import Context from './components/entrance-screen/context';
 import Menu from './components/menu/menu';
 
 function App() {
   const [state, setState] = useState<AppState>({
     lang: 'noLang',
     category: 'noCategory',
-    menu: 'context',
+    menu: 'context'
   });
-  const [isOpen, setOpen] = useState(true);
 
   const [screenSize, setScreenSize] = useState<ScreenSize>('default');
 
@@ -92,14 +90,6 @@ function App() {
                 'max-w-[1480px] max-h-[440px]': screenSize === 'default'
               })}
             >
-              {state.lang !== 'noLang' && isOpen && (
-                <Context
-                  containerClass="absolute z-50 left-[50%]"
-                  onClick={() => setOpen(false)}
-                  screenSize={screenSize}
-                  language={state.lang}
-                />
-              )}
               {state.category !== 'noCategory' && (
                 <CardLine
                   state={state}
@@ -125,7 +115,9 @@ function App() {
                 setState={setState}
                 screenSize={screenSize}
               />
-              {(state.lang !== 'noLang' && state.menu !== 'closed') && <Menu screenSize={screenSize} state={state} />}
+              {state.lang !== 'noLang' && state.menu !== 'closed' && (
+                <Menu screenSize={screenSize} state={state} setState={setState} />
+              )}
             </div>
           </>
         )}

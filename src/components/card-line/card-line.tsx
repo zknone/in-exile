@@ -36,8 +36,7 @@ const CardLine = (props: {
     } else {
       if (state.category !== 'noCategory') {
         setState({ ...state, category: 'noCategory' });
-      } 
-      else {
+      } else {
         setState({ ...state, lang: lang, category: 'noCategory' });
       }
     }
