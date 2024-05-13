@@ -7,14 +7,20 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
   return (
     <div
       className={cn(
-        'relative z-0  flex flex-col justify-between items-center top-0 mx-auto',
+        'relative z-0  flex flex-col justify-between items-center top-0 mx-auto max-h-[1px]',
         { 'top-[-20vw]': state.lang === 'noLang' && screenSize !== 'default' },
-        { 'top-[-40vw]': state.lang !== 'noLang' && state.category === 'noCategory' && screenSize !== 'default' },
-        { 'top-[-60vw]': state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize !== 'default' },
+        {
+          'top-[-40vw]':
+            state.lang !== 'noLang' && state.category === 'noCategory' && screenSize !== 'default'
+        },
+        {
+          'top-[-60vw]':
+            state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize !== 'default'
+        },
         { 'top-[-390px]': state.lang === 'noLang' && screenSize === 'default' },
         {
           'top-[-780px]':
-            state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'default' 
+            state.lang !== 'noLang' && state.category === 'noCategory' && screenSize === 'default'
         },
         {
           'top-[-1170px]':

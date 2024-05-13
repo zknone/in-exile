@@ -90,8 +90,9 @@ function App() {
         {screenSize !== 'out' && (
           <>
             <div
-              className={cn('relative bg-white w-full max-w-[75%] max-h-[28vw]', {
-                'max-w-[1480px]': screenSize == 'default'
+              className={cn('relative bg-white w-full', {
+                'max-w-[75%] max-h-[28vw]': screenSize !== 'default',
+                'max-w-[1480px] max-h-[440px]': screenSize === 'default'
               })}
             >
               {state.lang !== 'noLang' && isOpen && (
