@@ -43,7 +43,6 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
       >
         <Card
           className={leftCardDisplacement}
-          isSecondPlan
           isThirdPlan
           screenSize={screenSize}
           img="home-school"
@@ -53,7 +52,6 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
         />
         <Card
           className={rightCardDisplacement}
-          isSecondPlan
           isThirdPlan
           screenSize={screenSize}
           img="home-school"
@@ -73,7 +71,6 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
         )}
       >
         <Card
-          isSecondPlan
           isThirdPlan
           screenSize={screenSize}
           img="home-school"
