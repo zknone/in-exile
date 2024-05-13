@@ -128,7 +128,7 @@ function App() {
                 setState={setState}
                 screenSize={screenSize}
               />
-              <Menu screenSize={screenSize} state={state} />
+              {state.lang !== 'noLang' && <Menu screenSize={screenSize} state={state} />}
             </div>
           </>
         )}
