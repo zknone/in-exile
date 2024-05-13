@@ -8,13 +8,13 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
   const rightCardDisplacement = screenSize !== 'default' ? 'right-[2vw]' : 'right-[50px]';
 
 
-  const onMenuChange = (menu: MenuCard) => {
-    if (state.menu !== menu) {
-      setState({ ...state, menu: menu });
-    } else {
-      setState({ ...state, category: 'closed' });
-    }
-  };
+  // const onMenuChange = (menu: MenuCard) => {
+  //   if (state.menu !== menu) {
+  //     setState({ ...state, menu: menu });
+  //   } else {
+  //     setState({ ...state, category: 'closed' });
+  //   }
+  // };
 
   return (
     <div
@@ -90,8 +90,5 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
       </div>
     </div>
   );
-}
-function setState(arg0: { category: any; lang: import("../../types/data").Language; menu: "context" | "credits" | "closed"; }) {
-  throw new Error('Function not implemented.');
 }
 

@@ -14,7 +14,7 @@ function App() {
   const [state, setState] = useState<AppState>({
     lang: 'noLang',
     category: 'noCategory',
-    menu: 'closed',
+    menu: 'context',
   });
   const [isOpen, setOpen] = useState(true);
 
@@ -125,8 +125,7 @@ function App() {
                 setState={setState}
                 screenSize={screenSize}
               />
-              {state.lang !== 'noLang' && <Menu screenSize={screenSize} state={state} />}
-              {state.menu !== 'closed' && <Menu screenSize={screenSize} state={state} />}
+              {(state.lang !== 'noLang' && state.menu !== 'closed') && <Menu screenSize={screenSize} state={state} />}
             </div>
           </>
         )}
