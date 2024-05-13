@@ -92,7 +92,7 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn(
-            'relative top-0 flex justify-between mx-auto z-20 mx-auto max-w-[60%]',
+            'relative top-0 flex justify-between mx-auto z-20 mx-auto max-w-[59.5%]',
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },

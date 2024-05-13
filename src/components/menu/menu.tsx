@@ -4,6 +4,9 @@ import cn from 'classnames';
 import { AppState } from '../../types/data';
 
 export default function Menu({ screenSize, state }: { screenSize: ScreenSize; state: AppState }) {
+  const leftCardDisplacement = screenSize !== 'default' ? 'left-[2vw] z-10' : 'left-[50px] z-10';
+  const rightCardDisplacement = screenSize !== 'default' ? 'right-[2vw]' : 'right-[50px]';
+
   return (
     <div
       className={cn(
@@ -39,6 +42,7 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
         )}
       >
         <Card
+          className={leftCardDisplacement}
           isSecondPlan
           isThirdPlan
           screenSize={screenSize}
@@ -48,6 +52,7 @@ export default function Menu({ screenSize, state }: { screenSize: ScreenSize; st
           rotation={-4}
         />
         <Card
+          className={rightCardDisplacement}
           isSecondPlan
           isThirdPlan
           screenSize={screenSize}

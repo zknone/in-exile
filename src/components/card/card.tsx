@@ -5,6 +5,7 @@ import Popup from '../popup/popup';
 import usePopup from '../../hooks/usePopUp';
 
 export default function Card(props: {
+  className?: string;
   screenSize: ScreenSize;
   rotation?: number;
   cardTitle: string;
@@ -36,7 +37,8 @@ export default function Card(props: {
     rotation = 0,
     img,
     altImg,
-    screenSize
+    screenSize,
+    className
   } = props;
 
   const { isOpen, setOpen, cardRef } = usePopup();
@@ -57,6 +59,7 @@ export default function Card(props: {
       <div
         className={cn(
           'flex flex-col w-full relative shadow-card',
+          className,
           { 'border-[0.8px] rounded-[7px] p-[1px] max-w-[100px]': screenSize === 'mobile' },
           { 'border-[1px] p-[2px] rounded-[9px] max-w-[128px]': screenSize === 'tablet-m' },
           { 'border-[2px] p-[2px] rounded-[12px] max-w-[195px]': screenSize === 'tablet-l' },
