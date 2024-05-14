@@ -36,18 +36,21 @@ export default function Popup(props: {
           <div
             ref={cardRef}
             className={cn(
-              'absolute z-20 grid w-max h-max left-[50%] top-[-10%] translate-x-[-50%] rounded-[2vw] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C]',
+              'absolute z-20 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2vw] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C]',
               {
-                'text-xl ': screenSize === 'tabletop',
-                'max-w-[20vw]': screenSize !== 'default',
-                'max-w-[409px]': screenSize === 'default'
+                'w-[20vw] h-[30vw]': screenSize !== 'default',
+                'p-[3px]': screenSize === 'mobile',
+                'p-[5px]': screenSize === 'tablet-m',
+                'p-[6.2px]': screenSize === 'tablet-l',
+                'p-[9.5px]': screenSize === 'tabletop',
+                'w-[409px] h-[600px] p-[13px]': screenSize === 'default'
               }
             )}
             onClick={() => setOpen(false)}
           >
             <div
               className={cn(
-                'relative rounded-[calc(2vw_*_0.75)] w-full flex flex-col justify-between h-full border-[2px] border-[#FF6CFF] bg-white hover:border-[#F93598]',
+                'grid grid-rows-[88%_12%] rounded-[calc(2vw_*_0.75)] w-full flex flex-col justify-between h-full border-[#FF6CFF] bg-white hover:border-[#F93598]',
                 {
                   'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
                     screenSize !== 'default',
@@ -59,7 +62,7 @@ export default function Popup(props: {
                 }
               )}
             >
-              <ul>
+              <ul className={cn('block overflow-auto flex flex-col leading-normal')}>
                 {points &&
                   points.map((item, index) => (
                     <li className="pb-5 last:pb-0" key={index}>
@@ -67,15 +70,18 @@ export default function Popup(props: {
                     </li>
                   ))}
               </ul>
-            </div>
-            <div
-              className={cn('flex font-bold text-center border-t-[2px] leading-none', {
-                'text-[calc(7px_+_23_*_((100vw_-_360px)_/_(1600_-_360)))]':
-                  screenSize !== 'default',
-                'text-[30px]': screenSize === 'default',
-              })}
-            >
-              <div className="block m-auto ">{cardTitle}</div>
+              <div
+                className={cn(
+                  'flex font-bold text-center border-t-[2px] leading-none border-[#ff6cb6]',
+                  {
+                    'text-[calc(7px_+_23_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                      screenSize !== 'default',
+                    'text-[30px]': screenSize === 'default'
+                  }
+                )}
+              >
+                <div className="block m-auto ">{cardTitle}</div>
+              </div>
             </div>
           </div>
         </>
@@ -83,4 +89,3 @@ export default function Popup(props: {
     </>
   );
 }
-
