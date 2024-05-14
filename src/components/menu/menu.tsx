@@ -38,11 +38,10 @@ export default function Menu({
           language={state.lang}
         />
       )}
-
       <div
         className={cn(
-          'relative z-0  flex flex-col justify-between items-center top-0 mx-auto max-h-[1px]',
-          { 'top-[-20vw]': state.lang === 'noLang' && screenSize !== 'default' },
+          'relative z-0 flex flex-col justify-between items-center mx-auto max-h-[1px]',
+          { 'top-[-20vw]': state.lang === 'noLang' && screenSize !== 'default' && !isOpen },
           {
             'top-[-40vw]':
               state.lang !== 'noLang' && state.category === 'noCategory' && screenSize !== 'default'
