@@ -3,6 +3,7 @@ import cn from 'classnames';
 import { AppState, Language, ScreenSize } from '../../types/data';
 import FrenchContext from './french-context';
 import EnglishContext from './english-context';
+import Card from '../card/card';
 export default function MenuPopup(props: {
   onClick: () => void;
   screenSize: ScreenSize;
@@ -86,7 +87,7 @@ export default function MenuPopup(props: {
           </div>
         </div>
       </div>
-      {/* {state.mode === 'context' && (
+      {state.menu === 'context' && (
         <section className="flex right-[50%] justify-center z-10">
           <div
             className={cn('absolute  flex gap-[320px] justify-center', {
@@ -152,7 +153,7 @@ export default function MenuPopup(props: {
             </div>
           )}
         </section>
-      )} */}
+      )}
     </div>
   );
 }

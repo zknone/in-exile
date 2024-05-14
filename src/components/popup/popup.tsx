@@ -36,7 +36,7 @@ export default function Popup(props: {
           <div
             ref={cardRef}
             className={cn(
-              'block absolute z-50 -left-[35%] p-[11px] -top-[42%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
+              'block absolute z-900 -left-[35%] p-[11px] -top-[42%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
               { 'w-[408px] h-[647px] rounded-[40px] text-xl ': screenSize === 'tabletop' },
               { 'w-[320px] h-[508px] rounded-[35px] text-l': screenSize === 'tablet-l' }
             )}
