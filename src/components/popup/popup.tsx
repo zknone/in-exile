@@ -36,25 +36,30 @@ export default function Popup(props: {
           <div
             ref={cardRef}
             className={cn(
-              'block absolute z-900 -left-[35%] p-[11px] -top-[42%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] p-2 shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
-              { 'w-[408px] h-[647px] rounded-[40px] text-xl ': screenSize === 'tabletop' },
-              { 'w-[320px] h-[508px] rounded-[35px] text-l': screenSize === 'tablet-l' }
+              'absolute z-20 grid w-max h-max left-[50%] top-[-10%] translate-x-[-50%] rounded-[2vw] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C]',
+              {
+                'text-xl ': screenSize === 'tabletop',
+                'max-w-[20vw]': screenSize !== 'default',
+                'max-w-[409px]': screenSize === 'default'
+              }
             )}
             onClick={() => setOpen(false)}
           >
             <div
               className={cn(
-                'popup-content w-full flex flex-col justify-between h-full border-[2px] border-[#FF6CFF] bg-white hover:border-[#F93598] card',
-                { 'rounded-[30px]': screenSize === 'tabletop' },
-                { 'rounded-[27px]': screenSize === 'tablet-l' }
+                'relative rounded-[calc(2vw_*_0.75)] w-full flex flex-col justify-between h-full border-[2px] border-[#FF6CFF] bg-white hover:border-[#F93598]',
+                {
+                  'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                    screenSize !== 'default',
+                  'px-[3px]': screenSize === 'mobile',
+                  'px-[10px]': screenSize === 'tablet-m',
+                  'px-[15px]': screenSize === 'tablet-l',
+                  'px-[32px]': screenSize === 'tabletop',
+                  'text-[20px] px-[40px]': screenSize === 'default'
+                }
               )}
             >
-              <ul
-                className={cn('my-auto', {
-                  'p-6': screenSize === 'tablet-l',
-                  'p-12': screenSize === 'tabletop'
-                })}
-              >
+              <ul>
                 {points &&
                   points.map((item, index) => (
                     <li className="pb-5 last:pb-0" key={index}>
@@ -62,14 +67,15 @@ export default function Popup(props: {
                     </li>
                   ))}
               </ul>
-              <div
-                className={cn('font-bold text-center py-2', {
-                  'text-xl': screenSize === 'tablet-l',
-                  'text-2xl': screenSize === 'tabletop'
-                })}
-              >
-                {cardTitle}
-              </div>
+            </div>
+            <div
+              className={cn('flex font-bold text-center border-t-[2px] leading-none', {
+                'text-[calc(7px_+_23_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  screenSize !== 'default',
+                'text-[30px]': screenSize === 'default',
+              })}
+            >
+              <div className="block m-auto ">{cardTitle}</div>
             </div>
           </div>
         </>
@@ -77,3 +83,4 @@ export default function Popup(props: {
     </>
   );
 }
+

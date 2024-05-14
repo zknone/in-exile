@@ -47,7 +47,7 @@ export default function Card(props: {
   const altImgUrl = `/images/${altImg}.jpg`;
 
   return (
-    <div className='relative'>
+    <div className="relative">
       <Popup
         isOpen={isOpen}
         setOpen={setOpen}
