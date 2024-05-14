@@ -99,75 +99,94 @@ export default function MenuPopup(props: {
             'top-[200px]': screenSize === 'default'
           })}
         >
-          <div className="absolute w-[20vw] h-[30vw]">
+          <div
+            className={cn('absolute', {
+              'w-[14.135vw] top-[-10.98vw] z-50 right-[19vw]': screenSize !== 'default'
+            })}
+          >
             <Card
               screenSize={props.screenSize}
-              img="home-school"
+              img="home-artist"
+              altImg="home-artist-alt"
               key="artist"
-              cardTitle="artist"
-              rotation={isCardActive ? 0 : 3}
+              cardTitle="artiste"
+              active={isCardActive}
+              isNothingHovered={isCardActive}
+              isHovered={isCardActive}
             />
           </div>
-          <div className="absolute w-[20vw] h-[30vw]">
+          <div
+            className={cn('absolute', {
+              'w-[14.135vw] top-[-10.98vw] z-50 left-[19vw] ': screenSize !== 'default'
+            })}
+          >
             <Card
               screenSize={props.screenSize}
               img="home-school"
+              altImg="home-school-alt"
               key="school"
-              cardTitle="school"
-              rotation={isCardActive ? 0 : -3}
+              cardTitle="école"
+              active={isCardActive}
+              isNothingHovered={isCardActive}
+              isHovered={isCardActive}
             />
           </div>
+
           {!isCardActive && (
             <>
-              <div className={cn(
-                "absolute", {
-                  'w-[20vw] h-[30vw]': screenSize !== 'default',
-                }
-              )}>
+              <div
+                className={cn('absolute', {
+                  'w-[14.135vw] top-[-12.6vw] right-[22.8vw]': screenSize !== 'default'
+                })}
+              >
                 <Card
                   screenSize={props.screenSize}
                   img="home-school"
                   key="artist"
                   cardTitle="artist"
-                  rotation={isCardActive ? 0 : -3}
+                  rotation={isCardActive ? 0 : 8}
                 />
               </div>
-              <div className="absolute w-[20vw] h-[30vw]">
-                {' '}
+              <div
+                className={cn('absolute', {
+                  'w-[14.135vw] top-[-8.2vw] right-[21.8vw]': screenSize !== 'default'
+                })}
+              >
+                <Card
+                  screenSize={props.screenSize}
+                  img="home-school"
+                  key="school"
+                  cardTitle={state.lang}
+                  rotation={isCardActive ? 0 : -8}
+                />
+              </div>
+              <div
+                className={cn('absolute', {
+                  'w-[14.135vw] top-[-12.3vw] left-[22vw]': screenSize !== 'default'
+                })}
+              >
                 <Card
                   screenSize={props.screenSize}
                   img="home-school"
                   key="school"
                   cardTitle="school"
-                  rotation={isCardActive ? 0 : 3}
+                  rotation={isCardActive ? 0 : 8}
                 />
               </div>
-              <div className="absolute w-[20vw] h-[30vw]">
-                {' '}
-                <Card
-                  screenSize={props.screenSize}
-                  img="home-artist"
-                  altImg="home-artist-alt"
-                  key="artist"
-                  cardTitle="artiste"
-                  active={isCardActive}
-                  isNothingHovered={isCardActive}
-                  isHovered={isCardActive}
-                />
-              </div>
-              <div className="absolute w-[20vw] h-[30vw]">
-                {' '}
+              <div
+                className={cn('absolute', {
+                  'w-[14.135vw] top-[-9.7vw] left-[21vw]': screenSize !== 'default'
+                })}
+              >
                 <Card
                   screenSize={props.screenSize}
                   img="home-school"
-                  altImg="home-school-alt"
-                  key="school"
-                  cardTitle="école"
-                  active={isCardActive}
-                  isNothingHovered={isCardActive}
-                  isHovered={isCardActive}
+                  key="artist"
+                  cardTitle="artist"
+                  rotation={isCardActive ? 0 : -7}
                 />
               </div>
+
             </>
           )}
         </section>
