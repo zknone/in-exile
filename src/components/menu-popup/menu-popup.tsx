@@ -24,11 +24,7 @@ export default function MenuPopup(props: {
   return (
     <div
       className={cn(containerClass, {
-        'top-[-50vw]': screenSize !== 'default',
-        'max-w-[92px]': screenSize === 'mobile',
-        'max-w-[155px]': screenSize === 'tablet-m',
-        'max-w-[199px]': screenSize === 'tablet-l',
-        'max-w-[301px]': screenSize === 'tabletop',
+        'top-[-50vw] max-w-[20vw]': screenSize !== 'default',
         'max-w-[409px] max-h-[650px] top-[-970px]': screenSize === 'default'
       })}
     >
@@ -53,25 +49,23 @@ export default function MenuPopup(props: {
               'popup-content grid grid-rows-[90%_10%] border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]',
               {
                 'max-h-[32vw]': screenSize !== 'default',
-                // 'max-h-[31vw]': screenSize === 'tablet-m',
-                // 'max-h-[32vw]': screenSize === 'tablet-l',
-                // 'max-h-[33vw]': screenSize === 'tabletop',
                 'max-h-[610px]': screenSize === 'default'
               }
             )}
           >
             <div
-              className={cn('block overflow-auto flex flex-col gap-y-5 mb-[5%]', {
-                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] mx-[2px] px-[3px]':
-                  screenSize === 'mobile',
-                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] mx-[5px] px-[10px]':
-                  screenSize === 'tablet-m',
-                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] mx-[7px] px-[15px]':
-                  screenSize === 'tablet-l',
-                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] mx-[8px] px-[32px]':
-                  screenSize === 'tabletop',
-                'text-[20px] mt-[30px] mx-[10px] px-[40px]': screenSize === 'default'
-              })}
+              className={cn(
+                'block overflow-auto flex flex-col gap-y-5 mb-[5%] leading-normal mt-[10%]',
+                {
+                  'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                    screenSize !== 'default',
+                  'mx-[2px] px-[3px]': screenSize === 'mobile',
+                  'mx-[5px] px-[10px]': screenSize === 'tablet-m',
+                  'mx-[7px] px-[15px]': screenSize === 'tablet-l',
+                  'mx-[8px] px-[32px]': screenSize === 'tabletop',
+                  'text-[20px] mx-[10px] px-[40px]': screenSize === 'default'
+                }
+              )}
             >
               {language === 'français' && mode === 'context' && <FrenchContext />}
               {language === 'english' && mode === 'context' && <EnglishContext />}
