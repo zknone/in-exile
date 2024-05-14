@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Card from '../card/card';
 import cn from 'classnames';
 import { Language, ScreenSize } from '../../types/data';
 import FrenchContext from './french-context';
@@ -23,28 +22,55 @@ export default function MenuPopup(props: {
   };
 
   return (
-    <div className={cn(containerClass)}>
-      <div className={cn('flex gap-2 justify-center w-full]')}>
+    <div
+      className={cn(containerClass, {
+        'top-[-50vw]': screenSize !== 'default',
+        'max-w-[92px]': screenSize === 'mobile',
+        'max-w-[155px]': screenSize === 'tablet-m',
+        'max-w-[199px]': screenSize === 'tablet-l',
+        'max-w-[301px]': screenSize === 'tabletop',
+        'max-w-[409px] max-h-[650px] top-[-970px]': screenSize === 'default'
+      })}
+    >
+      <div className={cn('flex gap-2 justify-center w-full')}>
         <div
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
           className={cn(
-            'z-50 rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] p-[16px] shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup'
+            'z-50 rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup',
+            {
+              'p-[3px]': screenSize === 'mobile',
+              'p-[5px]': screenSize === 'tablet-m',
+              'p-[6.2px]': screenSize === 'tablet-l',
+              'p-[9.5px]': screenSize === 'tabletop',
+              'p-[13px]': screenSize === 'default'
+            }
           )}
           onClick={onClick}
         >
-          <div className="popup-content w-full flex flex-col justify-between h-full border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]">
+          <div
+            className={cn(
+              'popup-content grid grid-rows-[90%_10%] border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]',
+              {
+                'max-h-[32vw]': screenSize !== 'default',
+                // 'max-h-[31vw]': screenSize === 'tablet-m',
+                // 'max-h-[32vw]': screenSize === 'tablet-l',
+                // 'max-h-[33vw]': screenSize === 'tabletop',
+                'max-h-[610px]': screenSize === 'default'
+              }
+            )}
+          >
             <div
-              className={cn('block px-[50px] mx-3 overflow-auto flex flex-col gap-y-5 my-[5%]', {
-                'max-h-[146px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] ':
+              className={cn('block overflow-auto flex flex-col gap-y-5 mb-[5%]', {
+                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] mx-[2px] px-[3px]':
                   screenSize === 'mobile',
-                'max-h-[246px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] mx-[5px] px-[10px]':
                   screenSize === 'tablet-m',
-                'max-h-[315px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] mx-[7px] px-[15px]':
                   screenSize === 'tablet-l',
-                'max-h-[478px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))] mx-[8px] px-[32px]':
                   screenSize === 'tabletop',
-                'max-h-[650px] text-[20px]': screenSize === 'default'
+                'text-[20px] mt-[30px] mx-[10px] px-[40px]': screenSize === 'default'
               })}
             >
               {language === 'français' && mode === 'context' && <FrenchContext />}
@@ -66,7 +92,7 @@ export default function MenuPopup(props: {
           </div>
         </div>
       </div>
-      {mode === 'context' && (
+      {/* {mode === 'context' && (
         <section className="flex right-[50%] justify-center z-10">
           <div
             className={cn('absolute  flex gap-[320px] justify-center', {
@@ -132,7 +158,7 @@ export default function MenuPopup(props: {
             </div>
           )}
         </section>
-      )}
+      )} */}
     </div>
   );
 }
