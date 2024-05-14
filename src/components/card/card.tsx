@@ -62,7 +62,7 @@ export default function Card(props: {
           className,
           { 'border-[0.8px] rounded-[7px] p-[1px] max-w-[100px]': screenSize === 'mobile' },
           { 'border-[1px] p-[2px] rounded-[9px] max-w-[128px]': screenSize === 'tablet-m' },
-          { 'border-[2px] p-[2px] rounded-[12px] max-w-[195px]': screenSize === 'tablet-l' },
+          { 'border-[1.5px] p-[2px] rounded-[12px] max-w-[195px]': screenSize === 'tablet-l' },
           { 'border-[2px] p-[2px] rounded-[18px] max-w-[220px]': screenSize === 'tabletop' },
           { 'border-[2px] p-[3.5px] rounded-[25px] max-w-[280px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
@@ -85,7 +85,7 @@ export default function Card(props: {
             { 'border-[#2FA2FB]/[0.5]': isThirdPlan },
             { 'border-[0.8px] rounded-[5px]': screenSize === 'mobile' },
             { 'border-[1px] rounded-[7px]': screenSize === 'tablet-m' },
-            { 'border-[2px] rounded-[9px]': screenSize === 'tablet-l' },
+            { 'border-[1.5px] rounded-[9px]': screenSize === 'tablet-l' },
             { 'border-[2px] rounded-[13px]': screenSize === 'tabletop' },
             { 'border-[2px] rounded-[20px]': screenSize === 'default' }
           )}
@@ -107,19 +107,19 @@ export default function Card(props: {
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan },
               {
-                'pt-[2px] pb-[3px] border-t-[0.8px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'pt-[2px] pb-[3px] border-t-[0.8px] text-[calc(4px_+_14_*_((100vw_-_360px)_/_(1600_-_360)))]':
                   screenSize === 'mobile'
               },
               {
-                'pt-[3px] pb-[5px] border-t-[1px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'pt-[3px] pb-[5px] border-t-[1px] text-[calc(4px_+_14_*_((100vw_-_360px)_/_(1600_-_360)))]':
                   screenSize === 'tablet-m'
               },
               {
-                'pt-[3px] pb-[5px] border-t-[2px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'pt-[3px] pb-[5px] border-t-[2px] text-[calc(4px_+_14_*_((100vw_-_360px)_/_(1600_-_360)))]':
                   screenSize === 'tablet-l'
               },
               {
-                'pt-[5px] pb-[9px] border-t-[2px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'pt-[5px] pb-[9px] border-t-[2px] text-[calc(4px_+_14_*_((100vw_-_360px)_/_(1600_-_360)))]':
                   screenSize === 'tabletop'
               },
               { 'pt-[7px] pb-[12px] border-t-[2px] text-[22px]': screenSize === 'default' }

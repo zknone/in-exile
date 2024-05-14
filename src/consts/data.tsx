@@ -54,7 +54,7 @@ const data: Dataset = [
           },
           {
             card: 'equipment',
-            title: 'équipements et matériel',
+            title: 'équipements & matériel',
             img: 'equipment',
             text: [
               "modalités d'accès aux équipements et au matériel de l'école",

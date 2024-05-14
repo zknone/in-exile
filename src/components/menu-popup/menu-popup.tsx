@@ -27,8 +27,8 @@ export default function MenuPopup(props: {
     <div
       className={cn(containerClass, {
         'max-w-[20vw]': screenSize !== 'default',
-        'top-[-50vw] ' : screenSize !== 'default' && state.category === 'noCategory',
-        'top-[-71vw] ' : screenSize !== 'default' && state.category !== 'noCategory',
+        'top-[-50vw] ': screenSize !== 'default' && state.category === 'noCategory',
+        'top-[-71vw] ': screenSize !== 'default' && state.category !== 'noCategory',
 
         'max-w-[409px] max-h-[650px]': screenSize === 'default',
         'top-[-970px]': screenSize === 'default' && state.category === 'noCategory',

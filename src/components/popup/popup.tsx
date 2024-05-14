@@ -52,20 +52,25 @@ export default function Popup(props: {
               className={cn(
                 'grid grid-rows-[88%_12%] rounded-[calc(2vw_*_0.75)] w-full flex flex-col justify-between h-full border-[#FF6CFF] bg-white hover:border-[#F93598]',
                 {
-                  'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  'text-[calc(4px_+_12_*_((100vw_-_360px)_/_(1600_-_360)))]':
                     screenSize !== 'default',
-                  'px-[3px]': screenSize === 'mobile',
-                  'px-[10px]': screenSize === 'tablet-m',
-                  'px-[15px]': screenSize === 'tablet-l',
-                  'px-[32px]': screenSize === 'tabletop',
-                  'text-[20px] px-[40px]': screenSize === 'default'
+
+                  'text-[20px] ': screenSize === 'default'
                 }
               )}
             >
-              <ul className={cn('block overflow-auto flex flex-col leading-normal')}>
+              <ul
+                className={cn('overflow-auto flex flex-col justify-center leading-tight px-[9%]', {
+                  // 'px-[8px]': screenSize === 'mobile',
+                  // 'px-[10px]': screenSize === 'tablet-m',
+                  // 'px-[15px]': screenSize === 'tablet-l',
+                  // 'px-[32px]': screenSize === 'tabletop',
+                  // 'px-[40px]': screenSize === 'default'
+                })}
+              >
                 {points &&
                   points.map((item, index) => (
-                    <li className="pb-5 last:pb-0" key={index}>
+                    <li className="pb-[7%] last:pb-0" key={index}>
                       {item}
                     </li>
                   ))}
@@ -74,13 +79,13 @@ export default function Popup(props: {
                 className={cn(
                   'flex font-bold text-center border-t-[2px] leading-none border-[#ff6cb6]',
                   {
-                    'text-[calc(7px_+_23_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                    'text-[calc(7px_+_17_*_((100vw_-_360px)_/_(1600_-_360)))]':
                       screenSize !== 'default',
                     'text-[30px]': screenSize === 'default'
                   }
                 )}
               >
-                <div className="block m-auto ">{cardTitle}</div>
+                <div className="block m-auto">{cardTitle}</div>
               </div>
             </div>
           </div>
