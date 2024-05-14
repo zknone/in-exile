@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import { ScreenSize } from '../../types/data';
 
@@ -11,6 +11,15 @@ export default function Popup(props: {
   cardTitle: string;
 }) {
   const { isOpen, setOpen, cardRef, screenSize, points, cardTitle } = props;
+
+  const [isCardActive, setCardsActive] = useState(false);
+  const handlePopupHover = () => {
+    setCardsActive(true);
+  };
+
+  const handlePopupLeave = () => {
+    setCardsActive(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -35,6 +44,8 @@ export default function Popup(props: {
           <div className="popup-background"></div>
           <div
             ref={cardRef}
+            onMouseEnter={handlePopupHover}
+            onMouseLeave={handlePopupLeave}
             className={cn(
               'absolute z-20 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2vw] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C]',
               {
@@ -61,11 +72,6 @@ export default function Popup(props: {
             >
               <ul
                 className={cn('overflow-auto flex flex-col justify-center leading-tight px-[9%]', {
-                  // 'px-[8px]': screenSize === 'mobile',
-                  // 'px-[10px]': screenSize === 'tablet-m',
-                  // 'px-[15px]': screenSize === 'tablet-l',
-                  // 'px-[32px]': screenSize === 'tabletop',
-                  // 'px-[40px]': screenSize === 'default'
                 })}
               >
                 {points &&
@@ -77,11 +83,13 @@ export default function Popup(props: {
               </ul>
               <div
                 className={cn(
-                  'flex font-bold text-center border-t-[2px] leading-none border-[#ff6cb6]',
+                  'flex font-bold text-center border-t-[2px] leading-none',
                   {
                     'text-[calc(7px_+_17_*_((100vw_-_360px)_/_(1600_-_360)))]':
                       screenSize !== 'default',
-                    'text-[30px]': screenSize === 'default'
+                    'text-[30px]': screenSize === 'default',
+                    'border-[#ff6cb6]': !isCardActive,
+                    'border-[#F93598]': isCardActive
                   }
                 )}
               >
