@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import Card from '../card/card';
 import cn from 'classnames';
-import FrenchText from './french-text';
+import FrenchText from './french-context';
 import { Language, ScreenSize } from '../../types/data';
-import EnglishText from './english-text';
+import EnglishText from './english-context';
 export default function Context(props: {
   onClick: () => void;
   isMobile?: boolean;
   screenSize: ScreenSize;
   language?: Language;
   containerClass: string;
+  mode: 'credits' | 'context';
 }) {
   const { onClick, screenSize, language, containerClass } = props;
   const [isCardActive, setCardsActive] = useState(false);

@@ -3,7 +3,7 @@ import Card from '../card/card';
 import cn from 'classnames';
 import { AppState } from '../../types/data';
 import { Dispatch, SetStateAction, useState } from 'react';
-import Context from '../entrance-screen/context';
+import Context from '../menu-popup/menu-popup';
 
 export default function Menu({
   screenSize,
@@ -17,7 +17,6 @@ export default function Menu({
   const leftCardDisplacement = screenSize !== 'default' ? 'left-[2vw] z-10' : 'left-[50px] z-10';
   const rightCardDisplacement = screenSize !== 'default' ? 'right-[2vw]' : 'right-[50px]';
 
-
   const [isOpen, setOpen] = useState(true);
   const onMenuChange = (menu: MenuCard) => {
     if (state.menu !== menu) {
@@ -28,12 +27,12 @@ export default function Menu({
 
   console.log(state);
 
-
   return (
     <>
       {state.lang !== 'noLang' && state.menu === 'context' && isOpen && (
         <Context
-          containerClass="absolute z-50 left-[50%]"
+          containerClass="absolute z-50 left-[50%] top-[-50%]"
+          mode={state.menu}
           onClick={() => setOpen(false)}
           screenSize={screenSize}
           language={state.lang}
@@ -74,27 +73,27 @@ export default function Menu({
           )}
         >
           {/* {state.menu === 'context' && ( */}
-            <Card
-              className={leftCardDisplacement}
-              isThirdPlan
-              screenSize={screenSize}
-              img="home-school"
-              onCardClick={() => onMenuChange('context')}
-              key="artist"
-              cardTitle="context"
-              rotation={-4}
-            />
+          <Card
+            className={leftCardDisplacement}
+            isThirdPlan
+            screenSize={screenSize}
+            img="home-school"
+            onCardClick={() => onMenuChange('context')}
+            key="artist"
+            cardTitle="context"
+            rotation={-4}
+          />
           {/* {state.menu === 'credits' && ( */}
-            <Card
-              className={rightCardDisplacement}
-              isThirdPlan
-              screenSize={screenSize}
-              img="home-school"
-              onCardClick={() => onMenuChange('credits')}
-              key="artist"
-              cardTitle="credits"
-              rotation={-2}
-            />
+          <Card
+            className={rightCardDisplacement}
+            isThirdPlan
+            screenSize={screenSize}
+            img="home-school"
+            onCardClick={() => onMenuChange('credits')}
+            key="artist"
+            cardTitle="credits"
+            rotation={-2}
+          />
         </div>
 
         <div
