@@ -71,8 +71,10 @@ export default function Popup(props: {
               )}
             >
               <ul
-                className={cn('overflow-auto flex flex-col justify-center leading-tight px-[9%]', {
-                })}
+                className={cn(
+                  'overflow-auto flex flex-col justify-center leading-tight px-[9%]',
+                  {}
+                )}
               >
                 {points &&
                   points.map((item, index) => (
@@ -82,16 +84,13 @@ export default function Popup(props: {
                   ))}
               </ul>
               <div
-                className={cn(
-                  'flex font-bold text-center border-t-[2px] leading-none',
-                  {
-                    'text-[calc(7px_+_17_*_((100vw_-_360px)_/_(1600_-_360)))]':
-                      screenSize !== 'default',
-                    'text-[30px]': screenSize === 'default',
-                    'border-[#ff6cb6]': !isCardActive,
-                    'border-[#F93598]': isCardActive
-                  }
-                )}
+                className={cn('flex font-bold text-center border-t-[2px] leading-none', {
+                  'text-[calc(7px_+_17_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                    screenSize !== 'default',
+                  'text-[30px]': screenSize === 'default',
+                  'border-[#ff6cb6]': !isCardActive,
+                  'border-[#F93598]': isCardActive
+                })}
               >
                 <div className="block m-auto">{cardTitle}</div>
               </div>

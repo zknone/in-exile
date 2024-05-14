@@ -29,7 +29,7 @@ export default function Menu({
 
   return (
     <>
-      {state.lang !== 'noLang' && state.menu === 'context' && isOpen && (
+      {state.lang !== 'noLang' && isOpen && (
         <MenuPopup
           containerClass="relative z-50 left-[50%] translate-x-[-50%]"
           state={state}
@@ -72,25 +72,23 @@ export default function Menu({
             { 'gap-x-[32px] max-w-[592px]': screenSize === 'default' }
           )}
         >
-          {/* {state.menu === 'context' && ( */}
           <Card
             className={leftCardDisplacement}
             isThirdPlan
             screenSize={screenSize}
             img="home-school"
             onCardClick={() => onMenuChange('context')}
-            key="artist"
+            key="context"
             cardTitle="context"
             rotation={-4}
           />
-          {/* {state.menu === 'credits' && ( */}
           <Card
             className={rightCardDisplacement}
             isThirdPlan
             screenSize={screenSize}
             img="home-school"
             onCardClick={() => onMenuChange('credits')}
-            key="artist"
+            key="credits"
             cardTitle="credits"
             rotation={-2}
           />
@@ -110,7 +108,7 @@ export default function Menu({
             isThirdPlan
             screenSize={screenSize}
             img="home-school"
-            key="artist"
+            key="download"
             cardTitle="download"
             rotation={1.2}
           />

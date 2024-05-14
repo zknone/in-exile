@@ -4,6 +4,8 @@ import { AppState, Language, ScreenSize } from '../../types/data';
 import FrenchContext from './french-context';
 import EnglishContext from './english-context';
 import Card from '../card/card';
+import FrenchCredits from './french-credits';
+import EnglishCredits from './english-credits';
 export default function MenuPopup(props: {
   onClick: () => void;
   screenSize: ScreenSize;
@@ -25,7 +27,7 @@ export default function MenuPopup(props: {
 
   return (
     <div
-      className={cn(containerClass, {
+      className={cn(containerClass, 'relative', {
         'max-w-[20vw]': screenSize !== 'default',
         'top-[-50vw] ': screenSize !== 'default' && state.category === 'noCategory',
         'top-[-71vw] ': screenSize !== 'default' && state.category !== 'noCategory',
@@ -73,7 +75,8 @@ export default function MenuPopup(props: {
             >
               {language === 'français' && state.menu === 'context' && <FrenchContext />}
               {language === 'english' && state.menu === 'context' && <EnglishContext />}
-              <img src="/images/euro-logo.jpg" />
+              {language === 'français' && state.menu === 'credits' && <FrenchCredits />}
+              {language === 'english' && state.menu === 'credits' && <EnglishCredits />}
             </div>
             <div className="mask top-[calc(100%-100px)]"></div>
             <div
@@ -85,13 +88,18 @@ export default function MenuPopup(props: {
                 'border-[#F93598]': isCardActive
               })}
             >
-              <div className="block m-auto ">context</div>
+              <div className="block m-auto ">{state.menu}</div>
             </div>
           </div>
         </div>
       </div>
       {state.menu === 'context' && (
-        <section className="flex right-[50%] justify-center z-10">
+        <section
+          className={cn('relative flex justify-center z-10', {
+            'top-[15vw]': screenSize !== 'default',
+            'top-[200px]': screenSize === 'default'
+          })}
+        >
           <div
             className={cn('absolute  flex gap-[320px] justify-center', {
               '-top-[25px]': isCardActive,
