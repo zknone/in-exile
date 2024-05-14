@@ -3,7 +3,7 @@ import Card from '../card/card';
 import cn from 'classnames';
 import { AppState } from '../../types/data';
 import { Dispatch, SetStateAction, useState } from 'react';
-import Context from '../menu-popup/menu-popup';
+import MenuPopup from '../menu-popup/menu-popup';
 
 export default function Menu({
   screenSize,
@@ -30,7 +30,7 @@ export default function Menu({
   return (
     <>
       {state.lang !== 'noLang' && state.menu === 'context' && isOpen && (
-        <Context
+        <MenuPopup
           containerClass="absolute z-50 left-[50%] top-[-50%]"
           mode={state.menu}
           onClick={() => setOpen(false)}

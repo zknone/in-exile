@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Card from '../card/card';
 import cn from 'classnames';
-import FrenchText from './french-context';
 import { Language, ScreenSize } from '../../types/data';
-import EnglishText from './english-context';
-export default function Context(props: {
+import FrenchContext from './french-context';
+import EnglishContext from './english-context';
+export default function MenuPopup(props: {
   onClick: () => void;
   isMobile?: boolean;
   screenSize: ScreenSize;
@@ -12,7 +12,7 @@ export default function Context(props: {
   containerClass: string;
   mode: 'credits' | 'context';
 }) {
-  const { onClick, screenSize, language, containerClass } = props;
+  const { onClick, screenSize, language, containerClass, mode } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
     setCardsActive(true);
@@ -24,7 +24,7 @@ export default function Context(props: {
 
   return (
     <div className={cn(containerClass)}>
-      <div className={cn('right-[50%] flex gap-2 justify-center')}>
+      <div className={cn('flex gap-2 justify-center w-full]')}>
         <div
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
@@ -47,8 +47,8 @@ export default function Context(props: {
                 'max-h-[650px] text-[20px]': screenSize === 'default'
               })}
             >
-              {language === 'français' && <FrenchText />}
-              {language === 'english' && <EnglishText />}
+              {language === 'français' && mode === 'context' && <FrenchContext />}
+              {language === 'english' && mode === 'context' && <EnglishContext />}
               <img src="/images/euro-logo.jpg" />
             </div>
             <div className="mask top-[calc(100%-100px)]"></div>
@@ -66,72 +66,73 @@ export default function Context(props: {
           </div>
         </div>
       </div>
-      <section className="flex right-[50%] justify-center z-10">
-        <div
-          className={cn('absolute  flex gap-[320px] justify-center', {
-            '-top-[25px]': isCardActive,
-            '-top-[65px]': !isCardActive
-          })}
-        >
-          <Card
-            screenSize={props.screenSize}
-            img="home-school"
-            key="artist"
-            cardTitle="artist"
-            rotation={isCardActive ? 0 : 3}
-          />
-          <Card
-            screenSize={props.screenSize}
-            img="home-school"
-            key="school"
-            cardTitle="school"
-            rotation={isCardActive ? 0 : -3}
-          />
-        </div>
-        {!isCardActive && (
-          <div className="absolute -top-[40px] flex gap-[340px] justify-center">
+      {mode === 'context' && (
+        <section className="flex right-[50%] justify-center z-10">
+          <div
+            className={cn('absolute  flex gap-[320px] justify-center', {
+              '-top-[25px]': isCardActive,
+              '-top-[65px]': !isCardActive
+            })}
+          >
             <Card
               screenSize={props.screenSize}
               img="home-school"
               key="artist"
               cardTitle="artist"
-              rotation={isCardActive ? 0 : -3}
+              rotation={isCardActive ? 0 : 3}
             />
             <Card
               screenSize={props.screenSize}
               img="home-school"
               key="school"
               cardTitle="school"
-              rotation={isCardActive ? 0 : 3}
+              rotation={isCardActive ? 0 : -3}
             />
           </div>
-        )}
-        {/* на второй будет карточка с текущим языком */}
-        {!isCardActive && (
-          <div className="absolute -top-[55px] flex gap-[380px] justify-center">
-            <Card
-              screenSize={props.screenSize}
-              img="home-artist"
-              altImg="home-artist-alt"
-              key="artist"
-              cardTitle="artiste"
-              active={isCardActive}
-              isNothingHovered={isCardActive}
-              isHovered={isCardActive}
-            />
-            <Card
-              screenSize={props.screenSize}
-              img="home-school"
-              altImg="home-school-alt"
-              key="school"
-              cardTitle="école"
-              active={isCardActive}
-              isNothingHovered={isCardActive}
-              isHovered={isCardActive}
-            />
-          </div>
-        )}
-      </section>
+          {!isCardActive && (
+            <div className="absolute -top-[40px] flex gap-[340px] justify-center">
+              <Card
+                screenSize={props.screenSize}
+                img="home-school"
+                key="artist"
+                cardTitle="artist"
+                rotation={isCardActive ? 0 : -3}
+              />
+              <Card
+                screenSize={props.screenSize}
+                img="home-school"
+                key="school"
+                cardTitle="school"
+                rotation={isCardActive ? 0 : 3}
+              />
+            </div>
+          )}
+          {!isCardActive && (
+            <div className="absolute -top-[55px] flex gap-[380px] justify-center">
+              <Card
+                screenSize={props.screenSize}
+                img="home-artist"
+                altImg="home-artist-alt"
+                key="artist"
+                cardTitle="artiste"
+                active={isCardActive}
+                isNothingHovered={isCardActive}
+                isHovered={isCardActive}
+              />
+              <Card
+                screenSize={props.screenSize}
+                img="home-school"
+                altImg="home-school-alt"
+                key="school"
+                cardTitle="école"
+                active={isCardActive}
+                isNothingHovered={isCardActive}
+                isHovered={isCardActive}
+              />
+            </div>
+          )}
+        </section>
+      )}
     </div>
   );
 }

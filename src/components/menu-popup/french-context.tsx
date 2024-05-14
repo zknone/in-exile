@@ -1,4 +1,4 @@
-export default function FrenchText() {
+export default function FrenchContext() {
   return (
     <>
       <div>
