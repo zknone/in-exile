@@ -32,7 +32,7 @@ export default function Menu({
       {state.lang !== 'noLang' && state.menu === 'context' && isOpen && (
         <MenuPopup
           containerClass="relative z-50 left-[50%] translate-x-[-50%]"
-          mode={state.menu}
+          state={state}
           onClick={() => setOpen(false)}
           screenSize={screenSize}
           language={state.lang}
