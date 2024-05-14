@@ -33,7 +33,7 @@ export default function MenuPopup(props: {
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
           className={cn(
-            'z-50 rounded-[40px] border-2 border-[#FF6CFF] bg-[#FF6CB6] shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup',
+            'z-50 rounded-[2vw] border-2 border-[#FF6CFF] bg-[#FF6CB6] shadow-card text-xl hover:bg-[#F93598] hover:border-[#B1256C] popup',
             {
               'p-[3px]': screenSize === 'mobile',
               'p-[5px]': screenSize === 'tablet-m',
@@ -46,7 +46,7 @@ export default function MenuPopup(props: {
         >
           <div
             className={cn(
-              'popup-content grid grid-rows-[90%_10%] border-2 rounded-[30px] border-[#FF6CFF] bg-white hover:border-[#F93598]',
+              'popup-content grid grid-rows-[90%_10%] border-2 rounded-[calc(2vw_*_0.75)] border-[#FF6CFF] bg-white hover:border-[#F93598]',
               {
                 'max-h-[32vw]': screenSize !== 'default',
                 'max-h-[610px]': screenSize === 'default'
