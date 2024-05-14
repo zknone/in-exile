@@ -76,6 +76,10 @@ export default function MenuPopup(props: {
               className={cn(
                 'bottom-0 w-full font-bold text-center pb-[22px] pt-[14px] border-t-[2px]',
                 {
+                  'text-[calc(7px_+_23_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  screenSize !== 'default',
+                  'text-[30px]':
+                  screenSize === 'default',
                   'border-[#ff6cb6]': !isCardActive,
                   'border-[#F93598]': isCardActive
                 }
