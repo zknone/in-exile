@@ -19,9 +19,9 @@ export default function Menu({
 
   const [isOpen, setOpen] = useState(true);
   const onMenuChange = (menu: MenuCard) => {
-    setState({ ...state, category: 'noCategory'});
+    setState({ ...state, category: 'noCategory' });
     if (state.menu !== menu) {
-      setState({ ...state, menu: menu, category: 'noCategory'});
+      setState({ ...state, menu: menu, category: 'noCategory' });
     }
     setOpen(!isOpen);
   };

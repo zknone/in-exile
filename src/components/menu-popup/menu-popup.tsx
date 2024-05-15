@@ -56,8 +56,8 @@ export default function MenuPopup(props: {
             className={cn(
               'popup-content grid grid-rows-[88%_12%] rounded-[calc(2vw_*_0.75)] border-[#FF6CFF] bg-white hover:border-[#F93598]',
               {
-                'max-h-[32vw]': screenSize !== 'default',
-                'max-h-[610px] border-2': screenSize === 'default'
+                'h-[32vw]': screenSize !== 'default',
+                'h-[610px] border-2': screenSize === 'default'
               }
             )}
           >
@@ -192,7 +192,6 @@ export default function MenuPopup(props: {
                   rotation={isCardActive ? 0 : -7}
                 />
               </div>
-
             </>
           )}
         </section>
