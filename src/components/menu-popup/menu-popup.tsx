@@ -100,8 +100,9 @@ export default function MenuPopup(props: {
           })}
         >
           <div
-            className={cn('absolute', {
-              'w-[14.135vw] top-[-10.98vw] z-50 right-[19vw]': screenSize !== 'default'
+            className={cn('absolute z-50 ', {
+              'w-[14.3vw] top-[-10.55vw] right-[19vw]': screenSize !== 'default',
+              'w-[280px] top-[-122px] right-[380px]': screenSize === 'default'
             })}
           >
             <Card
@@ -116,8 +117,9 @@ export default function MenuPopup(props: {
             />
           </div>
           <div
-            className={cn('absolute', {
-              'w-[14.135vw] top-[-10.98vw] z-50 left-[19vw] ': screenSize !== 'default'
+            className={cn('absolute z-50', {
+              'w-[14.3vw] top-[-10.55vw] left-[19vw] ': screenSize !== 'default',
+              'w-[280px] top-[-122px] left-[380px]': screenSize === 'default'
             })}
           >
             <Card
@@ -136,7 +138,8 @@ export default function MenuPopup(props: {
             <>
               <div
                 className={cn('absolute', {
-                  'w-[14.135vw] top-[-12.6vw] right-[22.8vw]': screenSize !== 'default'
+                  'w-[14.3vw] top-[-12.6vw] right-[22.8vw]': screenSize !== 'default',
+                  'w-[280px] top-[-160px] right-[440px]': screenSize === 'default'
                 })}
               >
                 <Card
@@ -149,7 +152,8 @@ export default function MenuPopup(props: {
               </div>
               <div
                 className={cn('absolute', {
-                  'w-[14.135vw] top-[-8.2vw] right-[21.8vw]': screenSize !== 'default'
+                  'w-[14.3vw] top-[-8.2vw] right-[21.8vw]': screenSize !== 'default',
+                  'w-[280px] top-[-77px] right-[440px]': screenSize === 'default'
                 })}
               >
                 <Card
@@ -162,7 +166,8 @@ export default function MenuPopup(props: {
               </div>
               <div
                 className={cn('absolute', {
-                  'w-[14.135vw] top-[-12.3vw] left-[22vw]': screenSize !== 'default'
+                  'w-[14.3vw] top-[-12.3vw] left-[22vw]': screenSize !== 'default',
+                  'w-[280px] top-[-160px] left-[440px]': screenSize === 'default'
                 })}
               >
                 <Card
@@ -175,7 +180,8 @@ export default function MenuPopup(props: {
               </div>
               <div
                 className={cn('absolute', {
-                  'w-[14.135vw] top-[-9.7vw] left-[21vw]': screenSize !== 'default'
+                  'w-[14.3vw] top-[-9.7vw] left-[21vw]': screenSize !== 'default',
+                  'w-[280px] top-[-107px] left-[440px]': screenSize === 'default'
                 })}
               >
                 <Card
