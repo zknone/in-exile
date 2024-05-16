@@ -2,7 +2,7 @@ import { MenuCard, ScreenSize } from '../../types/data';
 import Card from '../card/card';
 import cn from 'classnames';
 import { AppState } from '../../types/data';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import MenuPopup from '../menu-popup/menu-popup';
 
 export default function Menu({
@@ -18,10 +18,30 @@ export default function Menu({
   const rightCardDisplacement = screenSize !== 'default' ? 'right-[2vw]' : 'right-[50px]';
 
   const [isOpen, setOpen] = useState(true);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen) {
+        setOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, setOpen]);
+
+
   const onMenuChange = (menu: MenuCard) => {
     setState({ ...state, category: 'noCategory' });
-    if (state.menu !== menu) {
+    if (menu !== 'credits') {
       setState({ ...state, menu: menu, category: 'noCategory' });
+    } else {
+      setState({ ...state, menu: menu });
     }
 
     setOpen(!isOpen);
