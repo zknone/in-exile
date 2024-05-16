@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import cn from 'classnames';
 import { AppState, Language, ScreenSize } from '../../types/data';
 import FrenchContext from './french-context';
@@ -29,6 +29,7 @@ export default function MenuPopup(props: {
         'w-[21vw]': screenSize !== 'default',
         'top-[-50vw] ': screenSize !== 'default' && state.category === 'noCategory',
         'top-[-71vw] ': screenSize !== 'default' && state.category !== 'noCategory',
+        'top-[-72vw] ': screenSize !== 'default' && state.category !== 'noCategory' && state.menu === 'credits',
         'max-w-[409px] max-h-[650px]': screenSize === 'default',
         'top-[-970px]': screenSize === 'default' && state.category === 'noCategory',
         'top-[-1370px]': screenSize === 'default' && state.category !== 'noCategory'
