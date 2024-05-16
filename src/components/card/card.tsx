@@ -66,10 +66,11 @@ export default function Card(props: {
         className={cn(
           'flex flex-col w-full relative shadow-card',
           className,
-          { 'border-[0.8px] rounded-[7px] p-[1px]': screenSize === 'mobile' },
-          { 'border-[1px] p-[2px] rounded-[9px]': screenSize === 'tablet-m' },
-          { 'border-[1.5px] p-[2px] rounded-[12px]': screenSize === 'tablet-l' },
-          { 'border-[2px] p-[2px] rounded-[18px]': screenSize === 'tabletop' },
+          { 'border-[calc(21vw*0.008)] p-[calc(21vw*0.013)] rounded-[1.3vw]': screenSize !== 'default' },
+          // { 'border-[0.8px] rounded-[7px] p-[1px]': screenSize === 'mobile' },
+          // { 'border-[1px] p-[2px] rounded-[9px]': screenSize === 'tablet-m' },
+          // { 'border-[1.5px] p-[2px] rounded-[12px]': screenSize === 'tablet-l' },
+          // { 'border-[2px] p-[2px] rounded-[18px]': screenSize === 'tabletop' },
           { 'border-[2px] p-[3.5px] rounded-[25px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
@@ -89,10 +90,7 @@ export default function Card(props: {
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
             { 'border-[#2FA2FB]/[0.5]': isThirdPlan },
-            { 'border-[0.8px] rounded-[5px]': screenSize === 'mobile' },
-            { 'border-[1px] rounded-[7px]': screenSize === 'tablet-m' },
-            { 'border-[1.5px] rounded-[9px]': screenSize === 'tablet-l' },
-            { 'border-[2px] rounded-[13px]': screenSize === 'tabletop' },
+            { 'border-[calc(21vw*0.008)] rounded-[calc(1.3vw*0.8)]': screenSize !== 'default' },
             { 'border-[2px] rounded-[20px]': screenSize === 'default' }
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
