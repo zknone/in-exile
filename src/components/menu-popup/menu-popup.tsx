@@ -31,7 +31,8 @@ export default function MenuPopup(props: {
         'top-[-71vw] left-[50%]': screenSize !== 'default' && state.category !== 'noCategory' && state.menu !== 'credits',
         'top-[-72vw] left-[60%]': screenSize !== 'default' && state.category !== 'noCategory' && state.menu === 'credits',
         'max-w-[409px] max-h-[650px]': screenSize === 'default',
-        'top-[-970px] left-[50%]': screenSize === 'default' && state.category === 'noCategory',
+        'top-[-970px] left-[50%]': screenSize === 'default' && state.category === 'noCategory' && state.menu !== 'credits',
+        'top-[-970px] left-[60%]': screenSize === 'default' && state.category === 'noCategory' && state.menu === 'credits',
         'top-[-1398px] left-[60%]': screenSize === 'default' && state.category !== 'noCategory',
       })}
     >
