@@ -50,7 +50,7 @@ export default function Card(props: {
 
   return (
     <div
-      className={cn('relative', {
+      className={cn('relative max-w-[100%]', {
         invisible: !visible
       })}
     >
