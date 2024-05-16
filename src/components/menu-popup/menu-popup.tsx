@@ -76,7 +76,9 @@ export default function MenuPopup(props: {
               {language === 'français' && state.menu === 'credits' && (
                 <FrenchCredits screenSize={screenSize} />
               )}
-              {language === 'english' && state.menu === 'credits' && <EnglishCredits screenSize={screenSize} />}
+              {language === 'english' && state.menu === 'credits' && (
+                <EnglishCredits screenSize={screenSize} />
+              )}
             </div>
 
             <div

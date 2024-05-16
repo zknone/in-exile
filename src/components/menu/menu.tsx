@@ -22,25 +22,26 @@ export default function Menu({
     setState({ ...state, category: 'noCategory' });
     if (state.menu !== menu) {
       setState({ ...state, menu: menu, category: 'noCategory' });
-    } 
-    
+    }
+
     setOpen(!isOpen);
   };
 
   return (
     <>
-      {state.lang !== 'noLang' && state.menu === 'noMenu' || 'closed' && isOpen && (
-        <MenuPopup
-          containerClass="relative z-50 left-[50%] translate-x-[-50%]"
-          state={state}
-          onClick={() => {
-            setOpen(false)
-            setState({ ...state, menu: 'noMenu'})
-          }}
-          screenSize={screenSize}
-          language={state.lang}
-        />
-      )}
+      {(state.lang !== 'noLang' && state.menu === 'noMenu') ||
+        ('closed' && isOpen && (
+          <MenuPopup
+            containerClass="relative z-50 left-[50%] translate-x-[-50%]"
+            state={state}
+            onClick={() => {
+              setOpen(false);
+              setState({ ...state, menu: 'noMenu' });
+            }}
+            screenSize={screenSize}
+            language={state.lang}
+          />
+        ))}
       <div
         className={cn(
           'relative z-0 flex flex-col justify-between items-center mx-auto max-h-[1px]',

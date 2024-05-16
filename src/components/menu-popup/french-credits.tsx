@@ -12,32 +12,32 @@ export default function FrenchCredits({ screenSize }: { screenSize: ScreenSize }
       >
         <dl className="block">
           <dt
-            className={cn('text-bold', {
+            className={cn('font-bold', {
               'text-[calc(6px_+_12_*_((100vw_-_360px)_/_(1600_-_360)))]': screenSize !== 'default',
-              'text-[18px]': screenSize === 'default'
+              'text-[22px]': screenSize === 'default'
             })}
           >
             Judith Depaule
           </dt>
-          <dd className="">Direction artistique, rédaction, édition.</dd>
+          <dd className="mb-[10%]">direction artistique</dd>
           <dt
-            className={cn('text-bold', {
+            className={cn('font-bold', {
               'text-[calc(6px_+_12_*_((100vw_-_360px)_/_(1600_-_360)))]': screenSize !== 'default',
-              'text-[18px]': screenSize === 'default'
+              'text-[22px]': screenSize === 'default'
             })}
           >
             Alexandre Plusnine
           </dt>
-          <dd>Direction artistique, gestion de produit, design web, design UI, illustrations.</dd>
+          <dd className="mb-[10%]">design produit, design web, illustrations</dd>
           <dt
-            className={cn('text-bold', {
+            className={cn('font-bold', {
               'text-[calc(6px_+_12_*_((100vw_-_360px)_/_(1600_-_360)))]': screenSize !== 'default',
               'text-[22px]': screenSize === 'default'
             })}
           >
             Ivan Streltsov
           </dt>
-          <dd>Développement frontend</dd>
+          <dd className="mb-[10%]">développement frontend</dd>
         </dl>
       </div>
     </>
