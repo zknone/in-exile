@@ -29,7 +29,7 @@ export default function Menu({
 
   return (
     <>
-      {state.lang !== 'noLang' && isOpen && (
+      {state.lang !== 'noLang' && state.menu === 'noMenu' || 'closed' && isOpen && (
         <MenuPopup
           containerClass="relative z-50 left-[50%] translate-x-[-50%]"
           state={state}

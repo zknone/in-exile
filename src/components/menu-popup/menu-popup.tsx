@@ -12,9 +12,8 @@ export default function MenuPopup(props: {
   language?: Language;
   containerClass: string;
   state: AppState;
-  setState?: Dispatch<SetStateAction<AppState>>;
 }) {
-  const { onClick, screenSize, language, containerClass, state,   setState } = props;
+  const { onClick, screenSize, language, containerClass, state } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
     setCardsActive(true);
