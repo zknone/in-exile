@@ -82,7 +82,7 @@ function App() {
           <>
             <div
               className={cn('relative bg-white w-full', {
-                'w-[75vw] h-[28vw]': screenSize !== 'default',
+                'max-w-[75vw] max-h-[28vw]': screenSize !== 'default',
                 'max-w-[1480px] max-h-[440px]': screenSize === 'default'
               })}
             >
