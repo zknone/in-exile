@@ -27,13 +27,14 @@ export default function MenuPopup(props: {
     <div
       className={cn(containerClass, 'absolute', {
         'w-[21vw]': screenSize !== 'default',
-        'top-[-50vw] left-[50%]': screenSize !== 'default' && state.category === 'noCategory',
-        'top-[-71vw] left-[50%]': screenSize !== 'default' && state.category !== 'noCategory' && state.menu === 'context',
-        'top-[-72vw] left-[60%]': screenSize !== 'default' && state.category !== 'noCategory' && state.menu === 'credits',
+        'left-[50%]':state.menu === 'context',
+        'left-[60%]': state.menu === 'credits',
         'max-w-[409px] max-h-[650px]': screenSize === 'default',
-        'top-[-970px] left-[50%]': screenSize === 'default' && state.category === 'noCategory' && state.menu === 'context',
-        'top-[-970px] left-[60%]': screenSize === 'default' && state.category === 'noCategory' && state.menu === 'credits',
-        'top-[-1398px] left-[60%]': screenSize === 'default' && state.category !== 'noCategory',
+        'top-[-50vw]': screenSize !== 'default' && state.category === 'noCategory',
+        'top-[-71vw] ': screenSize !== 'default' && state.category !== 'noCategory' && state.menu === 'context',
+        'top-[-72vw] ': screenSize !== 'default' && state.category !== 'noCategory' && state.menu === 'credits',
+        'top-[-970px]': screenSize === 'default' && state.category === 'noCategory',
+        'top-[-1398px]': screenSize === 'default' && state.category !== 'noCategory',
       })}
     >
       <div className={cn('flex gap-2 justify-center w-full')}>
