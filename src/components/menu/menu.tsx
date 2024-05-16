@@ -71,6 +71,7 @@ export default function Menu({
           )}
         >
           <Card
+            visible={state.menu === 'context' && isOpen ? false : true}
             className={leftCardDisplacement}
             isThirdPlan
             screenSize={screenSize}
@@ -81,6 +82,7 @@ export default function Menu({
             rotation={-4}
           />
           <Card
+            visible={state.menu === 'credits' && isOpen ? false : true}
             className={rightCardDisplacement}
             isThirdPlan
             screenSize={screenSize}

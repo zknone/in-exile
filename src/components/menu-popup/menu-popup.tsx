@@ -62,22 +62,25 @@ export default function MenuPopup(props: {
             )}
           >
             <div
-              className={cn('block overflow-auto flex flex-col gap-y-5 leading-normal mt-[10%]', {
+              className={cn('overflow-auto flex flex-col gap-y-5 leading-normal mt-[10%]', {
                 'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
                   screenSize !== 'default',
                 'mx-[2px] px-[3px]': screenSize === 'mobile',
                 'mx-[5px] px-[10px]': screenSize === 'tablet-m',
                 'mx-[7px] px-[15px]': screenSize === 'tablet-l',
                 'mx-[8px] px-[32px]': screenSize === 'tabletop',
-                'text-[20px] mx-[10px] px-[40px]': screenSize === 'default'
+                'text-[20px] mx-[10px] px-[40px]': screenSize === 'default',
+                'justify-center': state.menu === 'credits'
               })}
             >
               {language === 'français' && state.menu === 'context' && <FrenchContext />}
               {language === 'english' && state.menu === 'context' && <EnglishContext />}
-              {language === 'français' && state.menu === 'credits' && <FrenchCredits />}
+              {language === 'français' && state.menu === 'credits' && (
+                <FrenchCredits screenSize={screenSize} />
+              )}
               {language === 'english' && state.menu === 'credits' && <EnglishCredits />}
             </div>
-            <div className="mask top-[calc(100%-100px)]"></div>
+
             <div
               className={cn('flex font-bold text-center border-t-[2px] leading-none', {
                 'text-[calc(7px_+_23_*_((100vw_-_360px)_/_(1600_-_360)))]':
@@ -87,6 +90,12 @@ export default function MenuPopup(props: {
                 'border-[#F93598]': isCardActive
               })}
             >
+              <div
+                className={cn({
+                  'mask top-[23.15vw] h-[5vw]': screenSize !== 'default',
+                  'mask top-[484px] h-[50px]': screenSize === 'default'
+                })}
+              />
               <div className="block m-auto ">{state.menu}</div>
             </div>
           </div>
@@ -99,6 +108,7 @@ export default function MenuPopup(props: {
             'top-[200px]': screenSize === 'default'
           })}
         >
+          <div className="absolute z-100 block bg-white w-[60vw] top-[-15vw] h-[10vw]"></div>
           <div
             className={cn('absolute z-50 ', {
               'w-[14.3vw] top-[-10.55vw] right-[19vw]': screenSize !== 'default',

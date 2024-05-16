@@ -5,6 +5,7 @@ import Popup from '../popup/popup';
 import usePopup from '../../hooks/usePopUp';
 
 export default function Card(props: {
+  visible?: boolean;
   className?: string;
   screenSize: ScreenSize;
   rotation?: number;
@@ -23,6 +24,7 @@ export default function Card(props: {
   onMouseLeave?: () => void;
 }) {
   const {
+    visible = true,
     cardTitle,
     points,
     onCardClick,
@@ -47,7 +49,11 @@ export default function Card(props: {
   const altImgUrl = `/images/${altImg}.jpg`;
 
   return (
-    <div className="relative">
+    <div
+      className={cn('relative', {
+        invisible: !visible
+      })}
+    >
       <Popup
         isOpen={isOpen}
         setOpen={setOpen}
