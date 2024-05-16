@@ -22,7 +22,8 @@ export default function Menu({
     setState({ ...state, category: 'noCategory' });
     if (state.menu !== menu) {
       setState({ ...state, menu: menu, category: 'noCategory' });
-    }
+    } 
+    
     setOpen(!isOpen);
   };
 
@@ -32,7 +33,10 @@ export default function Menu({
         <MenuPopup
           containerClass="relative z-50 left-[50%] translate-x-[-50%]"
           state={state}
-          onClick={() => setOpen(false)}
+          onClick={() => {
+            setOpen(false)
+            setState({ ...state, menu: 'noMenu'})
+          }}
           screenSize={screenSize}
           language={state.lang}
         />

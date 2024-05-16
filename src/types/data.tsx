@@ -19,7 +19,7 @@ type SubcategoryCard =
   | 'family'
   | 'medical-care';
 
-export type MenuCard = 'closed' | 'credits' | 'context';
+export type MenuCard = 'closed' | 'credits' | 'context' | 'noMenu';
 
 export interface Subcategory {
   card: SubcategoryCard;

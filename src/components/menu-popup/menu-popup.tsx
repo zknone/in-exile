@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import cn from 'classnames';
 import { AppState, Language, ScreenSize } from '../../types/data';
 import FrenchContext from './french-context';
@@ -12,8 +12,9 @@ export default function MenuPopup(props: {
   language?: Language;
   containerClass: string;
   state: AppState;
+  setState?: Dispatch<SetStateAction<AppState>>;
 }) {
-  const { onClick, screenSize, language, containerClass, state } = props;
+  const { onClick, screenSize, language, containerClass, state,   setState } = props;
   const [isCardActive, setCardsActive] = useState(false);
   const handlePopupHover = () => {
     setCardsActive(true);
@@ -106,7 +107,6 @@ export default function MenuPopup(props: {
             'top-[200px]': screenSize === 'default'
           })}
         >
-          <div className="absolute z-100 block bg-white w-[60vw] top-[-15vw] h-[10vw]"></div>
           <div
             className={cn('absolute z-50 ', {
               'w-[14.3vw] top-[-10.55vw] right-[19vw]': screenSize !== 'default',

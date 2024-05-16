@@ -72,8 +72,6 @@ function App() {
     'images/workspace.jpg'
   ];
 
-  console.log(state.lang);
-
   return (
     <>
       <Helmet>
