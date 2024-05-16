@@ -28,13 +28,12 @@ export default function MenuPopup(props: {
       className={cn(containerClass, 'absolute', {
         'w-[21vw]': screenSize !== 'default',
         'top-[-50vw] ': screenSize !== 'default' && state.category === 'noCategory',
-        'top-[-71vw] ':
-          screenSize !== 'default' && state.category !== 'noCategory' && state.menu !== 'credits',
-        'top-[-72vw] ':
-          screenSize !== 'default' && state.category !== 'noCategory' && state.menu === 'credits',
+        'top-[-71vw] ': screenSize !== 'default' && state.category !== 'noCategory' && state.menu !== 'credits',
+        'top-[-72vw] ': screenSize !== 'default' && state.category !== 'noCategory' && state.menu === 'credits',
         'max-w-[409px] max-h-[650px]': screenSize === 'default',
         'top-[-970px]': screenSize === 'default' && state.category === 'noCategory',
-        'top-[-1370px]': screenSize === 'default' && state.category !== 'noCategory'
+        'top-[-1370px]': screenSize === 'default' && state.category !== 'noCategory' && state.menu !== 'credits',
+        'top-[-1398px]': screenSize === 'default' && state.category !== 'noCategory' && state.menu === 'credits'
       })}
     >
       <div className={cn('flex gap-2 justify-center w-full')}>
