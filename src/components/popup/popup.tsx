@@ -47,26 +47,26 @@ export default function Popup(props: {
             onMouseEnter={handlePopupHover}
             onMouseLeave={handlePopupLeave}
             className={cn(
-              'absolute z-20 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[2vw] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C]',
+              'absolute z-20 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C]',
               {
-                'w-[20vw] h-[30vw]': screenSize !== 'default',
+                'w-[21vw] h-[33.3vw] rounded-[2vw] ': screenSize !== 'default',
                 'p-[3px]': screenSize === 'mobile',
                 'p-[5px]': screenSize === 'tablet-m',
                 'p-[6.2px]': screenSize === 'tablet-l',
                 'p-[9.5px]': screenSize === 'tabletop',
-                'w-[409px] h-[600px] p-[13px]': screenSize === 'default'
+                'w-[409px] h-[650px] p-[13px] rounded-[40px]': screenSize === 'default'
               }
             )}
             onClick={() => setOpen(false)}
           >
             <div
               className={cn(
-                'grid grid-rows-[88%_12%] rounded-[calc(2vw_*_0.75)] w-full flex flex-col justify-between h-full border-[#FF6CFF] bg-white hover:border-[#F93598]',
+                'grid grid-rows-[88%_12%] w-full flex flex-col justify-between h-full border-[#FF6CFF] bg-white hover:border-[#F93598]',
                 {
-                  'text-[calc(4px_+_12_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  'text-[calc(4px_+_12_*_((100vw_-_360px)_/_(1600_-_360)))] rounded-[calc(2vw_*_0.75)]':
                     screenSize !== 'default',
 
-                  'text-[20px] ': screenSize === 'default'
+                  'text-[20px] rounded-[30px]': screenSize === 'default'
                 }
               )}
             >

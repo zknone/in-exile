@@ -26,11 +26,9 @@ export default function MenuPopup(props: {
   return (
     <div
       className={cn(containerClass, 'absolute', {
-        'max-w-[20vw]': screenSize !== 'default',
+        'w-[21vw]': screenSize !== 'default',
         'top-[-50vw] ': screenSize !== 'default' && state.category === 'noCategory',
-
         'top-[-71vw] ': screenSize !== 'default' && state.category !== 'noCategory',
-
         'max-w-[409px] max-h-[650px]': screenSize === 'default',
         'top-[-970px]': screenSize === 'default' && state.category === 'noCategory',
         'top-[-1370px]': screenSize === 'default' && state.category !== 'noCategory'
@@ -63,9 +61,9 @@ export default function MenuPopup(props: {
           >
             <div
               className={cn('overflow-auto flex flex-col gap-y-5 leading-normal mt-[10%]', {
-                'text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'text-[calc(4px_+_12_*_((100vw_-_360px)_/_(1600_-_360)))]':
                   screenSize !== 'default',
-                'mx-[2px] px-[3px]': screenSize === 'mobile',
+                'mx-[3px] px-[5px]': screenSize === 'mobile',
                 'mx-[5px] px-[10px]': screenSize === 'tablet-m',
                 'mx-[7px] px-[15px]': screenSize === 'tablet-l',
                 'mx-[8px] px-[32px]': screenSize === 'tabletop',
