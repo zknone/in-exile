@@ -23,6 +23,7 @@ export default function Menu({
     const handleClickOutside = (event: MouseEvent) => {
       if (isOpen) {
         setOpen(false);
+        setState({...state, menu: 'noMenu'})
       }
     };
 
