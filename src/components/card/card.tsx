@@ -107,7 +107,7 @@ export default function Card(props: {
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan },
               {
-                'border-t-[calc(21vw*0.007)] pt-[0.4vw] pb-[0.8vw] text-[calc(4px_+_14_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                'border-t-[calc(21vw*0.007)] pt-[0.35vw] pb-[0.6vw] text-[calc(4px_+_14_*_((100vw_-_360px)_/_(1600_-_360)))]':
                   screenSize !== 'default'
               },
               { 'pt-[7px] pb-[12px] border-t-[2px] text-[22px]': screenSize === 'default' }
