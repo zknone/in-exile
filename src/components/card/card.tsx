@@ -66,7 +66,10 @@ export default function Card(props: {
         className={cn(
           'flex flex-col w-full relative shadow-card',
           className,
-          { 'border-[calc(21vw*0.007)] p-[calc(21vw*0.013)] rounded-[1.3vw]': screenSize !== 'default' },
+          {
+            'border-[calc(21vw*0.007)] p-[calc(21vw*0.013)] rounded-[1.3vw]':
+              screenSize !== 'default'
+          },
           { 'border-[2px] p-[3.2px] rounded-[25px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',

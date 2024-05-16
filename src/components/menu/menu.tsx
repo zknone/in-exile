@@ -35,7 +35,6 @@ export default function Menu({
     };
   }, [isOpen, setOpen]);
 
-
   const onMenuChange = (menu: MenuCard) => {
     setState({ ...state, category: 'noCategory' });
     if (menu !== 'credits') {
@@ -50,7 +49,7 @@ export default function Menu({
   return (
     <>
       {(state.lang !== 'noLang' && state.menu === 'noMenu') ||
-        ('closed' && isOpen && (
+        (!isOpen && (
           <MenuPopup
             containerClass="relative z-50 left-[50%] translate-x-[-50%]"
             state={state}
