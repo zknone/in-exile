@@ -45,8 +45,8 @@ export default function Card(props: {
 
   const { isOpen, setOpen, cardRef } = usePopup();
 
-  const imgUrl = `/images/${img}.jpg`;
-  const altImgUrl = `/images/${altImg}.jpg`;
+  const imgUrl = `images/${img}.jpg`;
+  const altImgUrl = `images/${altImg}.jpg`;
 
   return (
     <div
