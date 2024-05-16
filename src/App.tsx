@@ -42,8 +42,6 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  console.log(screenSize);
-
   const imagesToPreload: string[] = [
     'images/administrative-support.jpg',
     'images/artist-position.jpg',

@@ -42,8 +42,6 @@ const CardLine = (props: {
     }
   };
 
-  console.log(state);
-
   const checkData = () => {
     if (mode === 'language') return data;
     if (mode === 'subCategory') {
