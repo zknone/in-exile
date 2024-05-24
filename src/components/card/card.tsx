@@ -5,6 +5,7 @@ import Popup from '../popup/popup';
 import usePopup from '../../hooks/usePopUp';
 
 export default function Card(props: {
+  href?: string;
   visible?: boolean;
   className?: string;
   screenSize: ScreenSize;
@@ -25,6 +26,7 @@ export default function Card(props: {
 }) {
   const {
     visible = true,
+    href,
     cardTitle,
     points,
     onCardClick,
@@ -116,7 +118,7 @@ export default function Card(props: {
               { 'pt-[7px] pb-[12px] border-t-[2px] text-[22px]': screenSize === 'default' }
             )}
           >
-            {cardTitle}
+            <a href={href} download>{cardTitle}</a>
           </div>
         </div>
       </div>
