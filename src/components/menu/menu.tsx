@@ -69,7 +69,7 @@ export default function Menu({
             'top-[-20vw]':
               state.lang === 'noLang' &&
               screenSize !== 'default' &&
-              !isOpen &&
+              isOpen &&
               screenSize !== 'mobile'
           },
           {

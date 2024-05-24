@@ -27,7 +27,7 @@ export default function MenuPopup(props: {
     <div
       className={cn(containerClass, 'absolute', {
         'w-[21vw]': screenSize !== 'default' && screenSize !== 'mobile',
-        'w-[24.5vw]': screenSize !== 'default' && screenSize === 'mobile',
+        'w-[24vw]': screenSize !== 'default' && screenSize === 'mobile',
         'left-[50%]': state.menu === 'context',
         'left-[60%]': state.menu === 'credits',
         'max-w-[409px] max-h-[650px]': screenSize === 'default',
@@ -140,7 +140,7 @@ export default function MenuPopup(props: {
           <div
             className={cn('absolute z-50 ', {
               'w-[14.3vw] top-[-10.55vw] right-[19vw]': screenSize !== 'default' && screenSize !== 'mobile',
-              'w-[16.8vw] top-[-10.55vw] right-[19vw]': screenSize !== 'default' && screenSize === 'mobile',
+              'w-[16.2vw] top-[-10.55vw] right-[22vw]': screenSize !== 'default' && screenSize === 'mobile',
               'w-[280px] top-[-122px] right-[380px]': screenSize === 'default'
             })}
           >
@@ -158,7 +158,7 @@ export default function MenuPopup(props: {
           <div
             className={cn('absolute z-50', {
               'w-[14.3vw] top-[-10.55vw] left-[19vw] ': screenSize !== 'default' && screenSize !== 'mobile',
-              'w-[16.8vw] top-[-10.55vw] left-[19vw] ': screenSize !== 'default' && screenSize === 'mobile',
+              'w-[16.2vw] top-[-10.55vw] left-[22vw] ': screenSize !== 'default' && screenSize === 'mobile',
               'w-[280px] top-[-122px] left-[380px]': screenSize === 'default'
             })}
           >
@@ -178,7 +178,8 @@ export default function MenuPopup(props: {
             <>
               <div
                 className={cn('absolute', {
-                  'w-[14.3vw] top-[-12.6vw] right-[22.8vw]': screenSize !== 'default',
+                  'w-[14.3vw] top-[-12.6vw] right-[22.8vw]': screenSize !== 'default' && screenSize !== 'mobile',
+                  'w-[16.2vw] top-[-12.6vw] right-[25.8vw]': screenSize !== 'default' && screenSize === 'mobile',
                   'w-[280px] top-[-160px] right-[440px]': screenSize === 'default'
                 })}
               >
@@ -192,7 +193,8 @@ export default function MenuPopup(props: {
               </div>
               <div
                 className={cn('absolute', {
-                  'w-[14.3vw] top-[-8.2vw] right-[21.8vw]': screenSize !== 'default',
+                  'w-[14.3vw] top-[-8.2vw] right-[21.8vw]': screenSize !== 'default' && screenSize !== 'mobile',
+                  'w-[16.2vw] top-[-8.2vw] right-[24.8vw]': screenSize !== 'default' && screenSize === 'mobile',
                   'w-[280px] top-[-77px] right-[440px]': screenSize === 'default'
                 })}
               >
@@ -206,7 +208,8 @@ export default function MenuPopup(props: {
               </div>
               <div
                 className={cn('absolute', {
-                  'w-[14.3vw] top-[-12.3vw] left-[22vw]': screenSize !== 'default',
+                  'w-[14.3vw] top-[-12.3vw] left-[22vw]': screenSize !== 'default' && screenSize !== 'mobile',
+                  'w-[16.2vw] top-[-12.3vw] left-[25vw]': screenSize !== 'default' && screenSize === 'mobile',
                   'w-[280px] top-[-160px] left-[440px]': screenSize === 'default'
                 })}
               >
@@ -220,7 +223,8 @@ export default function MenuPopup(props: {
               </div>
               <div
                 className={cn('absolute', {
-                  'w-[14.3vw] top-[-9.7vw] left-[21vw]': screenSize !== 'default',
+                  'w-[14.3vw] top-[-9.7vw] left-[21vw]': screenSize !== 'default' && screenSize !== 'mobile',
+                  'w-[16.2vw] top-[-9.7vw] left-[24vw]': screenSize !== 'default' && screenSize === 'mobile',
                   'w-[280px] top-[-107px] left-[440px]': screenSize === 'default'
                 })}
               >
