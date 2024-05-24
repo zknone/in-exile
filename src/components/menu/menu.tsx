@@ -136,7 +136,7 @@ export default function Menu({
             img="home-school"
             onCardClick={() => onMenuChange('context')}
             key="context"
-            cardTitle="context"
+            cardTitle={state.lang === 'english' ? 'context' : 'contexte'}
             rotation={-4}
           />
           <Card
@@ -147,7 +147,7 @@ export default function Menu({
             img="home-school"
             onCardClick={() => onMenuChange('credits')}
             key="credits"
-            cardTitle="credits"
+            cardTitle={state.lang === 'english' ? 'credits' : 'сrédits'}
             rotation={-2}
           />
         </div>
