@@ -167,7 +167,7 @@ export default function Menu({
             screenSize={screenSize}
             img="home-school"
             key="download"
-            cardTitle="download"
+            cardTitle={state.lang === 'english' ? 'download' : 'télécharger'}
             rotation={1.2}
           />
         </div>
