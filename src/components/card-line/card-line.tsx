@@ -103,7 +103,15 @@ const CardLine = (props: {
               'top-[-20vw]':
                 state.lang !== 'noLang' &&
                 state.category !== 'noCategory' &&
-                screenSize !== 'default'
+                screenSize !== 'default' &&
+                screenSize !== 'mobile'
+            },
+            {
+              'top-[-22.7vw]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize !== 'default' &&
+                screenSize === 'mobile'
             },
             {
               'top-[-390px]':
@@ -144,13 +152,29 @@ const CardLine = (props: {
               'top-[-20vw]':
                 state.lang !== 'noLang' &&
                 state.category === 'noCategory' &&
-                screenSize !== 'default'
+                screenSize !== 'default' &&
+                screenSize !== 'mobile'
+            },
+            {
+              'top-[-22.9vw]':
+                state.lang !== 'noLang' &&
+                state.category === 'noCategory' &&
+                screenSize !== 'default' &&
+                screenSize === 'mobile'
             },
             {
               'top-[-40vw]':
                 state.lang !== 'noLang' &&
                 state.category !== 'noCategory' &&
-                screenSize !== 'default'
+                screenSize !== 'default' &&
+                screenSize !== 'mobile'
+            },
+            {
+              'top-[-45.6vw]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize !== 'default' &&
+                screenSize === 'mobile'
             },
             {
               'top-[-390px]':

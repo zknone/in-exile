@@ -82,7 +82,8 @@ function App() {
           <>
             <div
               className={cn('relative bg-white w-full', {
-                'max-w-[75vw] max-h-[28vw]': screenSize !== 'default',
+                'max-w-[85vw] max-h-[14vw]': screenSize !== 'default' && screenSize === 'mobile',
+                'max-w-[75vw] max-h-[28vw]': screenSize !== 'default' && screenSize !== 'mobile',
                 'max-w-[1480px] max-h-[440px]': screenSize === 'default'
               })}
             >

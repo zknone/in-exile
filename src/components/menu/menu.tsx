@@ -23,7 +23,7 @@ export default function Menu({
     const handleClickOutside = (event: MouseEvent) => {
       if (isOpen) {
         setOpen(false);
-        setState({...state, menu: 'noMenu'})
+        setState({ ...state, menu: 'noMenu' });
       }
     };
 
@@ -35,7 +35,6 @@ export default function Menu({
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen, setOpen]);
-
 
   const onMenuChange = (menu: MenuCard) => {
     setState({ ...state, category: 'noCategory' });
@@ -66,14 +65,47 @@ export default function Menu({
       <div
         className={cn(
           'relative z-0 flex flex-col justify-between items-center mx-auto max-h-[1px]',
-          { 'top-[-20vw]': state.lang === 'noLang' && screenSize !== 'default' && !isOpen },
+          {
+            'top-[-20vw]':
+              state.lang === 'noLang' &&
+              screenSize !== 'default' &&
+              !isOpen &&
+              screenSize !== 'mobile'
+          },
+          {
+            'top-[-22.9vw]':
+              state.lang === 'noLang' &&
+              screenSize !== 'default' &&
+              !isOpen &&
+              screenSize === 'mobile'
+          },
           {
             'top-[-40vw]':
-              state.lang !== 'noLang' && state.category === 'noCategory' && screenSize !== 'default'
+              state.lang !== 'noLang' &&
+              state.category === 'noCategory' &&
+              screenSize !== 'default' &&
+              screenSize !== 'mobile'
+          },
+          {
+            'top-[-45.6vw]':
+              state.lang !== 'noLang' &&
+              state.category === 'noCategory' &&
+              screenSize !== 'default' &&
+              screenSize === 'mobile'
           },
           {
             'top-[-60vw]':
-              state.lang !== 'noLang' && state.category !== 'noCategory' && screenSize !== 'default'
+              state.lang !== 'noLang' &&
+              state.category !== 'noCategory' &&
+              screenSize !== 'default' &&
+              screenSize !== 'mobile'
+          },
+          {
+            'top-[-68.3vw]':
+              state.lang !== 'noLang' &&
+              state.category !== 'noCategory' &&
+              screenSize !== 'default' &&
+              screenSize === 'mobile'
           },
           { 'top-[-390px]': state.lang === 'noLang' && screenSize === 'default' },
           {
@@ -123,7 +155,7 @@ export default function Menu({
         <div
           className={cn(
             'relative z-0 flex justify-between  mx-auto',
-            { 'mx-[4px] max-w-[19.3%] top-[-20vw]': screenSize === 'mobile' },
+            { 'mx-[4px] max-w-[19.3%] top-[-22.4vw]': screenSize === 'mobile' },
             { 'mx-[8px] max-w-[19.3%] top-[-20vw]': screenSize === 'tablet-m' },
             { 'mx-[10px] max-w-[19.3%] top-[-20vw]': screenSize === 'tablet-l' },
             { 'mx-[15px] max-w-[19.3%] top-[-20vw]': screenSize === 'tabletop' },

@@ -49,7 +49,10 @@ export default function Popup(props: {
             className={cn(
               'absolute z-20 left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] border-[2px] border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C]',
               {
-                'w-[21vw] h-[33.3vw] rounded-[2vw] ': screenSize !== 'default',
+                'w-[21vw] h-[33.2vw] rounded-[2vw] ':
+                  screenSize !== 'default' && screenSize !== 'mobile',
+                'w-[24.5vw] h-[38.7vw] rounded-[2vw] ':
+                  screenSize !== 'default' && screenSize === 'mobile',
                 'p-[3px]': screenSize === 'mobile',
                 'p-[5px]': screenSize === 'tablet-m',
                 'p-[6.2px]': screenSize === 'tablet-l',
@@ -63,7 +66,7 @@ export default function Popup(props: {
               className={cn(
                 'grid grid-rows-[88%_12%] w-full flex flex-col justify-between h-full border-[#FF6CFF] bg-white hover:border-[#F93598]',
                 {
-                  'text-[calc(4px_+_12_*_((100vw_-_360px)_/_(1600_-_360)))] rounded-[calc(2vw_*_0.75)]':
+                  'text-[calc(4px_+_12_*_((100vw_-_375px)_/_(1600_-_375)))] rounded-[calc(2vw_*_0.75)]':
                     screenSize !== 'default',
 
                   'text-[20px] rounded-[30px]': screenSize === 'default'
@@ -72,8 +75,7 @@ export default function Popup(props: {
             >
               <ul
                 className={cn(
-                  'overflow-auto flex flex-col justify-center leading-tight px-[9%]',
-                  {}
+                  'overflow-auto flex flex-col justify-center leading-tight px-[9%]'
                 )}
               >
                 {points &&
@@ -85,7 +87,7 @@ export default function Popup(props: {
               </ul>
               <div
                 className={cn('flex font-bold text-center border-t-[2px] leading-none', {
-                  'text-[calc(7px_+_17_*_((100vw_-_360px)_/_(1600_-_360)))]':
+                  'text-[calc(7px_+_17_*_((100vw_-_375px)_/_(1600_-_375)))]':
                     screenSize !== 'default',
                   'text-[30px]': screenSize === 'default',
                   'border-[#ff6cb6]': !isCardActive,
