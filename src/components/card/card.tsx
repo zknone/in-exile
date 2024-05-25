@@ -118,7 +118,9 @@ export default function Card(props: {
               { 'pt-[7px] pb-[12px] border-t-[2px] text-[22px]': screenSize === 'default' }
             )}
           >
-            <a href={href} download>{cardTitle}</a>
+            <a href={href} download>
+              {cardTitle}
+            </a>
           </div>
         </div>
       </div>

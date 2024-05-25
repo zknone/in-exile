@@ -74,14 +74,12 @@ export default function Popup(props: {
               )}
             >
               <ul
-                className={cn(
-                  'overflow-auto flex flex-col justify-center leading-tight px-[9%]'
-                )}
+                className={cn('overflow-auto flex flex-col justify-center leading-tight px-[9%]')}
               >
                 {points &&
                   points.map((item, index) => (
                     <li className="pb-[7%] last:pb-0" key={index}>
-                      {item}
+                      <div dangerouslySetInnerHTML={{ __html: item }} />
                     </li>
                   ))}
               </ul>

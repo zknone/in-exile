@@ -18,13 +18,13 @@ export default function FrenchContext() {
       </div>
       <div>
         Ces «&#x202F;cartes d&rsquo;accueil&#x202F;» se nourrissent de discussions avec les
-        partenaires de PUZLP, les écoles d&rsquo;art et les acteurs du projet belge «&#x202F;Exil et
-        création&#x202F;», et de dialogues avec des artistes en exil accueilli·es dans des écoles
-        d&rsquo;art. Un premier prototype de résidence mené en 2020 à l&rsquo;ESAAA à Annecy avec
-        des membres de l&rsquo;aa-e, a contribué à adapter aux artistes le programme Pause porté par
-        le Collège de France. Depuis la moitié des écoles d&rsquo;arts et de design françaises ont
-        reçu ou reçoivent des dizaines d&rsquo;artistes en exil de tous horizons pour des résidences
-        de recherche, de création ou d&rsquo;enseignement.
+        partenaires de PUZLP, les écoles d&rsquo;art et les acteurs du projet belge
+        «&#x202F;Exil&#x202F;et&#x202F;création&#x202F;», et de dialogues avec des artistes en exil
+        accueilli·es dans des écoles d&rsquo;art. Un premier prototype de résidence mené en 2020 à
+        l&rsquo;ESAAA à Annecy avec des membres de l&rsquo;aa-e, a contribué à adapter aux artistes
+        le programme Pause porté par le Collège de France. Depuis la moitié des écoles d’arts et de
+        design françaises ont reçu ou reçoivent des dizaines d&rsquo;artistes en exil de tous
+        horizons pour des résidences de recherche, de création ou d&rsquo;enseignement.
       </div>
       <div>
         Musicien·nes, performeur·euses, danseur·euses, peintres, sculpteur·ices, photographes,
