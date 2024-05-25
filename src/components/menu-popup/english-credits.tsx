@@ -11,33 +11,19 @@ export default function EnglishCredits({ screenSize }: { screenSize: ScreenSize 
         })}
       >
         <dl className="block">
-          <dt
-            className={cn('font-bold', {
-              'text-[calc(6px_+_12_*_((100vw_-_375px)_/_(1600_-_375)))]': screenSize !== 'default',
-              'text-[22px]': screenSize === 'default'
-            })}
-          >
-            Judith Depaule
-          </dt>
-          <dd className="mb-[10%]">art direction</dd>
-          <dt
-            className={cn('font-bold', {
-              'text-[calc(6px_+_12_*_((100vw_-_375px)_/_(1600_-_375)))]': screenSize !== 'default',
-              'text-[22px]': screenSize === 'default'
-            })}
-          >
-            Alexandre Plusnine
-          </dt>
-          <dd className="mb-[10%]">product design, web design, illustrations</dd>
-          <dt
-            className={cn('font-bold', {
-              'text-[calc(6px_+_12_*_((100vw_-_375px)_/_(1600_-_375)))]': screenSize !== 'default',
-              'text-[22px]': screenSize === 'default'
-            })}
-          >
-            Ivan Streltsov
-          </dt>
-          <dd className="mb-[10%]">frontend development</dd>
+          <dt className="font-bold">Judith Depaule</dt>
+          <dd className="mb-[4%]">art direction</dd>
+          <dt className="font-bold">Alexandre Plusnine</dt>
+          <dd className="mb-[4%]">product design, web design, illustrations</dd>
+          <dt className="font-bold">Ivan Streltsov</dt>
+          <dd className="mb-[4%]">frontend development</dd>
+          <dt className="font-bold">Ryan Mai</dt>
+          <dd className="mb-[6%]">translation</dd>
+          <div>
+            <a href="http://welcome-cards.aa-e.org">welcome-cards.aa-e.org</a>
+            <br />
+            <a href="mailto:contact@aa-e.org">contact@aa-e.org</a>
+          </div>
         </dl>
       </div>
     </>

@@ -131,9 +131,11 @@ export default function MenuPopup(props: {
             >
               <div
                 className={cn({
-                  'mask top-[22.5vw] h-[5vw]': screenSize !== 'default' && screenSize !== 'mobile',
-                  'mask top-[27.3vw] h-[5vw]': screenSize !== 'default' && screenSize === 'mobile',
-                  'mask top-[484px] h-[50px]': screenSize === 'default'
+                  'mask top-[22.5vw] h-[5vw]':
+                    screenSize !== 'default' && screenSize !== 'mobile' && state.menu === 'context',
+                  'mask top-[27.3vw] h-[5vw]':
+                    screenSize !== 'default' && screenSize === 'mobile' && state.menu === 'context',
+                  'mask top-[484px] h-[50px]': screenSize === 'default' && state.menu === 'context'
                 })}
               />
               <div

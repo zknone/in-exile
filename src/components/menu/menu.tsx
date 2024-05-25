@@ -21,7 +21,7 @@ export default function Menu({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isOpen) {
+      if (isOpen && state.menu !== 'credits') {
         setOpen(false);
         setState({ ...state, menu: 'noMenu' });
       }
@@ -34,7 +34,7 @@ export default function Menu({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen, setOpen]);
+  }, [isOpen, state.menu, setOpen, setState]);
 
   const onMenuChange = (menu: MenuCard) => {
     setState({ ...state, category: 'noCategory' });
