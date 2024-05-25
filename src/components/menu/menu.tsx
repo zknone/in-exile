@@ -8,7 +8,7 @@ import MenuPopup from '../menu-popup/menu-popup';
 export default function Menu({
   screenSize,
   state,
-  setState
+  setState,
 }: {
   screenSize: ScreenSize;
   state: AppState;
@@ -21,9 +21,9 @@ export default function Menu({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isOpen && state.menu !== 'credits') {
+      if (isOpen) {
         setOpen(false);
-        setState({ ...state, menu: 'noMenu' });
+        setState({ ...state, menu: 'noMenu', isFirstTimeOpened: false });
       }
     };
 
@@ -37,16 +37,15 @@ export default function Menu({
   }, [isOpen, state.menu, setOpen, setState]);
 
   const onMenuChange = (menu: MenuCard) => {
-    setState({ ...state, category: 'noCategory' });
+    setState({ ...state, category: 'noCategory', isFirstTimeOpened: false });
     if (menu !== 'credits') {
-      setState({ ...state, menu: menu, category: 'noCategory' });
+      setState({ ...state, menu: menu, category: 'noCategory', isFirstTimeOpened: false });
     } else {
-      setState({ ...state, menu: menu });
+      setState({ ...state, menu: menu, isFirstTimeOpened: false });
     }
 
     setOpen(!isOpen);
   };
-
   return (
     <>
       {(state.lang !== 'noLang' && state.menu === 'noMenu') ||
@@ -65,6 +64,7 @@ export default function Menu({
       <div
         className={cn(
           'relative z-0 flex flex-col justify-between items-center mx-auto max-h-[1px]',
+          {'invisible': state.isFirstTimeOpened},
           {
             'top-[-20vw]':
               state.lang === 'noLang' &&

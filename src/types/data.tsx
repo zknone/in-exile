@@ -46,6 +46,7 @@ export type AppState = {
   lang: Language;
   category: CategoryCard;
   menu: MenuCard;
+  isFirstTimeOpened: boolean;
 };
 
 export type Dataset = DatasetItem[];

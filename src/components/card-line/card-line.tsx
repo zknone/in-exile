@@ -143,6 +143,7 @@ const CardLine = (props: {
         <div
           className={cn(
             'relative z-10 flex justify-between mx-auto max-w-[40%]',
+            {'invisible': state.isFirstTimeOpened && state.lang !== 'noLang'},
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
