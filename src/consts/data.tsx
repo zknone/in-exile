@@ -293,7 +293,7 @@ const data: Dataset = [
             img: 'professional-activity',
             text: [
               'Invitation to artistic and cultural events.',
-              "Introduction to partners, institutions, associations, or any other entity related to the artist's project.",
+              "Introduction to partners, institutions, associations,<br><em>or any other entity related to the artist's project.</em>",
               'Networking with other artists.'
             ]
           }
@@ -309,9 +309,9 @@ const data: Dataset = [
             title: 'administrative support',
             img: 'administrative-support',
             text: [
-              'Amount and distribution of the grant, terms of payment and declaration, use of a third-party association.',
-              'Affiliation with social and professional insurance funds, with the help of a specialized association.',
-              'Obtaining or renewing a residency permit, with the help of a specialized association.'
+              'Amount and distribution of the grant, terms of payment and declaration.<br><em>Possible use of a third-party association.</em>',
+              'Affiliation with social and professional insurance funds,<br><em>with the help of a specialized association.</em>',
+              'Obtaining or renewing a residency permit,<br><em>with the help of a specialized association.</em>'
             ]
           },
           {
@@ -319,8 +319,8 @@ const data: Dataset = [
             title: 'bank & phone',
             img: 'bank-phone',
             text: [
-              'Opening of a bank account, obtaining a payment card—physical or online bank—depending on the administrative status and origin of the artist.',
-              'Subscription to a telephone plan.'
+              "Opening of a bank account, obtaining a payment card:<br><em>physical or online bank.<br>Depending on the artist's administrative status and origin.</em>",
+              'Subscription to a telephone plan.<br><em>After opening a bank account.</em>'
             ]
           },
           {
@@ -328,8 +328,8 @@ const data: Dataset = [
             title: 'training',
             img: 'education',
             text: [
-              'Registration for French courses after placement test, unless beginner level—university, associations, municipal courses, school-taught courses, online education…',
-              'Internal or external training depending on the needs of the artist—guidance, English language, technical training…'
+              'Registration for French courses,<br><em>after placement test, unless beginner level.<br>Resources: university, associations, municipal courses, school-taught courses, online education…</em>',
+              'Internal or external training depending on the needs of the artist:<br><em>guidance, English language, technical training…</em>'
             ]
           },
           {
@@ -337,9 +337,9 @@ const data: Dataset = [
             title: 'family',
             img: 'family',
             text: [
-              "Consideration of the artist's family composition—appropriate housing, schedule arrangements…",
-              'Schooling and recreation for children—registration for school, university, specialized institute, recreation or animation center, conservatory…',
-              'Spousal assistance where possible and according to needs.'
+              "Consideration of the artist's family composition,<br><em>appropriate housing, schedule arrangements…</em>",
+              "Schooling and recreation for children:<br><em>registration for school, university, specialized institute, recreation or animation center, conservatory…</em>",
+              'Spousal assistance,<br><em>where possible and according to needs.</em>'
             ]
           },
           {
@@ -347,9 +347,9 @@ const data: Dataset = [
             title: 'care',
             img: 'medical-care',
             text: [
-              "Registration for Social Security, the Complementary Solidarity Health scheme, or even State Medical Aid (AME), depending on the artist's administrative status.",
-              "Explanation of how the health care system and mutual insurance funds operate, depending on the artist's status and health coverage.",
-              'Identification of general and specialist doctors, therapists—clarification of fees.'
+              "Registration for Healthcare (Assurance maladie), the Complementary Solidarity Health scheme, or even State Medical Aid (AME),<br><em>depending on the artist's administrative status.<br>Explanation of how the healthcare system and mutual insurance funds operate,<br>depending on the artist's status and health coverage.</em>",
+              "Identification of general and specialist doctors, therapists.<br><em>Clarification of fees.</em>",
+              'Provision of emergency numbers.'
             ]
           }
         ]
