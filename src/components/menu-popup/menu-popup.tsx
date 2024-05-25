@@ -94,7 +94,7 @@ export default function MenuPopup(props: {
             )}
           >
             <div
-              className={cn('overflow-auto flex flex-col gap-y-5 leading-normal mt-[10%]', {
+              className={cn('overflow-auto flex flex-col gap-y-[2vw] leading-normal mt-[10%]', {
                 'text-[calc(4px_+_12_*_((100vw_-_375px)_/_(1600_-_375)))]':
                   screenSize !== 'default',
                 'mx-[3px] px-[8px]': screenSize === 'mobile',
@@ -116,10 +116,13 @@ export default function MenuPopup(props: {
             </div>
 
             <div
-              className={cn('flex font-bold text-center border-t-[2px] leading-none', {
+              className={cn('flex font-bold text-center leading-none', {
+                'border-t-[0.5px]': screenSize === 'mobile',
+                'border-t-[1px]': screenSize === 'tablet-m',
+                'border-t-[1.5px]': screenSize === 'tablet-l' || screenSize === 'tabletop',
                 'text-[calc(7px_+_23_*_((100vw_-_375px)_/_(1600_-_375)))]':
                   screenSize !== 'default',
-                'text-[30px]': screenSize === 'default',
+                'text-[30px] border-t-[2px]': screenSize === 'default',
                 'border-[#ff6cb6]': !isCardActive,
                 'border-[#F93598]': isCardActive
               })}
@@ -157,7 +160,7 @@ export default function MenuPopup(props: {
               img="home-artist"
               altImg="home-artist-alt"
               key="artist"
-              cardTitle="artiste"
+              cardTitle={ state.lang === 'français' ? 'artiste' : 'artist'}
               active={isCardActive}
               isNothingHovered={isCardActive}
               isHovered={isCardActive}
@@ -177,7 +180,7 @@ export default function MenuPopup(props: {
               img="home-school"
               altImg="home-school-alt"
               key="school"
-              cardTitle="école"
+              cardTitle={ state.lang === 'français' ? 'école' : 'school'}
               active={isCardActive}
               isNothingHovered={isCardActive}
               isHovered={isCardActive}

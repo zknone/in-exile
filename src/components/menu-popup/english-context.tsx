@@ -10,10 +10,10 @@ export default function EnglishContext() {
       <div>
         A transnational reflection on the challenges of organizing residencies in art schools has
         made it possible to identify areas of concern, and then to create a facilitating welcome
-        tool designed as a deck of cards. The proposed tool synthesizes recommendations and &#34;best
-        practices,&#34; to be adjusted according to the artist&rdquo;s situation, context, and the
-        possibilities of each school. Everything stems from the desire for mutual enrichment of
-        schools and artists in exile.
+        tool designed as a deck of cards. The proposed tool synthesizes recommendations and
+        &#34;best practices,&#34; to be adjusted according to the artist&rdquo;s situation, context,
+        and the possibilities of each school. Everything stems from the desire for mutual enrichment
+        of schools and artists in exile.
       </div>
       <div>
         These “welcome cards” are enriched by discussions with PUZLP partners, art schools, and
