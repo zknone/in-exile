@@ -1,7 +1,9 @@
 export default function FrenchContext() {
   return (
     <>
-      <div className="font-bold">Cartes d’accueil en résidence d’un·e artiste en exil dans une école d’art</div>
+      <div className="font-bold">
+        Cartes d’accueil en résidence d’un·e artiste en exil dans une école d’art
+      </div>
       <div>
         Ce projet est né dans le cadre de «&#x202F;PUZLP – artistes en exil dans les écoles
         d&rsquo;art&#x202F;», qui réunit des écoles d&rsquo;art belges (ESA Saint-Luc Bruxelles,

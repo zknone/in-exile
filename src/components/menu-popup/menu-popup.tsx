@@ -160,7 +160,7 @@ export default function MenuPopup(props: {
               img="home-artist"
               altImg="home-artist-alt"
               key="artist"
-              cardTitle={ state.lang === 'français' ? 'artiste' : 'artist'}
+              cardTitle={state.lang === 'français' ? 'artiste' : 'artist'}
               active={isCardActive}
               isNothingHovered={isCardActive}
               isHovered={isCardActive}
@@ -180,7 +180,7 @@ export default function MenuPopup(props: {
               img="home-school"
               altImg="home-school-alt"
               key="school"
-              cardTitle={ state.lang === 'français' ? 'école' : 'school'}
+              cardTitle={state.lang === 'français' ? 'école' : 'school'}
               active={isCardActive}
               isNothingHovered={isCardActive}
               isHovered={isCardActive}
