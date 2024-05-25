@@ -1,6 +1,7 @@
 export default function EnglishContext() {
   return (
     <>
+      <div className="font-bold">Residency cards for an artist in exile at an art school</div>
       <div>
         This project originated within the framework of “PUZLP – artists in exile in art schools,”
         which brings together Belgian art schools (ESA Saint-Luc Brussels, ERG), the National

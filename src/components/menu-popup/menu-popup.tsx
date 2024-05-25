@@ -102,7 +102,9 @@ export default function MenuPopup(props: {
                 'mx-[7px] px-[15px]': screenSize === 'tablet-l',
                 'mx-[8px] px-[32px]': screenSize === 'tabletop',
                 'text-[20px] mx-[10px] px-[40px]': screenSize === 'default',
-                'justify-center': state.menu === 'credits'
+                'justify-center': state.menu === 'credits',
+                'text-[#555555]': !isCardActive,
+                'text-[#000000]': isCardActive
               })}
             >
               {language === 'français' && state.menu === 'context' && <FrenchContext />}
@@ -134,7 +136,14 @@ export default function MenuPopup(props: {
                   'mask top-[484px] h-[50px]': screenSize === 'default'
                 })}
               />
-              <div className="block m-auto ">{state.menu}</div>
+              <div
+                className={cn('block m-auto', {
+                  'text-[#555555]': !isCardActive,
+                  'text-[#000000]': isCardActive
+                })}
+              >
+                {state.menu}
+              </div>
             </div>
           </div>
         </div>

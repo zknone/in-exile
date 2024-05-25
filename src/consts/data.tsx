@@ -338,7 +338,7 @@ const data: Dataset = [
             img: 'family',
             text: [
               "Consideration of the artist's family composition,<br><em>appropriate housing, schedule arrangements…</em>",
-              "Schooling and recreation for children:<br><em>registration for school, university, specialized institute, recreation or animation center, conservatory…</em>",
+              'Schooling and recreation for children:<br><em>registration for school, university, specialized institute, recreation or animation center, conservatory…</em>',
               'Spousal assistance,<br><em>where possible and according to needs.</em>'
             ]
           },
@@ -348,7 +348,7 @@ const data: Dataset = [
             img: 'medical-care',
             text: [
               "Registration for Healthcare (Assurance maladie), the Complementary Solidarity Health scheme, or even State Medical Aid (AME),<br><em>depending on the artist's administrative status.<br>Explanation of how the healthcare system and mutual insurance funds operate,<br>depending on the artist's status and health coverage.</em>",
-              "Identification of general and specialist doctors, therapists.<br><em>Clarification of fees.</em>",
+              'Identification of general and specialist doctors, therapists.<br><em>Clarification of fees.</em>',
               'Provision of emergency numbers.'
             ]
           }

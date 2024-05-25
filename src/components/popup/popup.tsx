@@ -69,7 +69,15 @@ export default function Popup(props: {
                 }
               )}
             >
-              <ul className="overflow-auto flex flex-col justify-center leading-tight px-[5%] w-full">
+              <ul
+                className={cn(
+                  'overflow-auto flex flex-col justify-center leading-tight px-[5%] w-full',
+                  {
+                    'text-[#555555]': !isCardActive,
+                    'text-[#000000]': isCardActive
+                  }
+                )}
+              >
                 {points &&
                   points.map((item, index) => (
                     <li className="pb-[7%] last:pb-0 w-full" key={index}>
@@ -89,7 +97,14 @@ export default function Popup(props: {
                   'border-[#F93598]': isCardActive
                 })}
               >
-                <div className="block m-auto w-full">{cardTitle}</div>
+                <div
+                  className={cn('block m-auto w-full', {
+                    'text-[#555555]': !isCardActive,
+                    'text-[#000000]': isCardActive
+                  })}
+                >
+                  {cardTitle}
+                </div>
               </div>
             </div>
           </div>
