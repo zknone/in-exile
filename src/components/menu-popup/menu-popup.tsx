@@ -6,6 +6,7 @@ import EnglishContext from './english-context';
 import Card from '../card/card';
 import FrenchCredits from './french-credits';
 import EnglishCredits from './english-credits';
+
 export default function MenuPopup(props: {
   onClick: () => void;
   screenSize: ScreenSize;
@@ -27,42 +28,24 @@ export default function MenuPopup(props: {
     <div
       className={cn(containerClass, 'absolute', {
         'w-[21vw]': screenSize !== 'default' && screenSize !== 'mobile',
-        'w-[24vw]': screenSize !== 'default' && screenSize === 'mobile',
+        'w-[24vw]': screenSize === 'mobile',
         'left-[50%]': state.menu === 'context',
         'left-[60%]': state.menu === 'credits',
         'max-w-[409px] max-h-[650px]': screenSize === 'default',
         'top-[-50vw]':
           screenSize !== 'default' && state.category === 'noCategory' && screenSize !== 'mobile',
         'top-[-57.5vw]':
-          screenSize !== 'default' &&
-          state.category === 'noCategory' &&
-          screenSize === 'mobile' &&
-          state.menu === 'context',
+          screenSize === 'mobile' && state.category === 'noCategory' && state.menu === 'context',
         'top-[-55.7vw]':
-          screenSize !== 'default' &&
-          state.category === 'noCategory' &&
-          screenSize === 'mobile' &&
-          state.menu === 'credits',
-        'top-[-71vw] ':
-          screenSize !== 'default' &&
-          state.category !== 'noCategory' &&
-          state.menu === 'context' &&
-          screenSize !== 'mobile',
-        'top-[-73.5vw] ':
-          screenSize !== 'default' &&
-          state.category !== 'noCategory' &&
-          state.menu === 'context' &&
-          screenSize === 'mobile',
-        'top-[-72vw] ':
-          screenSize !== 'default' &&
-          state.category !== 'noCategory' &&
-          state.menu === 'credits' &&
-          screenSize !== 'mobile',
-        'top-[-82vw] ':
-          screenSize !== 'default' &&
-          state.category !== 'noCategory' &&
-          state.menu === 'credits' &&
-          screenSize === 'mobile',
+          screenSize === 'mobile' && state.category === 'noCategory' && state.menu === 'credits',
+        'top-[-71vw]':
+          screenSize !== 'default' && screenSize !== 'mobile' && state.category !== 'noCategory' && state.menu === 'context',
+        'top-[-73.5vw]':
+          screenSize === 'mobile' && state.category !== 'noCategory' && state.menu === 'context',
+        'top-[-72vw]':
+          screenSize !== 'default' && screenSize !== 'mobile' && state.category !== 'noCategory' && state.menu === 'credits',
+        'top-[-82vw]':
+          screenSize === 'mobile' && state.category !== 'noCategory' && state.menu === 'credits',
         'top-[-970px]': screenSize === 'default' && state.category === 'noCategory',
         'top-[-1398px]': screenSize === 'default' && state.category !== 'noCategory'
       })}
@@ -72,7 +55,7 @@ export default function MenuPopup(props: {
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
           className={cn(
-            'z-50 rounded-[2vw] border-2 border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
+            'z-50 rounded-[2vw] w-full border-2 border-[#FF6CFF] bg-[#FF6CB6] shadow-card hover:bg-[#F93598] hover:border-[#B1256C] popup',
             {
               'p-[2.5px]': screenSize === 'mobile',
               'p-[4px]': screenSize === 'tablet-m',
@@ -87,8 +70,8 @@ export default function MenuPopup(props: {
             className={cn(
               'popup-content grid grid-rows-[88%_12%] rounded-[calc(2vw_*_0.75)] border-[#FF6CFF] bg-white hover:border-[#F93598]',
               {
-                'h-[31.25vw]': screenSize !== 'default' && screenSize !== 'mobile',
-                'h-[36.7vw]': screenSize !== 'default' && screenSize === 'mobile',
+                'h-[36.7vw]': screenSize == 'mobile',
+                'h-[31.3vw]': screenSize !== 'default' && screenSize !== 'mobile',
                 'h-[610px] border-2': screenSize === 'default'
               }
             )}
@@ -134,7 +117,7 @@ export default function MenuPopup(props: {
                   'mask top-[22.5vw] h-[5vw]':
                     screenSize !== 'default' && screenSize !== 'mobile' && state.menu === 'context',
                   'mask top-[27.3vw] h-[5vw]':
-                    screenSize !== 'default' && screenSize === 'mobile' && state.menu === 'context',
+                    screenSize === 'mobile' && state.menu === 'context',
                   'mask top-[484px] h-[50px]': screenSize === 'default' && state.menu === 'context'
                 })}
               />
@@ -162,7 +145,7 @@ export default function MenuPopup(props: {
               'w-[14.3vw] top-[-10.55vw] right-[19vw]':
                 screenSize !== 'default' && screenSize !== 'mobile',
               'w-[16.2vw] top-[-9.2vw] right-[22vw]':
-                screenSize !== 'default' && screenSize === 'mobile',
+                screenSize === 'mobile',
               'w-[280px] top-[-122px] right-[380px]': screenSize === 'default'
             })}
           >
@@ -182,7 +165,7 @@ export default function MenuPopup(props: {
               'w-[14.3vw] top-[-10.55vw] left-[19vw] ':
                 screenSize !== 'default' && screenSize !== 'mobile',
               'w-[16.2vw] top-[-9.2vw] left-[22vw] ':
-                screenSize !== 'default' && screenSize === 'mobile',
+                screenSize === 'mobile',
               'w-[280px] top-[-122px] left-[380px]': screenSize === 'default'
             })}
           >
@@ -205,7 +188,7 @@ export default function MenuPopup(props: {
                   'w-[14.3vw] top-[-12.6vw] right-[22.8vw]':
                     screenSize !== 'default' && screenSize !== 'mobile',
                   'w-[16.2vw] top-[-11.25vw] right-[25.8vw]':
-                    screenSize !== 'default' && screenSize === 'mobile',
+                    screenSize === 'mobile',
                   'w-[280px] top-[-160px] right-[440px]': screenSize === 'default'
                 })}
               >
@@ -222,7 +205,7 @@ export default function MenuPopup(props: {
                   'w-[14.3vw] top-[-8.2vw] right-[21.8vw]':
                     screenSize !== 'default' && screenSize !== 'mobile',
                   'w-[16.2vw] top-[-6.85vw] right-[24.8vw]':
-                    screenSize !== 'default' && screenSize === 'mobile',
+                    screenSize === 'mobile',
                   'w-[280px] top-[-77px] right-[440px]': screenSize === 'default'
                 })}
               >
@@ -239,7 +222,7 @@ export default function MenuPopup(props: {
                   'w-[14.3vw] top-[-12.3vw] left-[22vw]':
                     screenSize !== 'default' && screenSize !== 'mobile',
                   'w-[16.2vw] top-[-10.95vw] left-[25vw]':
-                    screenSize !== 'default' && screenSize === 'mobile',
+                    screenSize === 'mobile',
                   'w-[280px] top-[-160px] left-[440px]': screenSize === 'default'
                 })}
               >
@@ -256,7 +239,7 @@ export default function MenuPopup(props: {
                   'w-[14.3vw] top-[-9.7vw] left-[21vw]':
                     screenSize !== 'default' && screenSize !== 'mobile',
                   'w-[16.2vw] top-[-8.35vw] left-[24vw]':
-                    screenSize !== 'default' && screenSize === 'mobile',
+                    screenSize === 'mobile',
                   'w-[280px] top-[-107px] left-[440px]': screenSize === 'default'
                 })}
               >
