@@ -101,7 +101,7 @@ export default function Card(props: {
               className={cn(
                 'object-cover w-auto h-auto transition-transform duration-300 transform hover:scale-110'
               )}
-              src={`/${active ? altImgUrl : imgUrl}`}
+              src={active ? altImgUrl : imgUrl}
               alt="cardTitle"
             />
           </div>
