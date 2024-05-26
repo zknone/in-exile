@@ -32,7 +32,7 @@ export default function EnglishContext() {
         Ukraine... The entire world circulates, moves, and meets in higher art schools, and these
         “welcome cards” are here to help and guide.
       </div>
-      <img src="/images/euro-logo.jpg" />
+      <img src="images/euro-logo.jpg" />
     </>
   );
 }
