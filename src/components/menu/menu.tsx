@@ -8,7 +8,7 @@ import MenuPopup from '../menu-popup/menu-popup';
 export default function Menu({
   screenSize,
   state,
-  setState,
+  setState
 }: {
   screenSize: ScreenSize;
   state: AppState;
@@ -64,7 +64,7 @@ export default function Menu({
       <div
         className={cn(
           'relative z-0 flex flex-col justify-between items-center mx-auto max-h-[1px]',
-          {'invisible': state.isFirstTimeOpened},
+          { invisible: state.isFirstTimeOpened },
           {
             'top-[-20vw]':
               state.lang === 'noLang' &&
