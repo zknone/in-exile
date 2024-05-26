@@ -80,7 +80,7 @@ export default function Menu({
               screenSize === 'mobile'
           },
           {
-            'top-[-40vw]':
+            'top-[-39.6vw]':
               state.lang !== 'noLang' &&
               state.category === 'noCategory' &&
               screenSize !== 'default' &&
@@ -94,7 +94,7 @@ export default function Menu({
               screenSize === 'mobile'
           },
           {
-            'top-[-60vw]':
+            'top-[-59.65vw]':
               state.lang !== 'noLang' &&
               state.category !== 'noCategory' &&
               screenSize !== 'default' &&
@@ -167,7 +167,7 @@ export default function Menu({
             screenSize={screenSize}
             img="home-school"
             key="download"
-            href="files/welcome-cards_aa-e_fr_eng.pdf"
+            href="/welcome-cards_aa-e_fr_eng.pdf"
             cardTitle={state.lang === 'english' ? 'download' : 'télécharger'}
             rotation={1.2}
           />
