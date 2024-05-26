@@ -100,7 +100,7 @@ const CardLine = (props: {
             { 'gap-x-[15px]': screenSize === 'tabletop' },
             { 'gap-x-[20px]': screenSize === 'default' },
             {
-              'top-[-20vw]':
+              'top-[-19.65vw]':
                 state.lang !== 'noLang' &&
                 state.category !== 'noCategory' &&
                 screenSize !== 'default' &&
@@ -164,7 +164,7 @@ const CardLine = (props: {
                 screenSize === 'mobile'
             },
             {
-              'top-[-40vw]':
+              'top-[-39.6vw]':
                 state.lang !== 'noLang' &&
                 state.category !== 'noCategory' &&
                 screenSize !== 'default' &&
