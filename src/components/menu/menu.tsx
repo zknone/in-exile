@@ -167,7 +167,7 @@ export default function Menu({
             screenSize={screenSize}
             img="home-school"
             key="download"
-            href="welcome-cards_aa-e_fr_eng.pdf"
+            href="in-exile/welcome-cards_aa-e_fr_eng.pdf"
             cardTitle={state.lang === 'english' ? 'download' : 'télécharger'}
             rotation={1.2}
           />
