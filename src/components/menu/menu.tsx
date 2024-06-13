@@ -167,7 +167,11 @@ export default function Menu({
             screenSize={screenSize}
             img="home-school"
             key="download"
-            href={state.lang === 'english' ? 'files/welcome-cards_aa-e_eng.pdf' : 'files/welcome-cards_aa-e_fr.pdf'}
+            href={
+              state.lang === 'english'
+                ? 'files/welcome-cards_aa-e_eng.pdf'
+                : 'files/welcome-cards_aa-e_fr.pdf'
+            }
             cardTitle={state.lang === 'english' ? 'download' : 'télécharger'}
             rotation={1.2}
           />
