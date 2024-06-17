@@ -9,7 +9,9 @@ export default function FrenchCredits({ screenSize }: { screenSize: ScreenSize }
         'text-[18px]': screenSize === 'default'
       })}
     >
-      <div className='font-bold mb-[6%]'>un projet de l'ESA Saint-Luc Bruxelles, l’ERG, l’ANdÉA et l’aa-e</div>
+      <div className="font-bold mb-[6%]">
+        Un projet de l&lsquo;ESA Saint-Luc Bruxelles, l&lsquo;ERG, l&lsquo;ANdÉA et l&lsquo;aa-e
+      </div>
       <dl className="block">
         <dt className="font-bold">Judith Depaule</dt>
         <dd className="mb-[4%]">direction artistique</dd>
