@@ -133,7 +133,8 @@ export default function MenuPopup(props: {
                   'text-[#000000]': isCardActive
                 })}
               >
-                {state.menu}
+                {language === 'français' && state.menu === 'context' ? 'contexte' : 'context'}
+                {language === 'français' && state.menu === 'credits' ? 'crédits' : 'credits'}
               </div>
             </div>
           </div>

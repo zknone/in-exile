@@ -9,6 +9,7 @@ export default function EnglishCredits({ screenSize }: { screenSize: ScreenSize 
         'text-[18px]': screenSize === 'default'
       })}
     >
+      <div className='font-bold mb-[6%]'>a project by ESA Saint-Luc Brussels, ERG, ANdÉA, aa-e</div>
       <dl className="block">
         <dt className="font-bold">Judith Depaule</dt>
         <dd className="mb-[4%]">art direction</dd>
