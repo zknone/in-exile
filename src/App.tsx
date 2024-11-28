@@ -14,7 +14,7 @@ function App() {
     lang: 'noLang',
     category: 'noCategory',
     menu: 'context',
-    isFirstTimeOpened: true,
+    isFirstTimeOpened: true
   });
 
   const [screenSize, setScreenSize] = useState<ScreenSize>('default');
