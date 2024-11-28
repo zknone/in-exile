@@ -16,8 +16,10 @@ const data: Dataset = [
             title: 'artiste en résidence',
             img: 'artist-position',
             text: [
-              "présentation de l'artiste et de son travail à l'équipe de l'école, aux professeur·es, aux étudiant·es, à prévoir en début de séjour",
-              "association de l'artiste aux projets de l'école selon les orientations de l'artiste et de l'école : workshops, programmes de recherche, enseignement, événements publics..."
+              "Présentation de l'artiste et de son travail,<br><em>à l'équipe de l'école, aux professeur·es, aux étudiant·es.</em><br><em>À planifier en début de séjour</em>. ",
+              "Association de l'artiste aux projets de l'école,<br><em>selon les orientations de l’artiste et de l’école : workshops, programmes de recherche, enseignement, événements publics...</em>",
+              "Définition du rôle et des responsabilités de l'artiste,<br><em>vis-à-vis de l'école, des professeur·es, des étudiant·es.</em>",
+              'Formulation des intérêts et des intentions respectifs de l’artiste et de l’école.'
             ]
           },
           {
@@ -25,9 +27,9 @@ const data: Dataset = [
             title: 'personnes référentes',
             img: 'referents',
             text: [
-              "désignation de deux personnes référentes de la résidence une personne de l'équipe habitant l'agglomération un·e professeur·e lié·e à la pratique de l'artiste privilégier des personnes qui partagent une langue commune avec l'artiste",
-              "mise en relation des personnes référentes avec l'artiste",
-              "définition et paramètres de l'accompagnement des personnes référentes"
+              "Désignation de deux personnes référentes de la résidence :<br><em>une personne de l’équipe habitant l'agglomération,</em><br><em>un·e professeur·e lié·e à la pratique de l'artiste.</em><br><em>De préférence des personnes qui partagent une langue commune avec l’artiste.</em>",
+              'Mise en relation des personnes référentes avec l’artiste.',
+              'Définition et paramètres de l’accompagnement des personnes référentes.'
             ]
           },
           {
@@ -35,11 +37,11 @@ const data: Dataset = [
             title: "présentation de l'école",
             img: 'school-familiarization',
             text: [
-              "fonctionnement d'une école d'art",
-              "visite de l'établissement",
-              'explication du fonctionnement des différents bâtiments, salles et ateliers',
-              "horaires et modalités d'accès",
-              "règlement intérieur de l'établissement"
+              "Visite de l'établissement.",
+              "Fonctionnement d'une école d'art.",
+              'Explication du fonctionnement des différents bâtiments, salles et ateliers.',
+              "Horaires et modalités d'accès.",
+              'Règlement interne.'
             ]
           },
           {
@@ -47,19 +49,19 @@ const data: Dataset = [
             title: 'espace de travail',
             img: 'workspace',
             text: [
-              "aménagement d'un espace de travail dans ou en dehors de l'école ou facilité d'accès à un atelier selon le champ d'intervention artistique de l'artiste et la nature de son projet selon les ressources de l'école",
-              "communication des horaires et des modalités d'accès",
-              "facilité d'accès à internet"
+              "Aménagement d’un espace de travail dans ou en dehors de l'école ou facilité d’accès à un atelier,<br><em>selon le champ d’intervention artistique de l'artiste et la nature de son projet,</em><br><em>selon les ressources de l’école.</<em>",
+              "Communication des horaires et des modalités d'accès.",
+              'Facilité d’accès à internet.'
             ]
           },
           {
             card: 'equipment',
-            title: 'équipements et matériel',
+            title: 'équipements & matériel',
             img: 'equipment',
             text: [
-              "modalités d'accès aux équipements et au matériel de l'école",
-              "définition du matériel ou des frais de production pris en charge par l'école",
-              'définition du matériel ou des frais de production pris en charge par le programme de résidence'
+              "Modalités d'accès aux équipements et au matériel de l'école.",
+              "Définition du matériel ou des frais de production pris en charge par l'école.",
+              'Définition du matériel ou des frais de production pris en charge par le programme de résidence.'
             ]
           }
         ]
@@ -74,10 +76,10 @@ const data: Dataset = [
             title: 'logement',
             img: 'lodging',
             text: [
-              "facilité d'accès, aide à la recherche d'un logement selon les ressources locales : logement de l'école, location d'un appartement ou d'une chambre, accord avec une résidence… ; de préférence une solution meublée",
-              "aménagement d'un équipement de base appel à don, récupération, seconde main",
-              "facilité d'accès à internet",
-              "souscription à une assurance habitation au nom de l'artiste"
+              "Facilité d’accès, aide à la recherche d'un logement,<br><em>selon les ressources locales : logement de l'école, location d’un appartement ou d’une chambre, accord avec une résidence ou une municipalité…</em><br><em>De préférence une solution meublée.</em><br>",
+              'Aménagement d’un équipement de base,<br><em>par appel à don, récupération, seconde main.</em>',
+              'Facilité d’accès à internet.',
+              'Souscription à une assurance habitation au nom de l’artiste.'
             ]
           },
           {
@@ -85,8 +87,8 @@ const data: Dataset = [
             title: 'découverte de la ville',
             img: 'city-familiarization',
             text: [
-              "organisation du tour de la ville et de ses environs avec l'aide de relais bénévoles",
-              "identification d'adresses utiles pour l'artiste culture, culte, bien-être, magasins, administrations"
+              'Organisation du tour de la ville et de ses environs,<br><em>avec l’aide de relais bénévoles</em>.',
+              "Identification d’adresses utiles pour l'artiste :<br><em>culture, culte, bien-être, magasins, administrations…</em>"
             ]
           },
           {
@@ -94,8 +96,8 @@ const data: Dataset = [
             title: 'transports',
             img: 'transport',
             text: [
-              'explication des modes et réseaux de transports de la ville et de ses environs de préférence une solution écoresponsable',
-              "informations sur les abonnements et cartes de réduction selon le statut administratif de l'artiste"
+              'Explication des modes et réseaux de transports de la ville et de ses environs.<br><em>De préférence une solution écoresponsable.</em>',
+              'Informations sur les abonnements et cartes de réduction,<br><em>selon le statut administratif de l’artiste</em>.'
             ]
           },
           {
@@ -103,8 +105,8 @@ const data: Dataset = [
             title: 'vie sociale',
             img: 'social-life',
             text: [
-              'mise en lien avec des relais bénévoles associations locales, habitant·es',
-              "organisation de sorties en soirée ou les week-ends avec l'aide des relais bénévoles"
+              'Mise en lien avec des relais bénévoles :<br><em>associations locales, habitant·es.</em>',
+              'Organisation de sorties en soirée ou les week-ends,<br><em>avec l’aide des relais bénévoles.</em>'
             ]
           },
           {
@@ -112,9 +114,9 @@ const data: Dataset = [
             title: 'vie professionnelle',
             img: 'professional-activity',
             text: [
-              'invitation à des événements artistiques et culturels',
-              "introduction auprès de partenaires, institutions, associations ou de toute autre entité en lien avec le projet de l'artiste",
-              "mise en relation avec d'autres artistes"
+              'Invitation à des événements artistiques et culturels.',
+              "Introduction auprès de partenaires, institutions, associations<br><em>ou de toute autre entité en lien avec le projet de l'artiste.</em>",
+              'Mise en relation avec d’autres artistes.'
             ]
           }
         ]
@@ -129,9 +131,9 @@ const data: Dataset = [
             title: 'suivi administratif',
             img: 'administrative-support',
             text: [
-              'montant et répartition de la bourse modalité de paiement et déclaration, recours à une association tiers',
-              "affiliation aux caisses sociales et professionnelles avec l'aide d'une association spécialisée",
-              "obtention ou renouvellement du titre de séjour avec l'aide d'une association spécialisée"
+              'Montant et répartition de la bourse :<br><em>modalité de paiement et déclaration.<br>Portage possible par une association tierce.</em>',
+              'Affiliation aux caisses sociales et professionnelles,<br><em>avec l’aide d’une association spécialisée.</em>',
+              'Obtention ou renouvellement du titre de séjour,<br><em>avec l’aide d’une association spécialisée.</em>'
             ]
           },
           {
@@ -139,8 +141,8 @@ const data: Dataset = [
             title: 'banque et téléphone',
             img: 'bank-phone',
             text: [
-              "ouverture d'un compte en banque, obtention d'une carte de paiement banque physique ou en ligne selon le statut administratif et l'origine de l'artiste",
-              'souscription à un abonnement téléphonique'
+              "Ouverture d'un compte en banque, obtention d'une carte de paiement :<br><em>banque physique ou en ligne,<br>Selon le statut administratif et l’origine de l’artiste.</em>",
+              'Souscription à un abonnement téléphonique.<br><em>Après ouverture d’un compte bancaire</em>.'
             ]
           },
           {
@@ -148,8 +150,8 @@ const data: Dataset = [
             title: 'formations',
             img: 'education',
             text: [
-              "inscription à des cours de français après test de placement sauf niveau débutant université, associations, cours municipaux, cours dispensés par l'école, enseignement en ligne…",
-              "formations internes ou externes en fonction des besoins de l'artiste guidance, langue anglais, formations techniques…"
+              'Inscription à des cours de français,<br><em>après test de placement sauf niveau débutant.<br>Ressources : universités, associations, cours municipaux, cours dispensés par l’école, enseignement en ligne…</em>',
+              "Formations internes ou externes en fonction des besoins de l'artiste :<br><em>guidance, langue anglaise, formations techniques…</em>"
             ]
           },
           {
@@ -157,9 +159,9 @@ const data: Dataset = [
             title: 'famille',
             img: 'family',
             text: [
-              "prise en compte de la composition familiale de l'artiste logement adéquat, aménagements horaires…",
-              "scolarisation et loisirs des enfants inscription école, université, institut spécialisé, centre de loisir ou d'animation, conservatoire…",
-              'assistance des conjoint·es dans la mesure du possible et selon les besoins'
+              "Prise en compte de la composition familiale de l'artiste :<br><em>logement approprié, aménagements horaires…</em>",
+              'Scolarisation et loisirs des enfants :<br><em>inscription école, université, institut spécialisé, centre de loisir ou d’animation, conservatoire…</em>',
+              'Assistance des conjoint·es,<br><em>dans la mesure du possible et selon les besoins.</em>'
             ]
           },
           {
@@ -167,9 +169,10 @@ const data: Dataset = [
             title: 'soins',
             img: 'medical-care',
             text: [
-              "inscription à la Sécurité sociale, à la Complémentaire santé solidaire, voire à l'Aide médicale de l'État (AME) selon le statut administratif de l'artiste",
-              "explication du fonctionnement du système de santé et de mutuelle selon le statut de l'artiste et sa couverture santé",
-              'identification de médecins généralistes et spécialisés, de thérapeutes expliciter les tarifications'
+              'Inscription à l’Assurance Maladie, à la Complémentaire santé solidaire, voire à l’Aide médicale de l’État (AME),<br><em>selon le statut administratif de l’artiste.</em>',
+              'Explication du fonctionnement du système de santé et de mutuelle,<br><em>selon le statut de l’artiste et sa couverture santé.</em>',
+              'Identification de médecins généralistes et spécialisés, de thérapeutes.<br><em>Expliciter les tarifications.</em>',
+              'Transmission de numéros d’urgence.'
             ]
           }
         ]
@@ -191,8 +194,10 @@ const data: Dataset = [
             title: 'artist in residence',
             img: 'artist-position',
             text: [
-              'Introduction of the artist and their work to the school team, teachers, and students, planned at the beginning of the stay.',
-              'Inclusion of the artist in school projects according to the orientations of the artist and the school: workshops, research programs, teaching, public events...'
+              'Introduction of the artist and their work<br><em>to the school team, teachers, and students.<br>To be planned at the beginning of the stay.</em>',
+              'Inclusion of the artist in school projects<br><em>according to the orientations of the artist and the school: workshops, research programs, teaching, public events…</em>',
+              "Definition of the artist's role and responsibilities,<br><em>toward the school, teachers, and students.</em>",
+              'Expression of the respective interests and intentions of the artist and the school.'
             ]
           },
           {
@@ -200,7 +205,7 @@ const data: Dataset = [
             title: 'reference persons',
             img: 'referents',
             text: [
-              "Assignment of two reference persons for the residency: one person from the team living in the urban area and one teacher related to the artist's practice. Preference should be given to individuals who share a common language with the artist.",
+              "Assignment of two reference persons for the residency:<br><em>one person from the team living in the urban area,<br>one teacher related to the artist's practice.<br>Preferably persons who share a common language with the artist.</em>",
               'Connection of the reference persons with the artist.',
               'Definition and parameters of the support provided by the reference persons.'
             ]
@@ -210,11 +215,11 @@ const data: Dataset = [
             title: 'school introduction',
             img: 'school-familiarization',
             text: [
+              'Tour of the facilities.',
               'Overview of how an art school operates.',
-              'Tour of the facility.',
               'Explanation of the function of different buildings, rooms, and workshops.',
               'Hours and access procedures.',
-              "The institution's internal regulations."
+              'Internal regulations.'
             ]
           },
           {
@@ -222,7 +227,7 @@ const data: Dataset = [
             title: 'workspace',
             img: 'workspace',
             text: [
-              "Arrangement of a workspace inside or outside the school, or facilitated access to a studio, depending on the artist's field of artistic intervention and the nature of their project, as well as the school's resources.",
+              "Arrangement of a workspace inside or outside the school, or facilitated access to a studio,<br><em>depending on the artist's field of artistic practice and the nature of their project.<br>As well as the school's resources.</em>",
               "Communication of the workspace's hours and access procedures.",
               'Provision of internet access.'
             ]
@@ -249,8 +254,8 @@ const data: Dataset = [
             title: 'accommodation',
             img: 'lodging',
             text: [
-              'Facilitation of access and assistance in finding accommodation based on local resources: school housing, renting an apartment or a room, agreement with a residence…; preferably a furnished solution.',
-              'Arrangement of basic equipment through donations, recovery, second-hand.',
+              'Facilitation of access and assistance in finding accommodation,<br><em>based on local resources: school housing, renting an apartment or a room, agreement with a residency or municipality…<br>Preferably a furnished solution.</em>',
+              'Arrangement of basic equipment,<br><em>including donations, recovery, second-hand.</em>',
               'Provision of internet access.',
               "Subscription to a homeowner's insurance in the artist's name."
             ]
@@ -260,8 +265,8 @@ const data: Dataset = [
             title: 'city discovery',
             img: 'city-familiarization',
             text: [
-              'Organization of city and surrounding area tours with the help of volunteer contacts.',
-              'Identification of useful addresses for the artist including cultural sites, places of worship, wellness, shops, and administrative services.'
+              'Organization of city and surrounding area tours,<br><em>with the help of volunteer contacts.</em>',
+              'Identification of useful addresses for the artist,<br><em>including cultural sites, places of worship, wellness, shops, and administrative services.</em>'
             ]
           },
           {
@@ -269,8 +274,8 @@ const data: Dataset = [
             title: 'transportation',
             img: 'transport',
             text: [
-              "Explanation of the city and surrounding area's modes and networks of transportation, preferably an eco-friendly solution.",
-              "Information on subscriptions and discount cards according to the artist's administrative status."
+              "Explanation of the city and surrounding area's modes and networks of transportation.<br><em>Preferably an eco-friendly solution.</em>",
+              "Information on subscriptions and discount cards,<br><em>according to the artist's administrative status.</em>"
             ]
           },
           {
@@ -278,8 +283,8 @@ const data: Dataset = [
             title: 'social life',
             img: 'social-life',
             text: [
-              'Connection with volunteer contacts from local associations, residents.',
-              'Organization of evening or weekend outings with the help of volunteer contacts.'
+              'Connection with volunteer contacts,<br><em>from local associations, residents.</em>',
+              'Organization of evening or weekend outing,<br><em>with the help of volunteer contacts.</em>'
             ]
           },
           {
@@ -288,7 +293,7 @@ const data: Dataset = [
             img: 'professional-activity',
             text: [
               'Invitation to artistic and cultural events.',
-              "Introduction to partners, institutions, associations, or any other entity related to the artist's project.",
+              "Introduction to partners, institutions, associations,<br><em>or any other entity related to the artist's project.</em>",
               'Networking with other artists.'
             ]
           }
@@ -304,9 +309,9 @@ const data: Dataset = [
             title: 'administrative support',
             img: 'administrative-support',
             text: [
-              'Amount and distribution of the grant, terms of payment and declaration, use of a third-party association.',
-              'Affiliation with social and professional insurance funds, with the help of a specialized association.',
-              'Obtaining or renewing a residency permit, with the help of a specialized association.'
+              'Amount and distribution of the grant, terms of payment and declaration.<br><em>Possible use of a third-party association.</em>',
+              'Affiliation with social and professional insurance funds,<br><em>with the help of a specialized association.</em>',
+              'Obtaining or renewing a residency permit,<br><em>with the help of a specialized association.</em>'
             ]
           },
           {
@@ -314,8 +319,8 @@ const data: Dataset = [
             title: 'bank & phone',
             img: 'bank-phone',
             text: [
-              'Opening of a bank account, obtaining a payment card—physical or online bank—depending on the administrative status and origin of the artist.',
-              'Subscription to a telephone plan.'
+              "Opening of a bank account, obtaining a payment card:<br><em>physical or online bank.<br>Depending on the artist's administrative status and origin.</em>",
+              'Subscription to a telephone plan.<br><em>After opening a bank account.</em>'
             ]
           },
           {
@@ -323,8 +328,8 @@ const data: Dataset = [
             title: 'training',
             img: 'education',
             text: [
-              'Registration for French courses after placement test, unless beginner level—university, associations, municipal courses, school-taught courses, online education…',
-              'Internal or external training depending on the needs of the artist—guidance, English language, technical training…'
+              'Registration for French courses,<br><em>after placement test, unless beginner level.<br>Resources: university, associations, municipal courses, school-taught courses, online education…</em>',
+              'Internal or external training depending on the needs of the artist:<br><em>guidance, English language, technical training…</em>'
             ]
           },
           {
@@ -332,9 +337,9 @@ const data: Dataset = [
             title: 'family',
             img: 'family',
             text: [
-              "Consideration of the artist's family composition—appropriate housing, schedule arrangements…",
-              'Schooling and recreation for children—registration for school, university, specialized institute, recreation or animation center, conservatory…',
-              'Spousal assistance where possible and according to needs.'
+              "Consideration of the artist's family composition,<br><em>appropriate housing, schedule arrangements…</em>",
+              'Schooling and recreation for children:<br><em>registration for school, university, specialized institute, recreation or animation center, conservatory…</em>',
+              'Spousal assistance,<br><em>where possible and according to needs.</em>'
             ]
           },
           {
@@ -342,9 +347,9 @@ const data: Dataset = [
             title: 'care',
             img: 'medical-care',
             text: [
-              "Registration for Social Security, the Complementary Solidarity Health scheme, or even State Medical Aid (AME), depending on the artist's administrative status.",
-              "Explanation of how the health care system and mutual insurance funds operate, depending on the artist's status and health coverage.",
-              'Identification of general and specialist doctors, therapists—clarification of fees.'
+              "Registration for Healthcare (Assurance maladie), the Complementary Solidarity Health scheme, or even State Medical Aid (AME),<br><em>depending on the artist's administrative status.<br>Explanation of how the healthcare system and mutual insurance funds operate,<br>depending on the artist's status and health coverage.</em>",
+              'Identification of general and specialist doctors, therapists.<br><em>Clarification of fees.</em>',
+              'Provision of emergency numbers.'
             ]
           }
         ]

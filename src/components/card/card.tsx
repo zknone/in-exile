@@ -5,6 +5,9 @@ import Popup from '../popup/popup';
 import usePopup from '../../hooks/usePopUp';
 
 export default function Card(props: {
+  href?: string;
+  visible?: boolean;
+  className?: string;
   screenSize: ScreenSize;
   rotation?: number;
   cardTitle: string;
@@ -22,6 +25,8 @@ export default function Card(props: {
   onMouseLeave?: () => void;
 }) {
   const {
+    visible = true,
+    href,
     cardTitle,
     points,
     onCardClick,
@@ -36,16 +41,21 @@ export default function Card(props: {
     rotation = 0,
     img,
     altImg,
-    screenSize
+    screenSize,
+    className
   } = props;
 
   const { isOpen, setOpen, cardRef } = usePopup();
 
-  const imgUrl = `/images/${img}.jpg`;
-  const altImgUrl = `/images/${altImg}.jpg`;
+  const imgUrl = `images/${img}.jpg`;
+  const altImgUrl = `images/${altImg}.jpg`;
 
   return (
-    <>
+    <div
+      className={cn('relative max-w-[100%]', {
+        invisible: !visible
+      })}
+    >
       <Popup
         isOpen={isOpen}
         setOpen={setOpen}
@@ -57,11 +67,12 @@ export default function Card(props: {
       <div
         className={cn(
           'flex flex-col w-full relative shadow-card',
-          { 'border-[0.8px] rounded-[7px] p-[1px] max-w-[100px]': screenSize === 'mobile' },
-          { 'border-[1px] p-[2px] rounded-[9px] max-w-[128px]': screenSize === 'tablet-m' },
-          { 'border-[2px] p-[2px] rounded-[12px] max-w-[195px]': screenSize === 'tablet-l' },
-          { 'border-[2px] p-[2px] rounded-[18px] max-w-[220px]': screenSize === 'tabletop' },
-          { 'border-[2px] p-[3.5px] rounded-[25px] max-w-[280px]': screenSize === 'default' },
+          className,
+          {
+            'border-[calc(21vw*0.007)] p-[calc(21vw*0.013)] rounded-[1.3vw]':
+              screenSize !== 'default'
+          },
+          { 'border-[2px] p-[3.2px] rounded-[25px]': screenSize === 'default' },
           { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
           'hover:bg-[#008AFF] hover:border-[#396E9A] hover:border-1',
           { 'border-[#008AFF] bg-white': !active },
@@ -80,10 +91,7 @@ export default function Card(props: {
             { 'border-[#2FA2FB]': !isHovered && !isNothingHovered },
             { 'border-[#2FA2FB]/[0.7]': isSecondPlan },
             { 'border-[#2FA2FB]/[0.5]': isThirdPlan },
-            { 'border-[0.8px] rounded-[5px]': screenSize === 'mobile' },
-            { 'border-[1px] rounded-[7px]': screenSize === 'tablet-m' },
-            { 'border-[2px] rounded-[9px]': screenSize === 'tablet-l' },
-            { 'border-[2px] rounded-[13px]': screenSize === 'tabletop' },
+            { 'border-[calc(21vw*0.007)] rounded-[calc(1.3vw*0.7)]': screenSize !== 'default' },
             { 'border-[2px] rounded-[20px]': screenSize === 'default' }
           )}
           onClick={openable ? () => setOpen(!isOpen) : onCardClick}
@@ -93,7 +101,7 @@ export default function Card(props: {
               className={cn(
                 'object-cover w-auto h-auto transition-transform duration-300 transform hover:scale-110'
               )}
-              src={active ? altImgUrl : imgUrl}
+              src={`/${active ? altImgUrl : imgUrl}`}
               alt="cardTitle"
             />
           </div>
@@ -104,28 +112,18 @@ export default function Card(props: {
               { 'opacity-[80%] text-[#727272] !important': isSecondPlan },
               { 'opacity-[60%] text-[#727272] !important': isThirdPlan },
               {
-                'pt-[2px] pb-[3px] border-t-[0.8px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
-                  screenSize === 'mobile'
-              },
-              {
-                'pt-[3px] pb-[5px] border-t-[1px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
-                  screenSize === 'tablet-m'
-              },
-              {
-                'pt-[3px] pb-[5px] border-t-[2px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
-                  screenSize === 'tablet-l'
-              },
-              {
-                'pt-[5px] pb-[9px] border-t-[2px] text-[calc(4px_+_16_*_((100vw_-_360px)_/_(1600_-_360)))]':
-                  screenSize === 'tabletop'
+                'border-t-[calc(21vw*0.007)] pt-[0.35vw] pb-[0.6vw] text-[calc(4px_+_13_*_((100vw_-_375px)_/_(1600_-_375)))]':
+                  screenSize !== 'default'
               },
               { 'pt-[7px] pb-[12px] border-t-[2px] text-[22px]': screenSize === 'default' }
             )}
           >
-            {cardTitle}
+            <a href={href} download>
+              {cardTitle}
+            </a>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

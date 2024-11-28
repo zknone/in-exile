@@ -19,6 +19,8 @@ type SubcategoryCard =
   | 'family'
   | 'medical-care';
 
+export type MenuCard = 'closed' | 'credits' | 'context' | 'noMenu';
+
 export interface Subcategory {
   card: SubcategoryCard;
   title: string;
@@ -43,6 +45,8 @@ export interface DatasetItem {
 export type AppState = {
   lang: Language;
   category: CategoryCard;
+  menu: MenuCard;
+  isFirstTimeOpened: boolean;
 };
 
 export type Dataset = DatasetItem[];

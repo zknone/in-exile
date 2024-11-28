@@ -37,7 +37,7 @@ const CardLine = (props: {
       if (state.category !== 'noCategory') {
         setState({ ...state, category: 'noCategory' });
       } else {
-        setState({ lang: 'noLang', category: 'noCategory' });
+        setState({ ...state, lang: lang, category: 'noCategory' });
       }
     }
   };
@@ -65,7 +65,7 @@ const CardLine = (props: {
       {mode === 'subCategory' && (
         <div
           className={cn(
-            'relative z-30 flex justify-between top-0 max-w-[100%] mx-auto',
+            'relative z-30 flex justify-between top-0  mx-auto max-w-[100%]',
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
@@ -92,17 +92,26 @@ const CardLine = (props: {
       {mode === 'category' && (
         <div
           className={cn(
-            'relative top-0 flex justify-between mx-auto z-20 max-w-[60%] mx-auto',
+            'relative top-0 flex justify-between mx-auto z-20 mx-auto max-w-[59.5%]',
+            { invisible: state.menu === 'context' },
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
             { 'gap-x-[15px]': screenSize === 'tabletop' },
             { 'gap-x-[20px]': screenSize === 'default' },
             {
-              'top-[-20vw]':
+              'top-[-19.65vw]':
                 state.lang !== 'noLang' &&
                 state.category !== 'noCategory' &&
-                screenSize !== 'default'
+                screenSize !== 'default' &&
+                screenSize !== 'mobile'
+            },
+            {
+              'top-[-22.7vw]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize !== 'default' &&
+                screenSize === 'mobile'
             },
             {
               'top-[-390px]':
@@ -133,7 +142,8 @@ const CardLine = (props: {
       {mode === 'language' && (
         <div
           className={cn(
-            'relative z-10 flex justify-between max-w-[40%] mx-auto',
+            'relative z-10 flex justify-between mx-auto max-w-[40%]',
+            { invisible: state.isFirstTimeOpened && state.lang !== 'noLang' },
             { 'gap-x-[4px]': screenSize === 'mobile' },
             { 'gap-x-[8px]': screenSize === 'tablet-m' },
             { 'gap-x-[10px]': screenSize === 'tablet-l' },
@@ -143,13 +153,29 @@ const CardLine = (props: {
               'top-[-20vw]':
                 state.lang !== 'noLang' &&
                 state.category === 'noCategory' &&
-                screenSize !== 'default'
+                screenSize !== 'default' &&
+                screenSize !== 'mobile'
             },
             {
-              'top-[-40vw]':
+              'top-[-22.9vw]':
+                state.lang !== 'noLang' &&
+                state.category === 'noCategory' &&
+                screenSize !== 'default' &&
+                screenSize === 'mobile'
+            },
+            {
+              'top-[-39.6vw]':
                 state.lang !== 'noLang' &&
                 state.category !== 'noCategory' &&
-                screenSize !== 'default'
+                screenSize !== 'default' &&
+                screenSize !== 'mobile'
+            },
+            {
+              'top-[-45.6vw]':
+                state.lang !== 'noLang' &&
+                state.category !== 'noCategory' &&
+                screenSize !== 'default' &&
+                screenSize === 'mobile'
             },
             {
               'top-[-390px]':
